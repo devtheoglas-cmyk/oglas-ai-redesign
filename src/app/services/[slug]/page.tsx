@@ -8,26 +8,39 @@ import {
   Brain,
   Building2,
   CheckCircle2,
+  CheckSquare,
   CircuitBoard,
   ClipboardCheck,
+  Code2,
+  Compass,
   Database,
   Eye,
   Factory,
   FileSpreadsheet,
+  FileText,
   Gauge,
+  GitBranch,
+  Globe,
+  Hammer,
+  Handshake,
   LineChart,
   ListChecks,
   Lock,
   Megaphone,
   MessageSquare,
   Network,
+  PenTool,
+  Puzzle,
   Radar,
+  RefreshCw,
   Rocket,
+  Scale,
   ShieldCheck,
   Smartphone,
   Sparkles,
   Target,
   TrendingUp,
+  UploadCloud,
   UsersRound,
   Workflow,
 } from "lucide-react";
@@ -637,6 +650,429 @@ const aiDashboardsIntegrations = [
   "REST APIs",
 ];
 
+const customSoftwareProblems = [
+  "Employees entering the same information into multiple systems",
+  "Spreadsheets filling gaps between applications",
+  "Manual approval and reporting processes",
+  "ERP, CRM, HR, and finance systems operating separately",
+  "Workflows that require unnecessary steps",
+  "Software that cannot adapt to changing business rules",
+  "Limited visibility across departments",
+  "Legacy applications that are difficult to extend",
+];
+
+const customSoftwarePrinciples = [
+  {
+    number: "01",
+    title: "Understand Before We Build",
+    description:
+      "We start by understanding your existing workflows, teams, systems, business rules, pain points, and desired outcomes.",
+    icon: Compass,
+  },
+  {
+    number: "02",
+    title: "Build What the Business Needs",
+    description:
+      "Instead of forcing your process into a predefined software model, we design functionality around your actual operational requirements.",
+    icon: Hammer,
+  },
+  {
+    number: "03",
+    title: "Connect the Systems You Already Use",
+    description:
+      "Your business may not need to replace everything. We can connect applications, data sources, APIs, ERP systems, CRM platforms, HR systems, and other tools where integration makes more sense.",
+    icon: Puzzle,
+  },
+  {
+    number: "04",
+    title: "Make AI Practical",
+    description:
+      "AI can be incorporated where it creates a useful operational advantage — such as document processing, intelligent assistants, data analysis, computer vision, or automated decisions.",
+    icon: Brain,
+  },
+  {
+    number: "05",
+    title: "Improve Over Time",
+    description:
+      "Good business software doesn't have to be finished forever. It should be capable of evolving as your processes, teams, and requirements change.",
+    icon: RefreshCw,
+  },
+];
+
+const customSoftwareCapabilities = [
+  {
+    title: "Custom Business Applications",
+    description:
+      "Purpose-built applications for unique business processes, internal operations, customer workflows, and departmental requirements.",
+    icon: Boxes,
+  },
+  {
+    title: "Custom ERP & Business Management Systems",
+    description:
+      "Connect business functions such as HR, payroll, finance, operations, inventory, reporting, and approvals within systems designed around your processes.",
+    icon: CircuitBoard,
+  },
+  {
+    title: "Custom CRM Solutions",
+    description:
+      "CRM applications designed around your sales processes, customer relationships, pipelines, reporting, and internal workflows.",
+    icon: Handshake,
+  },
+  {
+    title: "Employee & Customer Portals",
+    description:
+      "Secure portals that give employees, customers, partners, or other users access to the information and actions they need.",
+    icon: UsersRound,
+  },
+  {
+    title: "Workflow Management Systems",
+    description:
+      "Digitize approvals, assignments, notifications, escalations, validations, and recurring operational processes.",
+    icon: Workflow,
+  },
+  {
+    title: "Custom Web Applications",
+    description:
+      "Browser-based applications built for internal teams, customers, partners, or specific business operations.",
+    icon: Globe,
+  },
+  {
+    title: "AI-Powered Business Applications",
+    description:
+      "Add AI capabilities to software where they provide practical value — from document understanding and knowledge assistants to operational intelligence.",
+    icon: Sparkles,
+  },
+  {
+    title: "Software Integration",
+    description:
+      "Connect existing applications and data sources through APIs and integration workflows to reduce disconnected processes and duplicate work.",
+    icon: Network,
+  },
+];
+
+const customSoftwareAiFlows = [
+  {
+    flow: "Documents → AI Processing → Validation → Workflow",
+    description:
+      "Extract information from business documents and route it into the appropriate workflow.",
+    icon: FileText,
+  },
+  {
+    flow: "Business Knowledge → AI Assistant → Employee",
+    description:
+      "Give employees a conversational way to access approved business information and knowledge.",
+    icon: MessageSquare,
+  },
+  {
+    flow: "Operational Data → AI Analysis → Dashboard",
+    description:
+      "Turn information from business systems into useful insights for decision-making.",
+    icon: BarChart3,
+  },
+  {
+    flow: "Camera Feed → Computer Vision → Operational Signal",
+    description:
+      "Use computer vision to identify relevant events or conditions from visual data.",
+    icon: Eye,
+  },
+  {
+    flow: "Business Event → Automation → Action",
+    description:
+      "Connect events, business rules, and automated actions to reduce repetitive manual work.",
+    icon: Rocket,
+  },
+];
+
+const customSoftwareExistingSystems = [
+  "ERP systems",
+  "CRM platforms",
+  "HR and payroll software",
+  "Finance systems",
+  "Accounting applications",
+  "Third-party SaaS platforms",
+  "Legacy applications",
+  "Internal databases",
+  "APIs",
+  "Business intelligence tools",
+];
+
+const customSoftwareIntegrationCapabilities = [
+  {
+    title: "API Integration",
+    description: "Connect software applications and external platforms.",
+    icon: Puzzle,
+  },
+  {
+    title: "Data Integration",
+    description: "Bring information from different sources together.",
+    icon: Database,
+  },
+  {
+    title: "Workflow Integration",
+    description: "Trigger actions between systems based on business events.",
+    icon: Workflow,
+  },
+  {
+    title: "Legacy Integration",
+    description: "Extend existing applications where replacement isn't necessary.",
+    icon: RefreshCw,
+  },
+  {
+    title: "AI Integration",
+    description: "Connect AI capabilities with operational systems and workflows.",
+    icon: Brain,
+  },
+];
+
+const customSoftwareApproach = [
+  {
+    label: "BUY",
+    title: "Consider an existing solution when:",
+    items: [
+      "Your requirements are largely standard",
+      "The software already supports your processes",
+      "You don't require significant customization",
+      "Speed of adoption is more important than differentiation",
+    ],
+  },
+  {
+    label: "CUSTOMIZE",
+    title: "Consider customization when:",
+    items: [
+      "An existing platform is fundamentally suitable",
+      "Only specific workflows need modification",
+      "You want to extend an existing investment",
+    ],
+  },
+  {
+    label: "INTEGRATE",
+    title: "Consider integration when:",
+    items: [
+      "Your systems already work individually",
+      "The main problem is disconnected information",
+      "Replacing existing platforms would create unnecessary disruption",
+    ],
+  },
+  {
+    label: "BUILD",
+    title: "Consider custom development when:",
+    items: [
+      "Your workflows are highly specific",
+      "Existing software creates operational limitations",
+      "Your processes are central to your competitive advantage",
+      "Multiple systems need to operate as one business environment",
+      "You require functionality that standard platforms don't provide",
+    ],
+  },
+];
+
+const customSoftwareProcess = [
+  {
+    number: "01",
+    title: "Discover",
+    description:
+      "We understand your business, workflows, users, existing systems, pain points, and objectives.",
+    icon: Compass,
+  },
+  {
+    number: "02",
+    title: "Map",
+    description:
+      "We translate operational requirements into workflows, functional requirements, system relationships, and business rules.",
+    icon: GitBranch,
+  },
+  {
+    number: "03",
+    title: "Design",
+    description:
+      "We define the user experience, application structure, data flows, integrations, and technical architecture.",
+    icon: PenTool,
+  },
+  {
+    number: "04",
+    title: "Build",
+    description:
+      "Development begins around the agreed requirements, with functionality developed and tested progressively.",
+    icon: Hammer,
+  },
+  {
+    number: "05",
+    title: "Validate",
+    description:
+      "We test workflows, business rules, integrations, permissions, and application behaviour against the intended requirements.",
+    icon: CheckSquare,
+  },
+  {
+    number: "06",
+    title: "Deploy",
+    description:
+      "The software is prepared for deployment and introduced into the required operating environment.",
+    icon: UploadCloud,
+  },
+  {
+    number: "07",
+    title: "Improve",
+    description:
+      "After deployment, the system can evolve as users provide feedback and the business develops new requirements.",
+    icon: RefreshCw,
+  },
+];
+
+const customSoftwareIndustries = [
+  {
+    title: "Manpower & Staffing",
+    description:
+      "Employee management, workforce operations, ESS portals, payroll processes, approvals, and reporting.",
+  },
+  {
+    title: "Manufacturing & Industrial",
+    description:
+      "Operational workflows, production-related processes, data visibility, automation, and business systems.",
+  },
+  {
+    title: "Security & Surveillance",
+    description:
+      "Operational monitoring, workforce management, computer vision, reporting, and connected workflows.",
+  },
+  {
+    title: "Trading & Distribution",
+    description:
+      "Business operations, customer management, inventory-related processes, approvals, reporting, and integrations.",
+  },
+  {
+    title: "Healthcare",
+    description:
+      "Operational applications, workflows, information management, and connected business processes.",
+  },
+  {
+    title: "Marketing Agencies",
+    description:
+      "Campaign workflows, automation, reporting, client operations, and AI-powered marketing applications.",
+  },
+  {
+    title: "Facility Management",
+    description:
+      "Workforce operations, service workflows, assignments, approvals, and operational visibility.",
+  },
+  {
+    title: "Retail & Multi-Branch Businesses",
+    description:
+      "Branch operations, employee workflows, business applications, reporting, and centralized visibility.",
+  },
+];
+
+const customSoftwareOutcomes = [
+  {
+    title: "ESS Portal — Manpower Operations",
+    description:
+      "A custom Employee Self-Service portal helped reduce repetitive HR work.",
+    stats: [
+      { value: "300 minutes", label: "of HR time recovered per day." },
+      { value: "110 hours", label: "of HR time across 22 working days." },
+      { value: "Nearly 14 working days", label: "of HR capacity recovered each month." },
+    ],
+  },
+  {
+    title: "Payroll Automation + ESS Integration",
+    description:
+      "A payroll workflow that previously required substantial manual effort was automated through a connected payroll and ESS process.",
+    stats: [
+      { value: "Under 10 seconds", label: "for the automated payroll calculation process." },
+      { value: "16–48 staff-hours", label: "estimated time recovered per payroll cycle." },
+      { value: "2–6 working days", label: "of staff capacity potentially recovered each month." },
+    ],
+  },
+];
+
+const customSoftwareWhyUs = [
+  {
+    title: "Business Before Technology",
+    description: "We start with the business process rather than starting with a technology stack.",
+    icon: Compass,
+  },
+  {
+    title: "Built Around Your Workflows",
+    description: "Your software is designed around how your teams actually operate.",
+    icon: Workflow,
+  },
+  {
+    title: "Practical Technology",
+    description:
+      "We use automation, integrations, AI, dashboards, and other technologies where they solve a real requirement.",
+    icon: Sparkles,
+  },
+  {
+    title: "Connected Capabilities",
+    description:
+      "Custom software can work alongside ERP, HR, CRM, finance, AI, automation, and other business systems.",
+    icon: Network,
+  },
+  {
+    title: "Transparent Decision-Making",
+    description:
+      "We don't believe every problem requires a completely new system. Sometimes integrating or improving what you already have is the more appropriate approach.",
+    icon: Scale,
+  },
+  {
+    title: "Long-Term Thinking",
+    description:
+      "Business software needs to accommodate changing requirements, new users, additional data, and evolving operations.",
+    icon: TrendingUp,
+  },
+];
+
+const customSoftwareGovernance = [
+  "Role-based access",
+  "Authentication & authorization",
+  "Data validation",
+  "Activity records",
+  "Controlled integrations",
+  "Environment separation",
+];
+
+const customSoftwareFaqs = [
+  {
+    question: "What is custom software development?",
+    answer:
+      "Custom software development is the process of designing and building software specifically around a business's workflows, requirements, users, and systems. Unlike standard off-the-shelf software, custom software can be designed around how an organization actually operates, including its business rules, integrations, automation requirements, and data flows.",
+  },
+  {
+    question: "When does a business need custom software development?",
+    answer:
+      "A business may need custom software when existing software cannot adequately support its workflows, integrations, business rules, or operational requirements. Common signs include excessive spreadsheet use, repetitive manual processes, disconnected systems, workarounds, limited visibility, or software that is difficult to adapt as the business changes.",
+  },
+  {
+    question: "What is the difference between custom software and off-the-shelf software?",
+    answer:
+      "Off-the-shelf software provides standardized functionality for common business requirements, while custom software is designed around the specific needs of an organization. Off-the-shelf software can be suitable when requirements are standard; custom development becomes relevant when a business needs specialized workflows, integrations, functionality, or greater control over its software environment.",
+  },
+  {
+    question: "How much does custom software development cost in Dubai or the UAE?",
+    answer:
+      "The cost of custom software development in Dubai or the UAE depends on the scope and complexity of the project. Factors can include the number of users, workflows, features, integrations, application type, security requirements, AI functionality, and ongoing support. A reliable estimate should be based on defined requirements rather than a fixed price per screen or feature.",
+  },
+  {
+    question: "How long does custom software development take?",
+    answer:
+      "The development timeline depends on the scope, complexity, integrations, and requirements of the software. A focused business application may require significantly less development time than a large ERP, multi-system platform, or AI-enabled enterprise application. At Oglas AI, the timeline is determined after understanding the requirements and development scope.",
+  },
+  {
+    question: "Can custom software integrate with existing ERP, CRM, and business systems?",
+    answer:
+      "Yes. Custom software can integrate with existing ERP, CRM, HR, finance, databases, and third-party business applications where the required integration methods are available. APIs, data connections, and workflow integrations can help systems exchange information and automate processes without necessarily replacing the software a business already uses.",
+  },
+  {
+    question: "Can custom software include AI and workflow automation?",
+    answer:
+      "Yes. AI and workflow automation can be integrated into custom software where they provide a practical business benefit. Possible applications include intelligent document processing, AI knowledge assistants, data analysis, automated workflows, dashboards, computer vision, and event-based business automation. The appropriate approach depends on the business process, available data, and desired outcome.",
+  },
+  {
+    question: "How does Oglas AI approach custom software development?",
+    answer:
+      "Oglas AI takes a business-first approach to custom software development, starting with the organization's workflows, requirements, systems, and operational challenges before defining the technology solution. Depending on the situation, the approach may involve building new software, integrating existing systems, modernizing an application, automating workflows, or adding practical AI capabilities.",
+  },
+];
+
 const baseUrl = "https://www.oglasai.com";
 
 function BreadcrumbStructuredData() {
@@ -773,6 +1209,675 @@ function AiDashboardsServiceStructuredData() {
         __html: JSON.stringify(data).replace(/</g, "\\u003c"),
       }}
     />
+  );
+}
+
+function CustomSoftwareBreadcrumbStructuredData() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${baseUrl}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Custom Software Development",
+        item: `${baseUrl}/services/custom-software-development`,
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
+function CustomSoftwareServiceStructuredData() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${baseUrl}/services/custom-software-development#service`,
+    name: "Custom Software Development",
+    serviceType: "Custom Software Development",
+    description:
+      "Oglas AI develops custom software solutions for businesses in Dubai, the UAE, and beyond — combining business applications, integrations, automation, and practical AI into software designed around real operations.",
+    provider: {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Oglas AI",
+      url: baseUrl,
+    },
+    areaServed: [
+      "Dubai, United Arab Emirates",
+      "United Arab Emirates",
+      "Global",
+    ],
+    url: `${baseUrl}/services/custom-software-development`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
+function CustomSoftwarePage() {
+  return (
+    <>
+      <CustomSoftwareBreadcrumbStructuredData />
+      <CustomSoftwareServiceStructuredData />
+      <FaqStructuredData faqs={customSoftwareFaqs} />
+
+      {/* Hero */}
+      <section className="surface-grid bg-pearl py-20 md:py-28">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">
+            Custom Software Development
+          </p>
+          <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] text-onyx md:text-6xl">
+            Custom Software Built Around How Your Business Works
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-steel">
+            Your business has its own workflows, rules, teams, systems, and
+            operational requirements. Your software should be built around
+            them — not force them into a rigid process.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-steel">
+            Oglas AI develops custom software solutions for businesses in
+            Dubai, the UAE, and beyond, combining business applications,
+            integrations, automation, and practical AI into software designed
+            around real operations.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+            >
+              Build Your Custom Software
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-onyx px-6 text-sm font-semibold text-onyx transition hover:bg-onyx hover:text-white"
+            >
+              Talk to Oglas AI
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-steel/70">
+            UAE-based · Custom Software + Practical AI · Built Around Real
+            Operations
+          </p>
+        </div>
+      </section>
+
+      {/* Problem */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            The Problem
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            When Your Software Becomes the Bottleneck
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Off-the-shelf software can work well until your business starts
+            operating differently from the assumptions built into it. You may
+            find yourself dealing with:
+          </p>
+
+          <div className="mt-10 grid gap-3 md:grid-cols-2">
+            {customSoftwareProblems.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 rounded-lg border border-black/10 bg-pearl p-4"
+              >
+                <span
+                  aria-hidden
+                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-champagne"
+                />
+                <span className="text-sm leading-6 text-steel">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-base leading-7 text-steel">
+            At that point, adding another tool may not solve the underlying
+            problem. Sometimes the better approach is to build software
+            around the way the business actually operates.
+          </p>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Our Approach
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Software Should Adapt to the Business — Not the Other Way Around
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Custom software development isn&apos;t about building more
+            technology. It&apos;s about understanding the business problem
+            first and then deciding what technology is actually required.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            {customSoftwarePrinciples.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.number}
+                  className="rounded-xl border border-black/10 bg-white p-6"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
+                      {item.number}
+                    </span>
+                    <Icon className="h-6 w-6 text-emerald" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-onyx">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            What We Build
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Custom Software Designed for Real Business Operations
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            From individual business applications to connected enterprise
+            systems, we develop software around specific operational
+            requirements.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {customSoftwareCapabilities.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                >
+                  <Icon className="h-6 w-6 text-emerald" />
+                  <h3 className="mt-5 text-base font-semibold text-onyx">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Practical AI */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Custom Software + Practical AI
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            AI Becomes More Useful When It&apos;s Connected to Real Workflows
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Instead of treating AI as a standalone feature, we can incorporate
+            it directly into business applications.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            {customSoftwareAiFlows.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.flow}
+                  className="rounded-xl border border-black/10 bg-white p-6"
+                >
+                  <Icon className="h-6 w-6 text-emerald" />
+                  <p className="mt-5 text-sm font-semibold leading-6 text-onyx">
+                    {item.flow}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="mt-10 text-center text-base font-semibold text-onyx">
+            The objective isn&apos;t to add AI because it is available. It&apos;s
+            to use AI where it improves a real business process.
+          </p>
+        </div>
+      </section>
+
+      {/* Integration */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Software Integration
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            You Don&apos;t Always Need to Replace Everything
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Custom software doesn&apos;t necessarily mean starting from zero.
+            Your business may already depend on systems we can evaluate to
+            keep, connect, extend, modernize, or replace.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {customSoftwareExistingSystems.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-black/10 bg-pearl px-3 py-1 text-xs font-medium text-onyx"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-base leading-7 text-steel">
+            The result can be a connected software environment where
+            information moves between systems without requiring employees to
+            repeatedly perform the same work.
+          </p>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            {customSoftwareIntegrationCapabilities.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                >
+                  <Icon className="h-6 w-6 text-emerald" />
+                  <h3 className="mt-5 text-base font-semibold text-onyx">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Build vs Buy vs Integrate */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Build vs Buy
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Build vs Buy vs Integrate: Which Approach Fits Your Business?
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Custom software isn&apos;t automatically the right answer. For
+            some businesses, an existing platform may provide everything they
+            need. In other situations, customization or integration may solve
+            the problem. Where the workflow is genuinely unique or
+            strategically important, custom development may make more sense.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {customSoftwareApproach.map((item) => (
+              <article
+                key={item.label}
+                className="rounded-xl border border-black/10 bg-white p-6"
+              >
+                <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
+                  {item.label}
+                </span>
+                <p className="mt-4 text-sm font-semibold text-onyx">
+                  {item.title}
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-steel">
+                  {item.items.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-xl border border-black/10 bg-white p-7">
+            <p className="text-lg font-semibold text-onyx">
+              The Right Question Isn&apos;t &ldquo;Should We Build?&rdquo;
+            </p>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-steel">
+              It&apos;s: what technology approach solves the actual business
+              problem with the right balance of flexibility, cost,
+              complexity, and long-term value? That&apos;s the decision we
+              help businesses evaluate before development begins.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Our Process
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Our Custom Software Development Process
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            A structured process helps turn a business requirement into
+            software that people can actually use.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
+            {customSoftwareProcess.map((step) => {
+              const Icon = step.icon;
+              return (
+                <article
+                  key={step.number}
+                  className="rounded-xl border border-black/10 bg-pearl p-5"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
+                      {step.number}
+                    </span>
+                    <Icon className="h-5 w-5 text-emerald" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-onyx">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-xs leading-6 text-steel">
+                    {step.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          <p className="mt-10 text-center text-base font-semibold text-onyx">
+            Discovery comes before development because better software
+            decisions start with understanding the problem.
+          </p>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Industries
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Custom Software for Different Industries
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Different industries operate with different workflows,
+            terminology, compliance requirements, and operational priorities.
+            Our software approach is designed around those differences.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {customSoftwareIndustries.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-black/10 bg-white p-6"
+              >
+                <h3 className="text-base font-semibold text-onyx">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-steel">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/industries"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+            >
+              Explore Industries
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Real-World Results
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Real Business Outcomes, Not Just Software Features
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Custom software should ultimately improve how work gets done.
+            Oglas AI&apos;s existing projects demonstrate this through
+            measurable operational outcomes.
+          </p>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {customSoftwareOutcomes.map((project) => (
+              <article
+                key={project.title}
+                className="rounded-xl border border-black/10 bg-pearl p-7"
+              >
+                <h3 className="text-xl font-semibold text-onyx">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-steel">
+                  {project.description}
+                </p>
+                <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                  {project.stats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-lg border border-black/10 bg-white p-4"
+                    >
+                      <p className="text-lg font-semibold text-onyx">
+                        {stat.value}
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-steel">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/case-studies"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-onyx underline-offset-4 hover:underline"
+            >
+              View All Case Studies
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Why Oglas AI
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Why Businesses Work With Oglas AI
+          </h2>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {customSoftwareWhyUs.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="rounded-xl border border-black/10 bg-white p-6"
+                >
+                  <Icon className="h-6 w-6 text-emerald" />
+                  <h3 className="mt-5 text-base font-semibold text-onyx">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    {item.description}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Governance */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Security & Governance
+          </p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Built for Integration, Control & Long-Term Use
+          </h2>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            Security and access controls are considered as part of the
+            application architecture, with project-specific requirements
+            determining the appropriate approach.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-2">
+            {customSoftwareGovernance.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-pearl px-3 py-1 text-xs font-medium text-onyx"
+              >
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald" />
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-sm leading-7 text-steel">
+            The technology, security controls, and architecture are defined
+            around the requirements of each project.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-pearl py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[960px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+            Frequently Asked Questions
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="mt-10 divide-y divide-black/10 rounded-xl border border-black/10 bg-white">
+            {customSoftwareFaqs.map((faq) => (
+              <details key={faq.question} className="group p-6">
+                <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-onyx marker:hidden">
+                  {faq.question}
+                </summary>
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-steel">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="bg-onyx py-16 md:py-20">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-light">
+            Oglas AI
+          </p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white md:text-4xl">
+            Tell Us What Your Business Needs to Improve
+          </h2>
+          <ul className="mt-6 space-y-2 text-sm leading-7 text-white/70">
+            <li>Is your team spending too much time on repetitive work?</li>
+            <li>Are your systems disconnected?</li>
+            <li>Have spreadsheets become part of a critical business process?</li>
+            <li>Is your existing software limiting how your business operates?</li>
+            <li>
+              Or are you exploring where AI and automation can actually create
+              value?
+            </li>
+          </ul>
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-white/70">
+            Let&apos;s start with the business problem — and determine what
+            software approach makes sense.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-5">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-onyx transition hover:bg-champagne"
+            >
+              Book a Free Consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <p className="text-xs uppercase tracking-[0.14em] text-white/50">
+              Custom requirements · Discovery-first approach · UAE-based ·
+              Globally available
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -1856,6 +2961,10 @@ export default async function ServiceDetailPage({
 
   if (!service) {
     notFound();
+  }
+
+  if (slug === "custom-software-development") {
+    return <CustomSoftwarePage />;
   }
 
   if (slug === "workflow-automation") {

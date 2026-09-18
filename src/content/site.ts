@@ -6,6 +6,7 @@ import {
   Building2,
   Camera,
   CircuitBoard,
+  Code2,
   Compass,
   Factory,
   FileScan,
@@ -54,6 +55,30 @@ export type Service = {
 };
 
 export const services: Service[] = [
+  {
+    slug: "custom-software-development",
+    title: "Custom Software Development",
+    eyebrow: "Built around your business",
+    summary:
+      "Custom business applications, ERP and CRM systems, portals, and integrations designed around how your business actually operates.",
+    description:
+      "Your business has its own workflows, rules, teams, systems, and operational requirements. Oglas AI develops custom software for businesses in Dubai, the UAE, and beyond, combining business applications, integrations, automation, and practical AI into software designed around real operations — instead of forcing your team into a rigid, off-the-shelf process.",
+    icon: Code2,
+    outcomes: [
+      "Software built around your actual workflows and business rules",
+      "Fewer disconnected systems and duplicate manual entry",
+      "A platform that can evolve as your business changes",
+    ],
+    capabilities: [
+      "Custom business applications",
+      "Custom ERP & CRM systems",
+      "Employee & customer portals",
+      "Workflow management systems",
+      "Custom web applications",
+      "Software integration & AI-powered applications",
+    ],
+    fit: "Best for businesses whose workflows are too specific for off-the-shelf software, or that need multiple systems — ERP, CRM, HR, finance — to operate as one connected environment.",
+  },
   {
     slug: "erp-payroll-automation",
     title: "ERP & Payroll Automation",

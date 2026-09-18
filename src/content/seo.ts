@@ -46,6 +46,11 @@ export const staticPageSeo: Record<string, SeoEntry> = {
 };
 
 export const serviceSeo: Record<string, SeoEntry> = {
+  "custom-software-development": {
+    title: "Custom Software Development in Dubai & the UAE | Oglas AI",
+    description:
+      "Oglas AI builds custom software development in Dubai and the UAE — business applications, ERP & CRM systems, portals, workflow automation, integrations, and practical AI — designed around how your business actually operates.",
+  },
   "erp-payroll-automation": {
     title: "ERP & Payroll Software Solutions | Oglas AI",
     description:
