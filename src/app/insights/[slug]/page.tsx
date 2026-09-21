@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { ArticleStructuredData } from "@/components/structured-data";
 import { PortableTextContent } from "@/components/portable-text-content";
 import { insightSeo } from "@/content/seo";
-import { getPublishedPost, getPublishedPostSlugs } from "@/sanity/lib/posts";
+import { getPublishedPost, getPublishedPostSlugs, resolveCanonicalPath } from "@/sanity/lib/posts";
 
 type InsightPageProps = {
   params: Promise<{ slug: string }>;
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
     description,
     keywords: post.keywords,
     alternates: {
-      canonical: post.canonicalUrl || `/insights/${post.slug}`,
+      canonical: resolveCanonicalPath(post.canonicalUrl, `/insights/${post.slug}`),
     },
     openGraph: {
       title,
