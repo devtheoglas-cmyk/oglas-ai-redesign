@@ -100,6 +100,19 @@ const postSlugsQuery = groq`
   }
 `;
 
+const SITE_ORIGIN = "https://www.oglasai.com";
+
+export function resolveCanonicalPath(canonicalUrl: string | undefined, fallbackPath: string): string {
+  if (!canonicalUrl) return fallbackPath;
+
+  try {
+    const url = new URL(canonicalUrl, SITE_ORIGIN);
+    return `${SITE_ORIGIN}${url.pathname}${url.search}`;
+  } catch {
+    return fallbackPath;
+  }
+}
+
 function isSanityConfigured() {
   return Boolean(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) && projectId !== "demo";
 }
