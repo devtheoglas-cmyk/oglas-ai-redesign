@@ -19,6 +19,11 @@ export const staticPageSeo: Record<string, SeoEntry> = {
     description:
       "Explore Oglas AI's industry-focused custom software and AI solutions for manufacturing, healthcare, manpower, retail, trading, security, marketing, and facility management businesses in Dubai.",
   },
+  "/industries/forex-trading": {
+    title: "AI for Forex Brokers & Trading Companies | Oglas AI",
+    description:
+      "Oglas AI builds AI agents, trading intelligence, and automation for Forex and CFD brokers, fintechs, liquidity providers, PayTech companies, and prop firms. Download the brochure.",
+  },
   "/case-studies": {
     title: "Custom Software & AI Case Studies | Oglas AI",
     description:
@@ -64,7 +69,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "workflow-automation": {
   title: "Workflow Automation Services Dubai | Oglas AI",
   description:
-    "Oglas AI builds workflow automation solutions for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
+    "Oglas AI provides workflow automation services for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
 },
   "marketing-automation": {
     title: "Marketing Automation Solutions | Oglas AI",
