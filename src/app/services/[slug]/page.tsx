@@ -174,7 +174,7 @@ const workflowSteps = [
     title: "Integrate",
     subtitle: "Connect the systems your teams already use",
     description:
-      "We integrate the workflow with your existing business software, databases, CRM, ERP, HR systems, APIs, and other tools where required.",
+      "We integrate workflow automation software with your existing business systems, databases, CRM, ERP, HR systems, APIs, and other tools where required.",
   },
   {
     number: "04",
@@ -1119,7 +1119,7 @@ function WorkflowAutomationStructuredData() {
     name: "Workflow Automation Services",
     serviceType: "Workflow Automation",
     description:
-      "Oglas AI builds workflow automation solutions for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
+      "Oglas AI provides workflow automation services for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -2719,10 +2719,10 @@ function WorkflowAutomationPage() {
             Automate the Work That Slows Your Business Down
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
-            Oglas AI builds workflow automation systems around the way your business
-            operates. We connect people, processes, documents, and business systems to
-            reduce repetitive manual work and keep tasks moving without constant
-            follow-ups.
+            Oglas AI provides workflow automation services built around the way your
+            business operates. We connect people, processes, documents, and business
+            systems to reduce repetitive manual work and keep tasks moving without
+            constant follow-ups.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -2754,9 +2754,9 @@ function WorkflowAutomationPage() {
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Different teams have different processes, but the goal is the same: keep
-            work moving without relying on repetitive manual follow-ups. Oglas AI can
-            automate workflows across departments while adapting the system to your
-            existing processes and business rules.
+            work moving without relying on repetitive manual follow-ups. Oglas AI
+            delivers business workflow automation across departments while adapting
+            the system to your existing processes and business rules.
           </p>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-5">
@@ -2800,8 +2800,8 @@ function WorkflowAutomationPage() {
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Every business works differently. Instead of forcing your processes into a
-            fixed workflow, Oglas AI designs automation around your existing
-            operations, systems, and business rules.
+            fixed workflow, Oglas AI designs workflow automation solutions around your
+            existing operations, systems, and business rules.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -2841,7 +2841,16 @@ function WorkflowAutomationPage() {
             Generic automation tools can work well for straightforward processes. But
             when workflows involve multiple teams, approval rules, existing business
             systems, or exceptions, a solution built around your operations can provide
-            much greater control.
+            much greater control. As a workflow automation company, Oglas AI designs
+            custom workflows around your existing processes, systems, approval
+            structures, and business rules.
+          </p>
+          <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
+            AI workflow automation can further enhance these workflows by helping
+            businesses process documents, extract data, classify information, and
+            support decision-making. Oglas AI combines AI-powered workflow automation
+            with business rules and existing systems where intelligent processing adds
+            value.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -2873,8 +2882,8 @@ function WorkflowAutomationPage() {
           </div>
 
           <p className="mt-10 text-base font-semibold text-onyx">
-            When your workflows are unique, your automation should be designed around
-            your business—not the other way around.
+            For businesses seeking workflow automation in Dubai, Oglas AI designs
+            solutions around existing processes, systems, and business requirements.
           </p>
         </div>
       </section>
