@@ -64,7 +64,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "workflow-automation": {
   title: "Workflow Automation Services Dubai | Oglas AI",
   description:
-    "Oglas AI builds workflow automation solutions for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
+    "Oglas AI provides workflow automation services for approvals, operations, HR, finance, CRM, and business systems, built in Dubai for global businesses.",
 },
   "marketing-automation": {
     title: "Marketing Automation Solutions | Oglas AI",
