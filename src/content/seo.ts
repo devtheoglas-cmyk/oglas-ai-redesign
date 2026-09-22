@@ -82,9 +82,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Build custom employee self-service (ESS) and HR portals for leave requests, document access, approvals, HR communication, and employee workflows with Oglas AI.",
   },
   "ai-dashboards-decision-intelligence": {
-    title: "AI Dashboards & Decision Intelligence | Oglas AI UAE",
+    title: "AI Dashboard Services Dubai | Oglas AI",
     description:
-      "Oglas AI builds AI dashboards that connect your ERP, CRM, finance and operations data — with forecasting, alerts and AI analysis. UAE-based. Book a free consultation.",
+      "Oglas AI provides AI dashboard services in Dubai and across the UAE, connecting business data with AI-powered insights, forecasting, alerts and decision intelligence.",
   },
   "ai-document-processing": {
     title: "Intelligent Document Processing (IDP) | Oglas AI",

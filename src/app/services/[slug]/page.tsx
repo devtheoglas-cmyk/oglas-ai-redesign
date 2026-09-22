@@ -496,7 +496,7 @@ const aiDashboardsProcess = [
   },
   {
     number: "04",
-    title: "Build & Connect",
+    title: "AI Dashboard Development",
     timeline: "Week 3–6",
     description:
       "We build the dashboards, data models and required integrations against the relevant systems, reviewing progress at agreed milestones.",
@@ -1899,11 +1899,12 @@ function AiDashboardsPage() {
               AI Dashboards & Decision Intelligence
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-steel">
-              Oglas AI connects your ERP, CRM, finance, HR and production data
-              into one live business intelligence view — then goes further. Our
-              dashboards surface what changed, forecast what is coming, and help
-              trigger the follow-up action. Built for UAE businesses that need
-              to decide faster than their reporting cycle allows.
+              Oglas AI provides AI Dashboard Services that connect your ERP,
+              CRM, finance, HR and production data into one live business
+              intelligence view — then go further. Our dashboards surface what
+              changed, forecast what is coming, and help trigger the follow-up
+              action. Built for UAE businesses that need to decide faster than
+              their reporting cycle allows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -2026,14 +2027,14 @@ function AiDashboardsPage() {
           <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>
               Oglas AI connects data from your ERP, CRM, finance, HR, sales,
-              production and operational systems into a governed business
-              intelligence layer.
+              production and operational systems to deliver business
+              intelligence solutions through a governed business intelligence
+              layer.
             </p>
             <p>
-              Instead of forcing your business into a generic dashboard
-              template, we build around the systems you already use, the KPIs
-              your teams are responsible for and the decisions leadership needs
-              to make.
+              Our AI dashboard solutions are built around the systems you
+              already use, the KPIs your teams are responsible for and the
+              decisions leadership needs to make.
             </p>
           </div>
 
@@ -2100,11 +2101,11 @@ function AiDashboardsPage() {
               happen next and what action should follow.
             </p>
             <p>
-              Oglas AI combines business intelligence with AI-assisted analysis,
-              forecasting, alerts and workflow support. Your dashboards can
-              surface patterns, highlight unusual changes, provide context
-              around performance and route important actions to the people
-              responsible.
+              Oglas AI combines business intelligence with decision
+              intelligence solutions, AI-assisted analysis, forecasting, alerts
+              and workflow support. Your dashboards can surface patterns,
+              highlight unusual changes, provide context around performance
+              and route important actions to the people responsible.
             </p>
           </div>
 
@@ -2232,9 +2233,10 @@ function AiDashboardsPage() {
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             AI dashboards earn their place when they change what a business does
-            — not simply what it sees. Oglas AI builds business intelligence and
-            decision-support solutions around real operational environments
-            where data, workflows and management decisions are connected.
+            — not simply what it sees. Oglas AI provides business intelligence
+            services and decision-support solutions around real operational
+            environments where data, workflows and management decisions are
+            connected.
           </p>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -2465,9 +2467,9 @@ function AiDashboardsPage() {
             AI Dashboards Built Around Your Business
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
-            Oglas AI builds dashboards and decision intelligence solutions for
-            UAE businesses that need clearer visibility, faster analysis and
-            stronger decision support across their operations.
+            Oglas AI provides AI Dashboard Services in Dubai and across the
+            UAE for businesses that need clearer visibility, faster analysis
+            and stronger decision support across their operations.
           </p>
 
           <p className="mt-10 text-sm font-semibold uppercase tracking-[0.16em] text-onyx">
