@@ -145,6 +145,31 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* FOREX & TRADING CALLOUT */}
+      <section className="bg-white pt-20">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <Link
+            href="/industries/forex-trading"
+            className="group flex flex-col gap-6 rounded-lg bg-onyx p-8 text-white md:flex-row md:items-center md:justify-between"
+          >
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-light">
+                New · Forex &amp; Trading
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">The AI Layer for Modern Forex</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/65">
+                AI agents, trading intelligence, and automation for brokers, fintechs, liquidity
+                providers, PayTech companies, and prop firms. Brochure available.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-emerald-light transition group-hover:text-white">
+              Explore
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* INDUSTRY CARDS */}
       <section className="bg-white py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
