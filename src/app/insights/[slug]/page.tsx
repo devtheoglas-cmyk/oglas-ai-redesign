@@ -7,6 +7,8 @@ import { ArticleStructuredData } from "@/components/structured-data";
 import { PortableTextContent } from "@/components/portable-text-content";
 import { insightSeo } from "@/content/seo";
 import { getPublishedPost, getPublishedPostSlugs, resolveCanonicalPath } from "@/sanity/lib/posts";
+import { HeroBackdrop } from "@/components/page-hero";
+import { SplitTitle } from "@/components/split-title";
 
 type InsightPageProps = {
   params: Promise<{ slug: string }>;
@@ -73,21 +75,31 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
         title={seo?.title}
         description={seo?.description}
       />
-      <div className="mx-auto w-full max-w-[820px] px-4 py-20">
-        <Link href="/insights" className="inline-flex items-center gap-2 text-sm font-semibold text-emerald">
-          <ArrowLeft className="h-4 w-4" />
-          Insights
-        </Link>
-        <p className="mt-10 text-xs font-semibold uppercase text-champagne">{post.category}</p>
-        <h1 className="mt-5 text-5xl font-semibold leading-tight text-onyx">{post.title}</h1>
-        <p className="mt-6 text-sm font-semibold text-steel">
-          {post.readTime} · {new Date(post.date).toLocaleDateString("en", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
-        <p className="mt-10 text-xl leading-9 text-steel">{post.excerpt}</p>
+      <header className="bg-mesh -mt-20 overflow-hidden">
+        <HeroBackdrop />
+        <div className="relative mx-auto w-full max-w-[820px] px-4 pb-16 pt-36 md:pb-20 md:pt-44">
+          <Link
+            href="/insights"
+            className="inline-flex items-center gap-2 text-sm text-white/80 transition hover:text-white"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Insights
+          </Link>
+          <p className="pill-glass mt-10">{post.category}</p>
+          <h1 className="mt-6 text-4xl text-white md:text-[3.4rem]">
+            <SplitTitle>{post.title}</SplitTitle>
+          </h1>
+          <p className="mt-7 text-sm text-white/75">
+            {post.readTime} · {new Date(post.date).toLocaleDateString("en", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </p>
+        </div>
+      </header>
+      <div className="mx-auto w-full max-w-[820px] px-4 py-16 md:py-20">
+        <p className="lead-serif text-2xl leading-9 text-onyx">{post.excerpt}</p>
         {post.mainImage?.asset?.url ? (
           <figure className="mt-10">
             <BgImage
@@ -95,7 +107,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               alt={post.mainImage.alt ?? ""}
               width={Math.round(post.mainImage.asset.metadata?.dimensions?.width ?? 1400)}
               height={Math.round(post.mainImage.asset.metadata?.dimensions?.height ?? 840)}
-              className="w-full rounded-lg border border-black/10"
+              className="w-full rounded-[1.75rem]"
             />
             {post.mainImage.caption ? (
               <figcaption className="mt-3 text-sm leading-6 text-steel">

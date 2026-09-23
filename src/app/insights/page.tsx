@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BgImage } from "@/components/bg-image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
 import { staticPageSeo } from "@/content/seo";
 import { getPublishedPosts } from "@/sanity/lib/posts";
+import { PageHero } from "@/components/page-hero";
 
 export const revalidate = 60;
 
@@ -25,16 +25,11 @@ export default async function InsightsPage() {
 
   return (
     <>
-      <section className="surface-grid bg-pearl py-20">
-        <div className="mx-auto w-full max-w-[1160px] px-4">
-          <SectionHeading
-            eyebrow="Insights"
-            title="Automation and AI thinking for operational leaders"
-            summary="Practical articles to help you decide what to automate, where AI fits, and how to modernize operations without creating more complexity."
-            headingLevel="h1"
-          />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Insights"
+        title="Automation and AI thinking for operational leaders"
+        summary="Practical articles to help you decide what to automate, where AI fits, and how to modernize operations without creating more complexity."
+      />
 
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] px-4 gap-6 lg:grid-cols-3">
@@ -42,7 +37,7 @@ export default async function InsightsPage() {
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
-              className="group overflow-hidden rounded-lg border border-black/10 bg-pearl transition hover:-translate-y-1 hover:border-emerald/35"
+              className="group overflow-hidden rounded-2xl border border-brand/10 bg-pearl transition hover:-translate-y-1 hover:border-emerald/35"
             >
               {post.mainImage?.asset?.url ? (
                 <div className="relative aspect-[16/10] border-b border-black/10 bg-white">

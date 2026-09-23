@@ -67,8 +67,8 @@ export default async function OpengraphImage() {
           justifyContent: "space-between",
           padding: "80px 96px",
           background:
-            "linear-gradient(145deg, #080B0B 0%, #121716 55%, #1b1710 100%)",
-          color: "#F4F7F5",
+            "radial-gradient(circle at 0% 0%, rgba(206,212,255,0.75) 0%, rgba(206,212,255,0) 45%), linear-gradient(118deg, #2439ea 0%, #0b1fd2 46%, #0010b4 100%)",
+          color: "#FFFFFF",
           fontFamily,
         }}
       >
@@ -78,14 +78,14 @@ export default async function OpengraphImage() {
               width: 72,
               height: 72,
               borderRadius: 16,
-              background: "#080B0B",
-              border: "2px solid #C8A96A",
+              background: "rgba(255,255,255,0.14)",
+              border: "2px solid rgba(255,255,255,0.6)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 44,
               fontWeight: 700,
-              color: "#C8A96A",
+              color: "#C9D2FF",
               letterSpacing: -1,
             }}
           >
@@ -108,7 +108,7 @@ export default async function OpengraphImage() {
             style={{
               fontSize: 22,
               fontWeight: 600,
-              color: "#C8A96A",
+              color: "#C9D2FF",
               textTransform: "uppercase",
               letterSpacing: 2,
             }}
@@ -143,7 +143,7 @@ export default async function OpengraphImage() {
           <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
             <span>ERP · Payroll · Workflow · Computer Vision · AI Dashboards</span>
           </div>
-          <div style={{ color: "#C8A96A", fontWeight: 600 }}>Dubai · UAE</div>
+          <div style={{ color: "#C9D2FF", fontWeight: 600 }}>Dubai · UAE</div>
         </div>
       </div>
     ),

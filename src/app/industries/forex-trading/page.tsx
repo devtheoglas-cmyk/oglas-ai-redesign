@@ -20,6 +20,8 @@ import { BgImage } from "@/components/bg-image";
 import { SectionHeading } from "@/components/section-heading";
 import { FaqStructuredData } from "@/components/structured-data";
 import { staticPageSeo } from "@/content/seo";
+import { SplitTitle } from "@/components/split-title";
+import { HeroBackdrop } from "@/components/page-hero";
 
 const seo = staticPageSeo["/industries/forex-trading"];
 
@@ -253,8 +255,8 @@ function BrochureButton({ tone = "light" }: { tone?: "light" | "dark" }) {
       download={brochure.fileName}
       className={
         tone === "dark"
-          ? "inline-flex items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-onyx transition hover:bg-emerald-light"
-          : "inline-flex items-center gap-2 rounded-md bg-onyx px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald"
+          ? "btn btn-light"
+          : "btn btn-primary"
       }
     >
       <Download className="h-4 w-4" />
@@ -269,7 +271,8 @@ export default function ForexTradingPage() {
       <FaqStructuredData faqs={faqs} />
 
       {/* HERO */}
-      <section className="dark-grid bg-onyx py-20 text-white">
+      <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 text-white md:pb-28 md:pt-44">
+        <HeroBackdrop />
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 px-4 lg:grid-cols-[1fr_1.05fr]">
           <div>
             <SectionHeading
@@ -283,7 +286,7 @@ export default function ForexTradingPage() {
               <BrochureButton tone="dark" />
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-emerald-light hover:text-emerald-light"
+                className="btn btn-outline-light"
               >
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
@@ -297,13 +300,13 @@ export default function ForexTradingPage() {
             className="group relative block"
             aria-label="Download the Oglas AI Forex brochure"
           >
-            <div className="absolute -right-3 -top-3 h-full w-full rounded-lg border border-white/10 bg-white/5" />
+            <div className="absolute -right-4 -top-4 h-full w-full rounded-[1.5rem] border border-white/25 bg-white/8 backdrop-blur" />
             <BgImage
               src="/images/forex/brochure-cover.jpg"
               alt="Cover of the Oglas AI Forex brochure: The AI layer for modern Forex"
               width={16}
               height={9}
-              className="relative w-full rounded-lg border border-white/15 shadow-2xl transition group-hover:-translate-y-1"
+              className="relative w-full rounded-[1.5rem] border border-white/35 shadow-[0_40px_80px_-40px_rgba(0,0,80,0.9)] transition duration-500 group-hover:-translate-y-1"
             />
           </a>
         </div>
@@ -319,7 +322,7 @@ export default function ForexTradingPage() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {layers.map((layer) => (
-              <article key={layer.title} className="rounded-lg border border-black/10 bg-pearl p-7">
+              <article key={layer.title} className="rounded-2xl border border-brand/10 bg-pearl p-7">
                 <layer.icon className="h-8 w-8 text-emerald" />
                 <h3 className="mt-6 text-xl font-semibold text-onyx">{layer.title}</h3>
                 <div className="mt-5 grid gap-2">
@@ -337,7 +340,7 @@ export default function ForexTradingPage() {
       </section>
 
       {/* TRADING INTELLIGENCE */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="Trading intelligence"
@@ -346,7 +349,7 @@ export default function ForexTradingPage() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {tradingFeatures.map((feature, index) => (
-              <article key={feature.title} className="rounded-lg border border-black/10 bg-white p-7">
+              <article key={feature.title} className="rounded-2xl glass-light p-7">
                 <p className="text-xs font-semibold uppercase tracking-wide text-champagne">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -359,7 +362,7 @@ export default function ForexTradingPage() {
       </section>
 
       {/* CONTROLLED EXECUTION */}
-      <section className="bg-onyx py-20 text-white">
+      <section className="bg-mesh overflow-hidden py-20 text-white">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="AI you control"
@@ -416,7 +419,7 @@ export default function ForexTradingPage() {
           />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {agentTeams.map((team) => (
-              <article key={team.title} className="rounded-lg border border-black/10 bg-pearl p-7">
+              <article key={team.title} className="rounded-2xl border border-brand/10 bg-pearl p-7">
                 <div className="flex items-center gap-3">
                   <Bot className="h-6 w-6 text-emerald" />
                   <h3 className="text-lg font-semibold text-onyx">{team.title}</h3>
@@ -436,7 +439,7 @@ export default function ForexTradingPage() {
       </section>
 
       {/* HOW WE BUILD YOUR AGENT */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="How we build your agent"
@@ -445,7 +448,7 @@ export default function ForexTradingPage() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-5">
             {buildSteps.map((step, index) => (
-              <article key={step.title} className="rounded-lg border border-black/10 bg-white p-6">
+              <article key={step.title} className="rounded-2xl glass-light p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-champagne">
                   {String(index + 1).padStart(2, "0")}
                 </p>
@@ -469,7 +472,7 @@ export default function ForexTradingPage() {
             {sectors.map((sector) => (
               <article
                 key={sector.title}
-                className="flex flex-col rounded-lg border border-black/10 bg-pearl p-7"
+                className="flex flex-col rounded-2xl border border-brand/10 bg-pearl p-7"
               >
                 <sector.icon className="h-8 w-8 text-emerald" />
                 <h3 className="mt-6 text-xl font-semibold text-onyx">{sector.title}</h3>
@@ -486,7 +489,7 @@ export default function ForexTradingPage() {
                 </p>
               </article>
             ))}
-            <article className="flex flex-col justify-between rounded-lg bg-onyx p-7 text-white">
+            <article className="bg-mesh flex flex-col justify-between overflow-hidden rounded-[1.75rem] p-8 text-white">
               <div>
                 <Globe className="h-8 w-8 text-emerald-light" />
                 <h3 className="mt-6 text-xl font-semibold">Works With What You Already Run</h3>
@@ -505,7 +508,7 @@ export default function ForexTradingPage() {
       </section>
 
       {/* BROCHURE */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHeading
@@ -524,7 +527,7 @@ export default function ForexTradingPage() {
                 key={preview.src}
                 href={brochure.href}
                 download={brochure.fileName}
-                className="group block overflow-hidden rounded-lg border border-black/10 bg-white"
+                className="group block overflow-hidden rounded-2xl glass-light"
               >
                 <BgImage
                   src={preview.src}
@@ -547,17 +550,12 @@ export default function ForexTradingPage() {
             {faqs.map((faq, index) => (
               <details
                 key={faq.question}
-                className="group rounded-lg border border-black/10 bg-pearl p-6 open:border-emerald/40"
+                className="faq-item glass-light group p-6 md:px-8"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer items-start justify-between gap-6 text-base font-semibold text-onyx marker:hidden">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[17px] leading-7 text-onyx">
                   {faq.question}
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-md border border-black/10 bg-white text-emerald transition group-open:rotate-45"
-                  >
-                    +
-                  </span>
+                  <span aria-hidden="true" className="faq-toggle mt-0.5 text-lg leading-none">+</span>
                 </summary>
                 <p className="mt-4 text-sm leading-7 text-steel">{faq.answer}</p>
               </details>
@@ -567,13 +565,13 @@ export default function ForexTradingPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-onyx py-20 text-white">
+      <section className="bg-mesh overflow-hidden py-20 text-white">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-light">
+          <p className="pill-glass">
             Let&apos;s start with one workflow
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight md:text-5xl">
-            Give us one workflow your team still does manually.
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] md:text-[3.2rem]">
+            <SplitTitle>{"Give us one workflow your team still does manually."}</SplitTitle>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
             We&apos;ll map it with your team, connect your tools, and show you how AI can run it —
@@ -590,7 +588,7 @@ export default function ForexTradingPage() {
             <a
               href={brochure.href}
               download={brochure.fileName}
-              className="inline-flex items-center gap-2 rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-emerald-light hover:text-emerald-light"
+              className="btn btn-outline-light"
             >
               <Download className="h-4 w-4" />
               Download the Brochure

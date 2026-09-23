@@ -1,3 +1,5 @@
+import { SplitTitle } from "@/components/split-title";
+
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
@@ -15,26 +17,29 @@ export function SectionHeading({
   tone = "light",
   headingLevel = "h2",
 }: SectionHeadingProps) {
-  const titleClass = tone === "dark" ? "text-white" : "text-onyx";
-  const summaryClass = tone === "dark" ? "text-white/65" : "text-steel";
-  const eyebrowClass = tone === "dark" ? "text-emerald-light" : "text-emerald";
+  const dark = tone === "dark";
+  const Heading = headingLevel;
 
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       {eyebrow ? (
-        <p className={`mb-4 text-xs font-semibold uppercase ${eyebrowClass}`}>{eyebrow}</p>
+        <p className={`mb-6 ${dark ? "pill-glass" : "pill"}`}>{eyebrow}</p>
       ) : null}
-      {headingLevel === "h1" ? (
-        <h1 className={`text-3xl font-semibold leading-tight md:text-5xl ${titleClass}`}>
-          {title}
-        </h1>
-      ) : (
-        <h2 className={`text-3xl font-semibold leading-tight md:text-5xl ${titleClass}`}>
-          {title}
-        </h2>
-      )}
+      <Heading
+        className={`text-4xl md:text-[3.4rem] ${dark ? "text-white" : "text-onyx"} ${
+          headingLevel === "h1" ? "lg:text-[4.1rem]" : ""
+        }`}
+      >
+        <SplitTitle>{title}</SplitTitle>
+      </Heading>
       {summary ? (
-        <p className={`mt-5 text-base leading-8 md:text-lg ${summaryClass}`}>{summary}</p>
+        <p
+          className={`mt-6 text-base leading-8 md:text-lg ${
+            dark ? "text-white/80" : "text-steel"
+          } ${align === "center" ? "mx-auto" : ""}`}
+        >
+          {summary}
+        </p>
       ) : null}
     </div>
   );

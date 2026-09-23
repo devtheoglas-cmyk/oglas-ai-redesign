@@ -59,12 +59,12 @@ export function ContactForm() {
         <Field label="Phone" name="phone" placeholder="+971" />
       </div>
 
-      <label className="grid gap-2 text-sm font-semibold text-onyx">
+      <label className="grid gap-2 text-[13px] font-medium tracking-[0.02em] text-onyx">
         Project type
         <select
           name="projectType"
           required
-          className="h-12 rounded-md border border-black/10 bg-white px-4 text-sm font-medium text-onyx outline-none transition focus:border-emerald"
+          className="h-12 rounded-xl border border-brand/15 bg-white/90 px-4 text-[15px] text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
         >
           <option value="">Select a project type</option>
           {projectTypes.map((type) => (
@@ -75,21 +75,21 @@ export function ContactForm() {
         </select>
       </label>
 
-      <label className="grid gap-2 text-sm font-semibold text-onyx">
+      <label className="grid gap-2 text-[13px] font-medium tracking-[0.02em] text-onyx">
         Project brief
         <textarea
           name="message"
           rows={6}
           required
           placeholder="Tell us what you want to build, automate, or improve."
-          className="resize-none rounded-md border border-black/10 bg-white px-4 py-3 text-sm font-medium text-onyx outline-none transition focus:border-emerald"
+          className="resize-none rounded-xl border border-brand/15 bg-white/90 px-4 py-3 text-[15px] leading-7 text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
         />
       </label>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-emerald disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn btn-primary mt-1 w-full sm:w-auto sm:justify-self-start"
       >
         <Send className="h-4 w-4" />
         {status === "loading" ? "Sending..." : "Book a Free Consultation"}
@@ -99,8 +99,8 @@ export function ContactForm() {
         <p
           className={
             status === "success"
-              ? "rounded-md border border-emerald/20 bg-emerald/10 p-3 text-sm font-medium text-emerald"
-              : "rounded-md border border-red-200 bg-red-50 p-3 text-sm font-medium text-red-700"
+              ? "rounded-xl border border-brand/20 bg-brand/8 p-3.5 text-sm font-medium text-brand"
+              : "rounded-xl border border-red-200 bg-red-50 p-3.5 text-sm font-medium text-red-700"
           }
         >
           {message}
@@ -124,14 +124,14 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <label className="grid gap-2 text-sm font-semibold text-onyx">
+    <label className="grid gap-2 text-[13px] font-medium tracking-[0.02em] text-onyx">
       {label}
       <input
         name={name}
         type={type}
         placeholder={placeholder}
         required={required}
-        className="h-12 rounded-md border border-black/10 bg-white px-4 text-sm font-medium text-onyx outline-none transition focus:border-emerald"
+        className="h-12 rounded-xl border border-brand/15 bg-white/90 px-4 text-[15px] text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
       />
     </label>
   );

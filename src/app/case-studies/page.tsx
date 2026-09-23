@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
-import { SectionHeading } from "@/components/section-heading";
 import { caseStudies } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
+import { PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/case-studies"];
 
@@ -19,21 +19,16 @@ export const metadata: Metadata = {
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="surface-grid bg-pearl py-20">
-        <div className="mx-auto w-full max-w-[1160px] px-4">
-          <SectionHeading
-            eyebrow="Case studies"
-            title="Proof of operational problems solved"
-            summary="Explore the systems delivered, the bottlenecks removed, and the measurable outcomes achieved while client identities and sensitive details remain confidential."
-            headingLevel="h1"
-          />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Case studies"
+        title="Proof of operational problems solved"
+        summary="Explore the systems delivered, the bottlenecks removed, and the measurable outcomes achieved while client identities and sensitive details remain confidential."
+      />
 
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] px-4 gap-8">
           {caseStudies.map((study) => (
-            <article key={study.slug} className="grid gap-8 rounded-lg border border-black/10 bg-pearl p-7 lg:grid-cols-[0.8fr_1.2fr]">
+            <article key={study.slug} className="grid gap-8 rounded-2xl border border-brand/10 bg-pearl p-7 lg:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <p className="text-xs font-semibold uppercase text-emerald">{study.sector}</p>
                 <p className="mt-4 inline-flex rounded-md border border-champagne/30 bg-white px-3 py-2 text-xs font-semibold text-onyx">

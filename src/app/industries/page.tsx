@@ -5,6 +5,8 @@ import { SectionHeading } from "@/components/section-heading";
 import { FaqStructuredData } from "@/components/structured-data";
 import { caseStudies, industries } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
+import { SplitTitle } from "@/components/split-title";
+import { HeroArt, PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/industries"];
 
@@ -134,29 +136,37 @@ export default function IndustriesPage() {
       <FaqStructuredData faqs={industriesFaqs} />
 
       {/* HERO */}
-      <section className="surface-grid bg-pearl py-20">
-        <div className="mx-auto w-full max-w-[1160px] px-4">
-          <SectionHeading
-            eyebrow="Industries"
-            title="Custom Software & AI Solutions for Different Industries"
-            summary="Every industry operates differently. Oglas AI builds custom software, workflow automation, and practical AI solutions around your processes, people, data, and operational requirements — helping businesses reduce manual work, connect systems, and improve visibility."
-            headingLevel="h1"
+      <PageHero
+        eyebrow="Industries"
+        title="Custom Software & AI Solutions for Different Industries"
+        summary="Every industry operates differently. Oglas AI builds custom software, workflow automation, and practical AI solutions around your processes, people, data, and operational requirements — helping businesses reduce manual work, connect systems, and improve visibility."
+        art={
+          <HeroArt
+            src="/images/brand/robot-hand.webp"
+            alt="Chrome robotic hand pointing upward"
+            width={628}
+            height={975}
+            priority
+            className="max-w-[18rem]"
+            fade="bottom"
           />
-        </div>
-      </section>
+        }
+      />
 
       {/* FOREX & TRADING CALLOUT */}
       <section className="bg-white pt-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <Link
             href="/industries/forex-trading"
-            className="group flex flex-col gap-6 rounded-lg bg-onyx p-8 text-white md:flex-row md:items-center md:justify-between"
+            className="bg-mesh group flex flex-col gap-6 overflow-hidden rounded-[1.75rem] p-8 text-white md:flex-row md:items-center md:justify-between md:p-10"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-light">
+              <p className="pill-glass">
                 New · Forex &amp; Trading
               </p>
-              <h2 className="mt-3 text-2xl font-semibold md:text-3xl">The AI Layer for Modern Forex</h2>
+              <h2 className="mt-5 text-3xl font-light md:text-[2.4rem]">
+                <SplitTitle>{"The AI Layer for Modern Forex"}</SplitTitle>
+              </h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-white/65">
                 AI agents, trading intelligence, and automation for brokers, fintechs, liquidity
                 providers, PayTech companies, and prop firms. Brochure available.
@@ -181,7 +191,7 @@ export default function IndustriesPage() {
             {industries.map((industry) => (
               <article
                 key={industry.slug}
-                className="rounded-lg border border-black/10 bg-pearl p-7"
+                className="rounded-2xl border border-brand/10 bg-pearl p-7"
               >
                 <industry.icon className="h-8 w-8 text-emerald" />
                 <h3 className="mt-7 text-2xl font-semibold text-onyx">{industry.title}</h3>
@@ -201,7 +211,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* APPROACH */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="Our approach"
@@ -212,7 +222,7 @@ export default function IndustriesPage() {
             {approachCards.map((card) => (
               <article
                 key={card.title}
-                className="rounded-lg border border-black/10 bg-white p-6"
+                className="rounded-2xl glass-light p-6"
               >
                 <card.icon className="h-8 w-8 text-emerald" />
                 <h3 className="mt-6 text-lg font-semibold text-onyx">{card.title}</h3>
@@ -242,7 +252,7 @@ export default function IndustriesPage() {
                 return (
                   <article
                     key={study.slug}
-                    className="flex flex-col rounded-lg border border-black/10 bg-pearl p-6"
+                    className="flex flex-col rounded-2xl border border-brand/10 bg-pearl p-6"
                   >
                     <p className="text-xs font-semibold uppercase tracking-wide text-emerald">
                       {study.sector}
@@ -272,7 +282,7 @@ export default function IndustriesPage() {
       ) : null}
 
       {/* PROCESS */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="Process"
@@ -282,7 +292,7 @@ export default function IndustriesPage() {
             {processSteps.map((step) => (
               <article
                 key={step.number}
-                className="rounded-lg border border-black/10 bg-white p-6"
+                className="rounded-2xl glass-light p-6"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-champagne">
                   {step.number}
@@ -303,17 +313,12 @@ export default function IndustriesPage() {
             {industriesFaqs.map((faq, index) => (
               <details
                 key={faq.question}
-                className="group rounded-lg border border-black/10 bg-pearl p-6 open:border-emerald/40"
+                className="faq-item glass-light group p-6 md:px-8"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer items-start justify-between gap-6 text-base font-semibold text-onyx marker:hidden">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[17px] leading-7 text-onyx">
                   {faq.question}
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-md border border-black/10 bg-white text-emerald transition group-open:rotate-45"
-                  >
-                    +
-                  </span>
+                  <span aria-hidden="true" className="faq-toggle mt-0.5 text-lg leading-none">+</span>
                 </summary>
                 <p className="mt-4 text-sm leading-7 text-steel">{faq.answer}</p>
               </details>
@@ -323,13 +328,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-onyx py-20 text-white">
+      <section className="bg-mesh overflow-hidden py-20 text-white">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-light">
+          <p className="pill-glass">
             Let&apos;s build what your business needs
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight md:text-5xl">
-            Have a business workflow that doesn&apos;t fit off-the-shelf software?
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] md:text-[3.2rem]">
+            <SplitTitle>{"Have a business workflow that doesn't fit off-the-shelf software?"}</SplitTitle>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
             Tell us how your business operates, where the bottlenecks are, and what you want to
@@ -338,7 +343,7 @@ export default function IndustriesPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-md bg-emerald px-6 py-3 text-sm font-semibold text-onyx transition hover:bg-emerald-light"
+            className="btn btn-light mt-10"
           >
             Book a Free Consultation
             <ArrowRight className="h-4 w-4" />

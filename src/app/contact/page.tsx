@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { SectionHeading } from "@/components/section-heading";
 import { company } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
+import { PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/contact"];
 
@@ -20,20 +20,15 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="surface-grid bg-pearl py-20">
-        <div className="mx-auto w-full max-w-[1160px] px-4">
-          <SectionHeading
-            eyebrow="Contact"
-            title="Book a Free Consultation"
-            summary="Share the project type and the workflow you want to improve. The Dubai team will review your request and suggest a practical next step."
-            headingLevel="h1"
-          />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title="Book a Free Consultation"
+        summary="Share the project type and the workflow you want to improve. The Dubai team will review your request and suggest a practical next step."
+      />
 
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] px-4 gap-10 lg:grid-cols-[0.75fr_1.25fr]">
-          <aside className="rounded-lg border border-black/10 bg-onyx p-7 text-white">
+          <aside className="bg-mesh overflow-hidden rounded-[1.75rem] p-8 text-white md:p-9">
             <h2 className="text-2xl font-semibold">Consultation details</h2>
             <div className="mt-8 grid gap-5">
               <a href={`mailto:${company.email}`} className="flex gap-3 text-sm text-white/75 transition hover:text-white">
@@ -53,7 +48,7 @@ export default function ContactPage() {
             </div>
           </aside>
 
-          <div className="rounded-lg border border-black/10 bg-pearl p-6 md:p-8">
+          <div className="rounded-2xl border border-brand/10 bg-pearl p-6 md:p-8">
             <ContactForm />
           </div>
         </div>

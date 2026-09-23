@@ -1,23 +1,28 @@
 import Link from "next/link";
+import { OglasLogo } from "@/components/oglas-logo";
 
 type BrandMarkProps = {
   tone?: "light" | "dark";
 };
 
-export function BrandMark({ tone = "light" }: BrandMarkProps) {
-  const wordmarkColor = tone === "dark" ? "text-white" : "text-onyx";
-  const descriptorColor = tone === "dark" ? "text-white/55" : "text-steel";
+// The supplied Oglas AI logo, with the site's descriptor set beside it.
+export function BrandMark({ tone = "dark" }: BrandMarkProps) {
+  const onBlue = tone === "dark";
 
   return (
-    <Link href="/" className="flex items-center gap-3" aria-label="Oglas AI home">
-      <span className="grid h-10 w-10 place-items-center rounded-lg bg-onyx">
-        <span className="h-4 w-4 rounded-full border-[4px] border-champagne" />
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className={`text-base font-semibold ${wordmarkColor}`}>Oglas AI</span>
-        <span className={`mt-1 text-[11px] uppercase ${descriptorColor}`}>
-          Custom Software + Practical AI
-        </span>
+    <Link href="/" className="group flex items-center gap-4" aria-label="Oglas AI home">
+      <OglasLogo
+        className={`h-9 w-auto transition-opacity group-hover:opacity-85 ${
+          onBlue ? "text-white" : "text-brand"
+        }`}
+      />
+      <span
+        className={`hidden border-l pl-4 text-[10px] uppercase leading-4 tracking-[0.16em] xl:block ${
+          onBlue ? "border-white/25 text-white/65" : "border-brand/20 text-steel"
+        }`}
+      >
+        Custom Software
+        <br />+ Practical AI
       </span>
     </Link>
   );

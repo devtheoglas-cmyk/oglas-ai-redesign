@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Arabic, Manrope } from "next/font/google";
+import { EB_Garamond, IBM_Plex_Sans_Arabic } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { StructuredData } from "@/components/structured-data";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,9 +9,19 @@ import "./globals.css";
 
 const googleTagManagerId = "GTM-KS9QHLW9";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+// Aspekta (SIL OFL, github.com/ivodolenc/aspekta) is the company profile's sans.
+const aspekta = localFont({
+  src: "./fonts/AspektaVF.woff2",
+  variable: "--font-aspekta",
+  weight: "50 1000",
+  display: "swap",
+});
+
+// EB Garamond Italic carries the profile's serif lead-lines.
+const garamond = EB_Garamond({
+  variable: "--font-garamond",
   subsets: ["latin"],
+  style: ["italic"],
   display: "swap",
 });
 
@@ -65,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${arabic.variable} h-full antialiased`}
+      className={`${aspekta.variable} ${garamond.variable} ${arabic.variable} h-full antialiased`}
     >
       <Script id="google-tag-manager" strategy="beforeInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

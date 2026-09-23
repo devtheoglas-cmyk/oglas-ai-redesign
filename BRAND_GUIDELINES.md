@@ -1,5 +1,7 @@
 # Oglas AI Brand Guidelines
 
+> **Redesign note:** the visual identity (logo, colour palette, typography) is now defined by the 2026 company profile and documented in `DESIGN.md`. The positioning, personality, and voice sections below still apply.
+
 ## Brand Position
 
 Oglas AI is a Dubai-based custom software and AI solutions company for businesses that need serious operational systems, not generic technology promises.

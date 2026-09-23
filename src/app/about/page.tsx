@@ -25,8 +25,12 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRule } from "@/components/arrow-rule";
 import { BgImage } from "@/components/bg-image";
+import { HeroBackdrop } from "@/components/page-hero";
+import { SplitTitle } from "@/components/split-title";
 import { FaqStructuredData } from "@/components/structured-data";
 import { company } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
@@ -358,21 +362,26 @@ const aboutPageSchema = {
 
 /* ---------- small building blocks ---------- */
 
-function Eyebrow({ num, children }: { num: string; children: string }) {
+function Eyebrow({
+  num,
+  children,
+  tone = "light",
+}: {
+  num: string;
+  children: string;
+  tone?: "light" | "dark";
+}) {
   return (
-    <div className="flex items-center gap-3">
-      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-champagne">
-        {num} — {children}
-      </p>
-      <span className="h-px w-10 bg-champagne/50" aria-hidden="true" />
-    </div>
+    <p className={tone === "dark" ? "pill-glass" : "pill"}>
+      {num} — {children}
+    </p>
   );
 }
 
 function IconBadge({ icon: Icon }: { icon: LucideIcon }) {
   return (
-    <span className="grid h-14 w-14 place-items-center rounded-full bg-champagne/15 text-champagne">
-      <Icon className="h-6 w-6" />
+    <span className="grid h-12 w-12 place-items-center rounded-full bg-[linear-gradient(135deg,#2f4cf6,#0c29df)] text-white shadow-[0_10px_20px_-10px_rgba(12,41,223,0.9)]">
+      <Icon className="h-5 w-5" />
     </span>
   );
 }
@@ -389,20 +398,24 @@ export default function AboutPage() {
       />
 
       {/* SECTION 1 — Hero */}
-      <section className="surface-grid border-b border-black/10 bg-pearl">
-        <div className="mx-auto grid w-full max-w-[1160px] gap-12 px-4 py-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-24">
-          <div>
-            <Eyebrow num="01">ABOUT OGLAS AI</Eyebrow>
-            <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[1.05] text-onyx md:text-6xl">
-              Technology Built Around How Businesses Actually Work
+      <section className="bg-mesh -mt-20 overflow-hidden">
+        <HeroBackdrop />
+        <div className="mx-auto grid w-full max-w-[1160px] gap-12 px-4 pb-20 pt-36 lg:grid-cols-[1fr_1fr] lg:items-center lg:pb-28 lg:pt-44">
+          <div className="rise">
+            <Eyebrow num="01" tone="dark">
+              ABOUT OGLAS AI
+            </Eyebrow>
+            <h1 className="mt-7 max-w-xl text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4rem]">
+              <SplitTitle>{"Technology Built Around How Businesses Actually Work"}</SplitTitle>
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-steel">
+            <ArrowRule className="mt-8 text-white/70" />
+            <p className="mt-8 max-w-xl text-lg leading-8 text-white/90">
               Oglas AI is a Dubai-based custom software and practical AI company
               helping businesses replace disconnected tools, repetitive
               processes, and manual work with software designed around the way
               they operate.
             </p>
-            <p className="mt-5 max-w-xl text-base leading-8 text-steel">
+            <p className="mt-5 max-w-xl text-base leading-8 text-white/80">
               From ERP and payroll systems to workflow automation, computer
               vision, intelligent document processing, and AI-powered business
               applications, we provide custom software development and practical
@@ -411,13 +424,13 @@ export default function AboutPage() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-emerald"
+                className="btn btn-light"
               >
                 Talk to Oglas AI
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-steel">
-                <Globe2 className="h-4 w-4 text-champagne" />
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-white/80">
+                <Globe2 className="h-4 w-4 text-white/70" />
                 UAE-based · Globally available
               </span>
             </div>
@@ -427,7 +440,7 @@ export default function AboutPage() {
             alt="Oglas AI office in Dubai showing custom software and practical AI service areas"
             width={850}
             height={920}
-            className="w-full rounded-2xl border border-black/10 shadow-xl shadow-black/5"
+            className="rise w-full rounded-[2rem] border border-white/35 shadow-[0_40px_80px_-40px_rgba(0,0,80,0.8)] [animation-delay:120ms]"
           />
         </div>
       </section>
@@ -437,8 +450,8 @@ export default function AboutPage() {
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 px-4 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <Eyebrow num="02">WHO WE ARE</Eyebrow>
-            <h2 className="mt-6 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-              Software Should Fit the Business — Not the Other Way Around
+            <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+              <SplitTitle>{"Software Should Fit the Business — Not the Other Way Around"}</SplitTitle>
             </h2>
             <div className="mt-7 grid gap-5">
               <p className="text-base leading-8 text-steel">
@@ -458,9 +471,9 @@ export default function AboutPage() {
                 unnecessary technological complexity.
               </p>
             </div>
-            <div className="mt-8 flex items-start gap-4 rounded-lg border-l-4 border-champagne bg-pearl px-6 py-5">
-              <Quote className="mt-1 h-6 w-6 shrink-0 text-champagne" />
-              <p className="text-lg font-semibold leading-8 text-onyx">
+            <div className="glass-light mt-9 flex items-start gap-4 rounded-[1.5rem] px-6 py-6">
+              <Quote className="mt-1 h-6 w-6 shrink-0 fill-brand/10 text-brand" />
+              <p className="lead-serif text-[1.35rem] leading-8 text-onyx">
                 Understand the business. Build around it. Improve it
                 continuously.
               </p>
@@ -477,13 +490,15 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 3 — What We Do */}
-      <section className="bg-pearl py-20">
+      <section className="bg-mesh overflow-hidden py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <Eyebrow num="03">WHAT WE DO</Eyebrow>
-          <h2 className="mt-6 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            From Business Problems to Working Systems
+          <Eyebrow num="03" tone="dark">
+            WHAT WE DO
+          </Eyebrow>
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-white md:text-[3.2rem]">
+            <SplitTitle>{"From Business Problems to Working Systems"}</SplitTitle>
           </h2>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-steel md:text-lg">
+          <p className="mt-6 max-w-3xl text-base leading-8 text-white/85 md:text-lg">
             We build software for businesses that have outgrown spreadsheets,
             disconnected applications, repetitive manual processes, or
             off-the-shelf tools that don&apos;t quite fit.
@@ -492,14 +507,14 @@ export default function AboutPage() {
             {whatWeDo.map((item) => (
               <article
                 key={item.title}
-                className="flex flex-col overflow-hidden rounded-lg border border-black/10 bg-white"
+                className="glass flex flex-col overflow-hidden rounded-[1.5rem]"
               >
                 <BgImage
                   src={item.image}
                   alt={`${item.title} interface`}
                   width={344}
                   height={232}
-                  className="h-40 w-full border-b border-black/10"
+                  className="h-40 w-full"
                 />
                 <div className="flex flex-1 flex-col gap-4 p-6">
                   <div className="flex items-center justify-between">
@@ -527,8 +542,8 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <Eyebrow num="04">OUR APPROACH</Eyebrow>
-              <h2 className="mt-6 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-                Technology Should Solve a Business Problem First
+              <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+                <SplitTitle>{"Technology Should Solve a Business Problem First"}</SplitTitle>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-8 text-steel md:text-lg">
                 The best technology starts with a clear understanding of the
@@ -549,7 +564,7 @@ export default function AboutPage() {
             {approach.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-5 rounded-lg border border-black/10 bg-pearl p-6"
+                className="flex flex-col gap-5 rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <div className="flex items-center gap-3">
                   <IconBadge icon={item.icon} />
@@ -573,16 +588,27 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 5 — How We Work */}
-      <section className="bg-pearl py-20">
+      <section className="bg-mesh overflow-hidden py-24 md:py-32">
+        <Image
+          src="/images/brand/chrome-brain.webp"
+          alt=""
+          aria-hidden="true"
+          width={736}
+          height={736}
+          sizes="30rem"
+          className="fade-top pointer-events-none absolute bottom-0 left-0 -z-10 hidden w-[28rem] select-none opacity-90 lg:block"
+        />
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <Eyebrow num="05">HOW WE WORK</Eyebrow>
-          <h2 className="mt-6 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            From Discovery to Long-Term Improvement
+          <Eyebrow num="05" tone="dark">
+            HOW WE WORK
+          </Eyebrow>
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-white md:text-[3.2rem]">
+            <SplitTitle>{"From Discovery to Long-Term Improvement"}</SplitTitle>
           </h2>
           <div className="mt-12 grid gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {howWeWork.map((item, i) => (
               <div key={item.title} className="relative">
-                <div className="flex h-full flex-col gap-5 rounded-lg border border-black/10 bg-white p-6">
+                <div className="glass flex h-full flex-col gap-5 rounded-[1.5rem] p-6">
                   <span className="text-lg font-semibold text-champagne">
                     {item.index}
                   </span>
@@ -600,7 +626,7 @@ export default function AboutPage() {
                 {i < howWeWork.length - 1 ? (
                   <span
                     aria-hidden="true"
-                    className="absolute -right-3 top-1/2 z-10 hidden h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-champagne text-white lg:grid"
+                    className="absolute -right-3 top-1/2 z-10 hidden h-6 w-6 -translate-y-1/2 place-items-center rounded-full bg-white text-brand shadow-[0_8px_18px_-8px_rgba(0,0,80,0.7)] lg:grid"
                   >
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>
@@ -616,8 +642,8 @@ export default function AboutPage() {
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 px-4 lg:grid-cols-[1fr_0.85fr]">
           <div>
             <Eyebrow num="06">WHERE WE&apos;RE BASED</Eyebrow>
-            <h2 className="mt-6 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-              UAE-Based. Built for Global Business
+            <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+              <SplitTitle>{"UAE-Based. Built for Global Business"}</SplitTitle>
             </h2>
             <p className="mt-7 max-w-xl text-base leading-8 text-steel">
               Oglas AI is a{" "}
@@ -653,7 +679,7 @@ export default function AboutPage() {
               height={938}
               className="w-full"
             />
-            <div className="grid grid-cols-2 gap-4 bg-onyx p-6 sm:grid-cols-4">
+            <div className="bg-mesh grid grid-cols-2 gap-4 p-6 sm:grid-cols-4">
               {basedFeatures.map((f) => (
                 <div key={f.title} className="flex flex-col items-center gap-2 text-center">
                   <f.icon className="h-5 w-5 text-champagne" />
@@ -668,13 +694,13 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 7 — Who We Work With */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <div className="grid items-start gap-8 lg:grid-cols-[1.4fr_0.6fr]">
             <div>
               <Eyebrow num="07">WHO WE WORK WITH</Eyebrow>
-              <h2 className="mt-6 max-w-2xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-                Software Built for Businesses With Real Operational Complexity
+              <h2 className="mt-6 max-w-2xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+                <SplitTitle>{"Software Built for Businesses With Real Operational Complexity"}</SplitTitle>
               </h2>
               <p className="mt-6 max-w-2xl text-base leading-8 text-steel">
                 We work with businesses where people, processes, data, and
@@ -695,7 +721,7 @@ export default function AboutPage() {
             {whoWeWorkWith.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-4 rounded-lg border border-black/10 bg-white p-6"
+                className="flex flex-col gap-4 rounded-2xl glass-light p-6"
               >
                 <div className="flex items-center gap-3">
                   <IconBadge icon={item.icon} />
@@ -712,7 +738,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="mt-10 flex items-center gap-4 rounded-lg border border-black/10 bg-white px-6 py-5">
+          <div className="mt-10 flex items-center gap-4 rounded-2xl glass-light px-6 py-5">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-champagne/15 text-champagne">
               <UsersRound className="h-5 w-5" />
             </span>
@@ -730,8 +756,8 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <Eyebrow num="08">EXPERIENCE IN PRACTICE</Eyebrow>
-              <h2 className="mt-6 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-                We Measure Software by What It Changes
+              <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+                <SplitTitle>{"We Measure Software by What It Changes"}</SplitTitle>
               </h2>
               <p className="mt-7 max-w-xl text-base leading-8 text-steel">
                 Good software isn&apos;t measured by how impressive it looks. It
@@ -756,7 +782,7 @@ export default function AboutPage() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col gap-4 rounded-lg border border-black/10 bg-pearl p-7"
+                className="flex flex-col gap-4 rounded-2xl border border-brand/10 bg-pearl p-7"
               >
                 <div className="flex items-center gap-4">
                   <IconBadge icon={stat.icon} />
@@ -778,13 +804,13 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 9 — Why Oglas AI */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <Eyebrow num="09">WHY OGLAS AI</Eyebrow>
-              <h2 className="mt-6 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-                A Business-First Approach to Technology
+              <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+                <SplitTitle>{"A Business-First Approach to Technology"}</SplitTitle>
               </h2>
               <p className="mt-7 max-w-xl text-base leading-8 text-steel">
                 We believe technology should support the way your business works,
@@ -805,7 +831,7 @@ export default function AboutPage() {
             {whyOglas.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col gap-5 rounded-lg border border-black/10 bg-white p-6"
+                className="flex flex-col gap-5 rounded-2xl glass-light p-6"
               >
                 <IconBadge icon={item.icon} />
                 <div>
@@ -820,8 +846,8 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="mt-10 flex flex-col items-start gap-3 rounded-lg border border-black/10 bg-white px-6 py-5 sm:flex-row sm:items-center">
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-onyx text-champagne">
+          <div className="mt-10 flex flex-col items-start gap-3 rounded-2xl glass-light px-6 py-5 sm:flex-row sm:items-center">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#2f4cf6,#0c29df)] text-white">
               <Rocket className="h-5 w-5" />
             </span>
             <p className="text-base font-semibold text-onyx">
@@ -836,11 +862,11 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 10 — FAQ */}
-      <section className="bg-pearl py-20">
+      <section className="bg-bloom py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <Eyebrow num="10">FREQUENTLY ASKED QUESTIONS</Eyebrow>
-          <h2 className="mt-6 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Questions Businesses Ask About Oglas AI
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Questions Businesses Ask About Oglas AI"}</SplitTitle>
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Answers to common questions about Oglas AI, our custom software
@@ -851,17 +877,12 @@ export default function AboutPage() {
             {faqs.map((faq, index) => (
               <details
                 key={faq.question}
-                className="group rounded-lg border border-black/10 bg-white p-6 open:border-champagne/50"
+                className="faq-item glass-light group p-6 md:px-8"
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer items-start justify-between gap-6 text-base font-semibold text-onyx marker:hidden">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[17px] leading-7 text-onyx">
                   {faq.question}
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-md border border-black/10 bg-pearl text-champagne transition group-open:rotate-45"
-                  >
-                    +
-                  </span>
+                  <span aria-hidden="true" className="faq-toggle mt-0.5 text-lg leading-none">+</span>
                 </summary>
                 <p className="mt-4 text-sm leading-7 text-steel">{faq.answer}</p>
               </details>
@@ -871,17 +892,21 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 11 — Final CTA */}
-      <section className="bg-white py-20">
+      <section className="bg-mesh overflow-hidden py-24 md:py-32">
+        <HeroBackdrop />
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 px-4 lg:grid-cols-[1fr_1fr]">
           <div>
-            <Eyebrow num="11">FINAL CTA</Eyebrow>
+            <Eyebrow num="11" tone="dark">
+              FINAL CTA
+            </Eyebrow>
             <p className="mt-6 text-xs font-semibold uppercase tracking-[0.15em] text-champagne">
               Start With the Business Problem
             </p>
-            <h2 className="mt-3 text-4xl font-semibold leading-tight text-onyx md:text-6xl">
-              Tell Us What You Want to Improve
+            <h2 className="mt-5 text-4xl leading-[1.05] text-white md:text-[3.6rem]">
+              <SplitTitle>{"Tell Us What You Want to Improve"}</SplitTitle>
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-steel">
+            <ArrowRule className="mt-8 text-white/70" />
+            <p className="mt-7 max-w-xl text-lg leading-8 text-white/85">
               Whether you&apos;re replacing manual processes, connecting
               disconnected systems, exploring AI, or building a new business
               application, we&apos;ll start by understanding how your business
@@ -890,14 +915,14 @@ export default function AboutPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-champagne px-6 text-sm font-semibold text-onyx transition hover:bg-onyx hover:text-white"
+                className="btn btn-light"
               >
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-champagne px-6 text-sm font-semibold text-champagne transition hover:bg-champagne hover:text-onyx"
+                className="btn btn-outline-light"
               >
                 Explore Our Services
                 <ArrowRight className="h-4 w-4" />
@@ -909,10 +934,10 @@ export default function AboutPage() {
             alt="Oglas AI workspace in Dubai with a laptop and branded notebook"
             width={700}
             height={818}
-            className="w-full rounded-2xl border border-black/10"
+            className="w-full rounded-[2rem] border border-white/35 shadow-[0_40px_80px_-40px_rgba(0,0,80,0.8)]"
           />
         </div>
-        <p className="mx-auto mt-8 w-full max-w-[1160px] px-4 text-sm text-steel">
+        <p className="mx-auto mt-10 w-full max-w-[1160px] px-4 text-sm text-white/70">
           {company.name} · {company.location}
         </p>
       </section>

@@ -48,6 +48,9 @@ import Link from "next/link";
 import { services } from "@/content/site";
 import { serviceSeo } from "@/content/seo";
 import { FaqStructuredData } from "@/components/structured-data";
+import { SplitTitle } from "@/components/split-title";
+import Image from "next/image";
+import { HeroBackdrop } from "@/components/page-hero";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -1289,20 +1292,31 @@ function CustomSoftwarePage() {
       <FaqStructuredData faqs={customSoftwareFaqs} />
 
       {/* Hero */}
-      <section className="surface-grid bg-pearl py-20 md:py-28">
+      <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
+        <HeroBackdrop watermark={false} />
+        <Image
+          src="/images/brand/chrome-brain.webp"
+          alt=""
+          aria-hidden="true"
+          width={736}
+          height={736}
+          priority
+          sizes="32rem"
+          className="fade-top pointer-events-none absolute bottom-0 right-0 -z-10 hidden w-[32rem] -scale-x-100 select-none opacity-95 lg:block xl:w-[36rem]"
+        />
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">
+          <p className="pill-glass">
             Custom Software Development
           </p>
-          <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] text-onyx md:text-6xl">
-            Custom Software Built Around How Your Business Works
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-steel">
+          <h1 className="mt-7 max-w-3xl text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
+              <SplitTitle>{"Custom Software Built Around How Your Business Works"}</SplitTitle>
+            </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
             Your business has its own workflows, rules, teams, systems, and
             operational requirements. Your software should be built around
             them — not force them into a rigid process.
           </p>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-steel">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/85">
             Oglas AI develops custom software solutions for businesses in
             Dubai, the UAE, and beyond, combining business applications,
             integrations, automation, and practical AI into software designed
@@ -1311,20 +1325,20 @@ function CustomSoftwarePage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+              className="btn btn-light"
             >
               Build Your Custom Software
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-onyx px-6 text-sm font-semibold text-onyx transition hover:bg-onyx hover:text-white"
+              className="btn btn-outline-light"
             >
               Talk to Oglas AI
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-steel/70">
+          <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
             UAE-based · Custom Software + Practical AI · Built Around Real
             Operations
           </p>
@@ -1334,11 +1348,11 @@ function CustomSoftwarePage() {
       {/* Problem */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             The Problem
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            When Your Software Becomes the Bottleneck
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"When Your Software Becomes the Bottleneck"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Off-the-shelf software can work well until your business starts
@@ -1350,7 +1364,7 @@ function CustomSoftwarePage() {
             {customSoftwareProblems.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-lg border border-black/10 bg-pearl p-4"
+                className="flex items-start gap-3 rounded-2xl border border-brand/10 bg-pearl p-4"
               >
                 <span
                   aria-hidden
@@ -1370,13 +1384,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Principles */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Our Approach
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Software Should Adapt to the Business — Not the Other Way Around
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Software Should Adapt to the Business — Not the Other Way Around"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Custom software development isn&apos;t about building more
@@ -1390,7 +1404,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={item.number}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
@@ -1414,11 +1428,11 @@ function CustomSoftwarePage() {
       {/* Capabilities */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             What We Build
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Custom Software Designed for Real Business Operations
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Custom Software Designed for Real Business Operations"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             From individual business applications to connected enterprise
@@ -1432,7 +1446,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                  className="rounded-2xl border border-brand/10 bg-pearl p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -1449,13 +1463,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Practical AI */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Custom Software + Practical AI
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            AI Becomes More Useful When It&apos;s Connected to Real Workflows
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"AI Becomes More Useful When It's Connected to Real Workflows"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Instead of treating AI as a standalone feature, we can incorporate
@@ -1468,7 +1482,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={item.flow}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <p className="mt-5 text-sm font-semibold leading-6 text-onyx">
@@ -1492,11 +1506,11 @@ function CustomSoftwarePage() {
       {/* Integration */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Software Integration
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            You Don&apos;t Always Need to Replace Everything
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"You Don't Always Need to Replace Everything"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Custom software doesn&apos;t necessarily mean starting from zero.
@@ -1527,7 +1541,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                  className="rounded-2xl border border-brand/10 bg-pearl p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -1544,13 +1558,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Build vs Buy vs Integrate */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Build vs Buy
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Build vs Buy vs Integrate: Which Approach Fits Your Business?
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Build vs Buy vs Integrate: Which Approach Fits Your Business?"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Custom software isn&apos;t automatically the right answer. For
@@ -1564,7 +1578,7 @@ function CustomSoftwarePage() {
             {customSoftwareApproach.map((item) => (
               <article
                 key={item.label}
-                className="rounded-xl border border-black/10 bg-white p-6"
+                className="rounded-2xl glass-light p-6"
               >
                 <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
                   {item.label}
@@ -1587,7 +1601,7 @@ function CustomSoftwarePage() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-xl border border-black/10 bg-white p-7">
+          <div className="mt-10 rounded-2xl glass-light p-7">
             <p className="text-lg font-semibold text-onyx">
               The Right Question Isn&apos;t &ldquo;Should We Build?&rdquo;
             </p>
@@ -1604,11 +1618,11 @@ function CustomSoftwarePage() {
       {/* Process */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Our Process
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Our Custom Software Development Process
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Our Custom Software Development Process"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             A structured process helps turn a business requirement into
@@ -1621,7 +1635,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={step.number}
-                  className="rounded-xl border border-black/10 bg-pearl p-5"
+                  className="rounded-2xl border border-brand/10 bg-pearl p-5"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
@@ -1648,13 +1662,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Industries */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Industries
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Custom Software for Different Industries
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Custom Software for Different Industries"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Different industries operate with different workflows,
@@ -1666,7 +1680,7 @@ function CustomSoftwarePage() {
             {customSoftwareIndustries.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-black/10 bg-white p-6"
+                className="rounded-2xl glass-light p-6"
               >
                 <h3 className="text-base font-semibold text-onyx">
                   {item.title}
@@ -1681,7 +1695,7 @@ function CustomSoftwarePage() {
           <div className="mt-10">
             <Link
               href="/industries"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+              className="btn btn-primary"
             >
               Explore Industries
               <ArrowRight className="h-4 w-4" />
@@ -1693,11 +1707,11 @@ function CustomSoftwarePage() {
       {/* Outcomes */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Real-World Results
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Real Business Outcomes, Not Just Software Features
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Real Business Outcomes, Not Just Software Features"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Custom software should ultimately improve how work gets done.
@@ -1709,7 +1723,7 @@ function CustomSoftwarePage() {
             {customSoftwareOutcomes.map((project) => (
               <article
                 key={project.title}
-                className="rounded-xl border border-black/10 bg-pearl p-7"
+                className="rounded-2xl border border-brand/10 bg-pearl p-7"
               >
                 <h3 className="text-xl font-semibold text-onyx">
                   {project.title}
@@ -1721,7 +1735,7 @@ function CustomSoftwarePage() {
                   {project.stats.map((stat) => (
                     <div
                       key={stat.label}
-                      className="rounded-lg border border-black/10 bg-white p-4"
+                      className="rounded-2xl glass-light p-4"
                     >
                       <p className="text-lg font-semibold text-onyx">
                         {stat.value}
@@ -1749,13 +1763,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Why Us */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Why Oglas AI
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Why Businesses Work With Oglas AI
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Why Businesses Work With Oglas AI"}</SplitTitle>
           </h2>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -1764,7 +1778,7 @@ function CustomSoftwarePage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -1783,11 +1797,11 @@ function CustomSoftwarePage() {
       {/* Security & Governance */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Security & Governance
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Built for Integration, Control & Long-Term Use
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Built for Integration, Control & Long-Term Use"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Security and access controls are considered as part of the
@@ -1815,16 +1829,16 @@ function CustomSoftwarePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[960px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Frequently Asked Questions
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Frequently Asked Questions
+          <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Frequently Asked Questions"}</SplitTitle>
           </h2>
 
-          <div className="mt-10 divide-y divide-black/10 rounded-xl border border-black/10 bg-white">
+          <div className="mt-10 divide-y divide-black/10 rounded-2xl glass-light">
             {customSoftwareFaqs.map((faq) => (
               <details key={faq.question} className="group p-6">
                 <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-onyx marker:hidden">
@@ -1840,13 +1854,13 @@ function CustomSoftwarePage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="bg-onyx py-16 md:py-20">
+      <section className="bg-mesh overflow-hidden py-16 md:py-20">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-light">
+          <p className="pill-glass">
             Oglas AI
           </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white md:text-4xl">
-            Tell Us What Your Business Needs to Improve
+          <h2 className="mt-5 max-w-3xl text-4xl leading-[1.05] text-white md:text-[3.2rem]">
+            <SplitTitle>{"Tell Us What Your Business Needs to Improve"}</SplitTitle>
           </h2>
           <ul className="mt-6 space-y-2 text-sm leading-7 text-white/70">
             <li>Is your team spending too much time on repetitive work?</li>
@@ -1865,7 +1879,7 @@ function CustomSoftwarePage() {
           <div className="mt-8 flex flex-wrap items-center gap-5">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-onyx transition hover:bg-champagne"
+              className="btn btn-light"
             >
               Book a Free Consultation
               <ArrowRight className="h-4 w-4" />
@@ -1889,16 +1903,17 @@ function AiDashboardsPage() {
       <FaqStructuredData faqs={aiDashboardsFaqs} />
 
       {/* Hero */}
-      <section className="surface-grid bg-pearl py-20 md:py-28">
+      <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
+        <HeroBackdrop watermark={false} />
         <div className="mx-auto grid w-full max-w-[1160px] gap-10 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">
+            <p className="pill-glass">
               AI-Powered Business Intelligence
             </p>
-            <h1 className="mt-5 text-5xl font-semibold leading-[1.05] text-onyx md:text-6xl">
-              AI Dashboards & Decision Intelligence
+            <h1 className="mt-7 text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
+              <SplitTitle>{"AI Dashboards & Decision Intelligence"}</SplitTitle>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-steel">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
               Oglas AI provides AI Dashboard Services that connect your ERP,
               CRM, finance, HR and production data into one live business
               intelligence view — then go further. Our dashboards surface what
@@ -1909,30 +1924,30 @@ function AiDashboardsPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+                className="btn btn-light"
               >
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-onyx px-6 text-sm font-semibold text-onyx transition hover:bg-onyx hover:text-white"
+                className="btn btn-outline-light"
               >
                 Get a Free Data Readiness Check
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-steel/70">
+            <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
               Connected to the systems you already run
             </p>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-steel">
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-white/85">
               Odoo · SAP · Microsoft Dynamics · Zoho · Salesforce · QuickBooks ·
               Tally · Shopify
             </p>
           </div>
 
-          <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
-            <div className="rounded-xl bg-onyx p-5 text-white">
+          <div className="glass rise rounded-[1.75rem] p-4 [animation-delay:120ms]">
+            <div className="bg-mesh overflow-hidden rounded-xl p-5 text-white">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
@@ -1972,12 +1987,11 @@ function AiDashboardsPage() {
       {/* Problem */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             The Problem
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            When Business Data Exists but Decisions Still Depend on Manual
-            Reports
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"When Business Data Exists but Decisions Still Depend on Manual Reports"}</SplitTitle>
           </h2>
           <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>
@@ -2003,7 +2017,7 @@ function AiDashboardsPage() {
             {aiDashboardsProblems.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-black/10 bg-pearl p-6"
+                className="rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <h3 className="text-lg font-semibold text-onyx">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-steel">
@@ -2016,13 +2030,13 @@ function AiDashboardsPage() {
       </section>
 
       {/* What Oglas AI Builds */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             What Oglas AI Builds
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Business Intelligence Built on Your Live Systems
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Business Intelligence Built on Your Live Systems"}</SplitTitle>
           </h2>
           <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>
@@ -2044,7 +2058,7 @@ function AiDashboardsPage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-lg font-semibold text-onyx">
@@ -2058,7 +2072,7 @@ function AiDashboardsPage() {
             })}
           </div>
 
-          <div className="mt-12 rounded-xl border border-black/10 bg-white p-6">
+          <div className="mt-12 rounded-2xl glass-light p-6">
             <p className="text-sm font-semibold text-onyx">
               Integrations Oglas AI can work with
             </p>
@@ -2088,11 +2102,11 @@ function AiDashboardsPage() {
       {/* From Reporting to Action */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             From Reporting to Action
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            From Dashboards That Report to Systems That Act
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"From Dashboards That Report to Systems That Act"}</SplitTitle>
           </h2>
           <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>
@@ -2115,7 +2129,7 @@ function AiDashboardsPage() {
               return (
                 <article
                   key={step.number}
-                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                  className="rounded-2xl border border-brand/10 bg-pearl p-6"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
@@ -2140,13 +2154,13 @@ function AiDashboardsPage() {
       </section>
 
       {/* Capabilities */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Capabilities
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Built for the Way Your Business Operates
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Built for the Way Your Business Operates"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             From executive reporting to operational analysis, Oglas AI
@@ -2160,7 +2174,7 @@ function AiDashboardsPage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -2179,11 +2193,11 @@ function AiDashboardsPage() {
       {/* Comparison table */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Comparison
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Traditional Dashboards vs Decision Intelligence
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Traditional Dashboards vs Decision Intelligence"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Most businesses already have a reporting tool. The difference is not
@@ -2223,13 +2237,13 @@ function AiDashboardsPage() {
       </section>
 
       {/* Real-world experience */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Real-World Experience
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Decision Intelligence Built Around Real Operations
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Decision Intelligence Built Around Real Operations"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             AI dashboards earn their place when they change what a business does
@@ -2240,7 +2254,7 @@ function AiDashboardsPage() {
           </p>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            <article className="rounded-xl border border-black/10 bg-white p-7">
+            <article className="rounded-2xl glass-light p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-champagne">
                 Case Study · Steel Manufacturing, UAE
               </p>
@@ -2288,7 +2302,7 @@ function AiDashboardsPage() {
               </p>
             </article>
 
-            <article className="rounded-xl border border-black/10 bg-white p-7">
+            <article className="rounded-2xl glass-light p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-champagne">
                 Case Study · Agri-Processing, UAE
               </p>
@@ -2321,11 +2335,11 @@ function AiDashboardsPage() {
       {/* How We Work */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             How We Work
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            From First Conversation to Dashboards Your Team Actually Uses
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"From First Conversation to Dashboards Your Team Actually Uses"}</SplitTitle>
           </h2>
           <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>
@@ -2344,7 +2358,7 @@ function AiDashboardsPage() {
             {aiDashboardsProcess.map((step) => (
               <article
                 key={step.number}
-                className="rounded-xl border border-black/10 bg-pearl p-6"
+                className="rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
                   {step.number}
@@ -2365,13 +2379,13 @@ function AiDashboardsPage() {
       </section>
 
       {/* Data Readiness */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Data Readiness
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Most Businesses Do Not Start With Clean Data
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Most Businesses Do Not Start With Clean Data"}</SplitTitle>
           </h2>
           <div className="mt-6 grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
@@ -2389,13 +2403,13 @@ function AiDashboardsPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+                className="btn btn-primary"
               >
                 Get a Free Data Readiness Check
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <div className="rounded-xl border border-black/10 bg-white p-6">
+            <div className="rounded-2xl glass-light p-6">
               <p className="text-sm font-semibold text-onyx">
                 The assessment covers:
               </p>
@@ -2422,11 +2436,11 @@ function AiDashboardsPage() {
       {/* Security & Governance */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Data Security & Governance
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Your Data Stays Yours
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Your Data Stays Yours"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Connecting finance, HR, operational and customer data to a new
@@ -2441,7 +2455,7 @@ function AiDashboardsPage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-pearl p-6"
+                  className="rounded-2xl border border-brand/10 bg-pearl p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -2458,13 +2472,13 @@ function AiDashboardsPage() {
       </section>
 
       {/* Who It's For */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
-            Who It's For
+          <p className="pill">
+            Who It&apos;s For
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            AI Dashboards Built Around Your Business
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"AI Dashboards Built Around Your Business"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Oglas AI provides AI Dashboard Services in Dubai and across the
@@ -2481,7 +2495,7 @@ function AiDashboardsPage() {
               return (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <Icon className="h-6 w-6 text-emerald" />
                   <h3 className="mt-5 text-base font-semibold text-onyx">
@@ -2496,7 +2510,7 @@ function AiDashboardsPage() {
           </div>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl border border-black/10 bg-white p-7">
+            <div className="rounded-2xl glass-light p-7">
               <h3 className="text-lg font-semibold text-onyx">
                 Probably not a fit if
               </h3>
@@ -2517,7 +2531,7 @@ function AiDashboardsPage() {
               </p>
             </div>
 
-            <div className="rounded-xl border border-black/10 bg-white p-7">
+            <div className="rounded-2xl glass-light p-7">
               <h3 className="text-lg font-semibold text-onyx">
                 What you can expect
               </h3>
@@ -2541,11 +2555,11 @@ function AiDashboardsPage() {
       {/* Engagement Models */}
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Engagement Models
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            How Projects Are Scoped
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"How Projects Are Scoped"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Every Oglas AI dashboard project is scoped around the systems, KPIs,
@@ -2558,7 +2572,7 @@ function AiDashboardsPage() {
             {aiDashboardsEngagements.map((option) => (
               <article
                 key={option.title}
-                className="flex flex-col rounded-xl border border-black/10 bg-pearl p-6"
+                className="flex flex-col rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <h3 className="text-xl font-semibold text-onyx">
                   {option.title}
@@ -2589,16 +2603,16 @@ function AiDashboardsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[960px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Frequently Asked Questions
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Frequently Asked Questions
+          <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Frequently Asked Questions"}</SplitTitle>
           </h2>
 
-          <div className="mt-10 divide-y divide-black/10 rounded-xl border border-black/10 bg-white">
+          <div className="mt-10 divide-y divide-black/10 rounded-2xl glass-light">
             {aiDashboardsFaqs.map((faq) => (
               <details key={faq.question} className="group p-6">
                 <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-onyx marker:hidden">
@@ -2614,14 +2628,14 @@ function AiDashboardsPage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="bg-onyx py-16 md:py-20">
+      <section className="bg-mesh overflow-hidden py-16 md:py-20">
         <div className="mx-auto flex w-full max-w-[1160px] flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-light">
+            <p className="pill-glass">
               Oglas AI
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Turn Your Business Data Into Better Decisions
+            <h2 className="mt-5 text-4xl leading-[1.05] text-white md:text-[3.2rem]">
+              <SplitTitle>{"Turn Your Business Data Into Better Decisions"}</SplitTitle>
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/70">
               Your business already has the data. The challenge is turning it
@@ -2632,14 +2646,14 @@ function AiDashboardsPage() {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-onyx transition hover:bg-champagne"
+              className="btn btn-light"
             >
               Book a Free Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/40 px-6 text-sm font-semibold text-white transition hover:bg-white hover:text-onyx"
+              className="btn btn-outline-light"
             >
               Free Data Readiness Check
               <ArrowRight className="h-4 w-4" />
@@ -2658,31 +2672,32 @@ function WorkflowAutomationPage() {
       <WorkflowAutomationStructuredData />
       <FaqStructuredData faqs={workflowFaqs} />
 
-      <section className="surface-grid bg-pearl py-20 md:py-28">
+      <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
+        <HeroBackdrop watermark={false} />
         <div className="mx-auto grid w-full max-w-[1160px] gap-10 px-4 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-champagne">
+            <p className="pill-glass">
               Built in Dubai. Designed for businesses globally
             </p>
-            <h1 className="mt-5 text-5xl font-semibold leading-[1.05] text-onyx md:text-6xl">
-              Workflow Automation Services
+            <h1 className="mt-7 text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
+              <SplitTitle>{"Workflow Automation Services"}</SplitTitle>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-steel">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
               Automate approvals, document routing, notifications, and repetitive
               tasks with workflows built around the way your business actually
               operates.
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-onyx px-6 text-sm font-semibold text-white transition hover:bg-champagne hover:text-onyx"
+              className="btn btn-light mt-8"
             >
               Automate Your Workflow
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm">
-            <div className="rounded-xl bg-onyx p-5 text-white">
+          <div className="glass rise rounded-[1.75rem] p-4 [animation-delay:120ms]">
+            <div className="bg-mesh overflow-hidden rounded-xl p-5 text-white">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
@@ -2714,11 +2729,11 @@ function WorkflowAutomationPage() {
 
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             What We Automate
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Automate the Work That Slows Your Business Down
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Automate the Work That Slows Your Business Down"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
             Oglas AI provides workflow automation services built around the way your
@@ -2731,7 +2746,7 @@ function WorkflowAutomationPage() {
             {workflowCapabilities.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-black/10 bg-pearl p-6"
+                className="rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <CheckCircle2 className="h-6 w-6 text-emerald" />
                 <h3 className="mt-5 text-lg font-semibold text-onyx">{item.title}</h3>
@@ -2746,13 +2761,13 @@ function WorkflowAutomationPage() {
         </div>
       </section>
 
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Workflow Automation Across Your Business
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Workflow Automation Across Your Business
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Workflow Automation Across Your Business"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Different teams have different processes, but the goal is the same: keep
@@ -2767,7 +2782,7 @@ function WorkflowAutomationPage() {
               return (
                 <article
                   key={team.number}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
@@ -2794,11 +2809,11 @@ function WorkflowAutomationPage() {
 
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             How Oglas AI Builds It
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            How Oglas AI Builds Workflow Automation
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"How Oglas AI Builds Workflow Automation"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Every business works differently. Instead of forcing your processes into a
@@ -2810,7 +2825,7 @@ function WorkflowAutomationPage() {
             {workflowSteps.map((step) => (
               <article
                 key={step.number}
-                className="rounded-xl border border-black/10 bg-pearl p-6"
+                className="rounded-2xl border border-brand/10 bg-pearl p-6"
               >
                 <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
                   {step.number}
@@ -2831,13 +2846,13 @@ function WorkflowAutomationPage() {
         </div>
       </section>
 
-      <section className="bg-pearl py-20 md:py-24">
+      <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Why Custom Workflow Automation
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Why Choose Custom Workflow Automation?
+          <h2 className="mt-6 max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Why Choose Custom Workflow Automation?"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             Generic automation tools can work well for straightforward processes. But
@@ -2861,7 +2876,7 @@ function WorkflowAutomationPage() {
               return (
                 <article
                   key={benefit.number}
-                  className="rounded-xl border border-black/10 bg-white p-6"
+                  className="rounded-2xl glass-light p-6"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-semibold tracking-[0.16em] text-champagne">
@@ -2892,11 +2907,11 @@ function WorkflowAutomationPage() {
 
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[960px] px-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald">
+          <p className="pill">
             Frequently Asked Questions
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-onyx md:text-5xl">
-            Frequently Asked Questions
+          <h2 className="mt-6 text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Frequently Asked Questions"}</SplitTitle>
           </h2>
 
           <div className="mt-10 divide-y divide-black/10 rounded-xl border border-black/10">
@@ -2914,19 +2929,19 @@ function WorkflowAutomationPage() {
         </div>
       </section>
 
-      <section className="bg-onyx py-16 md:py-20">
+      <section className="bg-mesh overflow-hidden py-16 md:py-20">
         <div className="mx-auto flex w-full max-w-[1160px] flex-col gap-6 px-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-light">
+            <p className="pill-glass">
               Oglas AI
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
-              Ready to automate the work slowing your team down?
+            <h2 className="mt-5 text-4xl leading-[1.05] text-white md:text-[3.2rem]">
+              <SplitTitle>{"Ready to automate the work slowing your team down?"}</SplitTitle>
             </h2>
           </div>
           <Link
             href="/contact"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-onyx transition hover:bg-champagne"
+            className="btn btn-light"
           >
             Automate Your Workflow
             <ArrowRight className="h-4 w-4" />
@@ -2988,29 +3003,30 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <section className="surface-grid bg-pearl py-20">
+      <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
+        <HeroBackdrop />
         <div className="mx-auto grid w-full max-w-[1160px] gap-10 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <service.icon className="h-10 w-10 text-emerald" />
-            <p className="mt-6 text-xs font-semibold uppercase text-champagne">
+            <p className="pill-glass mt-6">
               {service.eyebrow}
             </p>
-            <h1 className="mt-4 text-5xl font-semibold leading-tight text-onyx md:text-6xl">
-              {service.title}
+            <h1 className="mt-6 text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
+              <SplitTitle>{service.title}</SplitTitle>
             </h1>
           </div>
-          <p className="text-lg leading-8 text-steel">{service.description}</p>
+          <p className="text-lg leading-8 text-white/85">{service.description}</p>
         </div>
       </section>
 
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-lg border border-black/10 bg-onyx p-7 text-white">
+          <div className="bg-mesh overflow-hidden rounded-[1.75rem] p-8 text-white">
             <h2 className="text-2xl font-semibold">Best fit</h2>
             <p className="mt-5 text-sm leading-7 text-white/70">{service.fit}</p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex h-11 items-center justify-center gap-2 rounded-md bg-white px-5 text-sm font-semibold text-onyx transition hover:bg-champagne"
+              className="btn btn-light btn-sm mt-8"
             >
               Book a Free Consultation
               <ArrowRight className="h-4 w-4" />

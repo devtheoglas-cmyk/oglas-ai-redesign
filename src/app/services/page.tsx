@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { SectionHeading } from "@/components/section-heading";
 import { services } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
+import { HeroArt, PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/services"];
 
@@ -20,16 +20,20 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="surface-grid bg-pearl py-20">
-        <div className="mx-auto w-full max-w-[1160px] px-4">
-          <SectionHeading
-            eyebrow="Services"
-            title="Custom software and AI services built for operational depth"
-            summary="Start with one painful bottleneck or connect a full operating platform across HR, finance, operations, sales, marketing, and management."
-            headingLevel="h1"
+      <PageHero
+        eyebrow="Services"
+        title="Custom software and AI services built for operational depth"
+        summary="Start with one painful bottleneck or connect a full operating platform across HR, finance, operations, sales, marketing, and management."
+        art={
+          <HeroArt
+            src="/images/brand/neural-brain.webp"
+            alt="Glowing blue neural brain"
+            width={652}
+            height={528}
+            priority
           />
-        </div>
-      </section>
+        }
+      />
 
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] px-4 gap-6 md:grid-cols-2">
@@ -37,7 +41,7 @@ export default function ServicesPage() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group rounded-lg border border-black/10 bg-pearl p-7 transition hover:-translate-y-1 hover:border-emerald/35 hover:shadow-xl hover:shadow-black/5"
+              className="group rounded-2xl border border-brand/10 bg-pearl p-7 transition hover:-translate-y-1 hover:border-emerald/35 hover:shadow-xl hover:shadow-black/5"
             >
               <div className="flex items-start justify-between gap-4">
                 <service.icon className="h-8 w-8 text-emerald" />
