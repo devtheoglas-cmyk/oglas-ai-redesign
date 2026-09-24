@@ -73,7 +73,7 @@ export function StructuredData() {
               "@type": "Service",
               name: service.title,
               description: service.summary,
-              url: `${baseUrl}/services/${service.slug}`,
+              url: `${baseUrl}/${service.slug}`,
               areaServed: ["AE", "SA", "AU"],
               audience: industries.map((industry) => industry.title),
             },

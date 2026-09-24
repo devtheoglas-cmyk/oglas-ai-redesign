@@ -10,7 +10,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPublishedPosts();
   const staticRoutes = [
     "",
-    "/services",
     "/industries",
     "/industries/forex-trading",
     "/case-studies",
@@ -26,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     })),
     ...services.map((service) => ({
-      url: `${baseUrl}/services/${service.slug}`,
+      url: `${baseUrl}/${service.slug}`,
       lastModified: new Date(),
     })),
     ...posts.map((post) => ({

@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/company", destination: "/about", permanent: true },
+      // Services moved to the site root and into the header dropdown.
+      { source: "/services", destination: "/#services", permanent: true },
+      { source: "/services/:slug", destination: "/:slug", permanent: true },
     ];
   },
 };

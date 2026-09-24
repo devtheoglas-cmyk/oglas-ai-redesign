@@ -921,7 +921,7 @@ export default function AboutPage() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/services"
+                href="/#services"
                 className="btn btn-outline-light"
               >
                 Explore Our Services

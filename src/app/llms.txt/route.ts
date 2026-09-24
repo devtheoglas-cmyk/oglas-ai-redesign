@@ -19,7 +19,6 @@ Primary markets: United Arab Emirates, with global availability and expansion fo
 ## Key Pages
 
 - [Home](${baseUrl}/): Oglas AI overview, positioning, services, industries, case studies, and latest insights.
-- [Services](${baseUrl}/services): Core custom software and AI service categories.
 - [Industries](${baseUrl}/industries): Industries served by Oglas AI.
 - [Anonymous Case Studies](${baseUrl}/case-studies): Confidential outcome stories and measurable business improvements.
 - [Insights](${baseUrl}/insights): Articles about automation, ERP, AI adoption, computer vision, and business software strategy.
@@ -31,7 +30,7 @@ Primary markets: United Arab Emirates, with global availability and expansion fo
 ${services
   .map(
     (service) =>
-      `- [${service.title}](${baseUrl}/services/${service.slug}): ${service.summary}`,
+      `- [${service.title}](${baseUrl}/${service.slug}): ${service.summary}`,
   )
   .join("\n")}
 

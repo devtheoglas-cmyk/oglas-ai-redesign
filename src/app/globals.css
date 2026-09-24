@@ -197,6 +197,20 @@
     backdrop-filter: blur(18px) saturate(150%);
   }
 
+  /* Near-opaque frosted panel for menus that float over busy heroes. */
+  .glass-menu {
+    --color-onyx: #070b3d;
+    --color-steel: #3d4575;
+    color: #070b3d;
+    background: linear-gradient(140deg, rgb(255 255 255 / 0.97), rgb(238 241 255 / 0.95));
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow:
+      0 40px 80px -40px rgb(0 0 90 / 0.75),
+      inset 0 1px 0 rgb(255 255 255);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+  }
+
   /* Tinted glass that keeps white text on a blue field. */
   .glass-dim {
     background: linear-gradient(135deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.06));
@@ -483,6 +497,10 @@
   .spin-slow {
     animation: spin-slow 120s linear infinite;
   }
+
+  .menu-in {
+    animation: menu-in 0.4s var(--ease-out-expo) both;
+  }
 }
 
 @keyframes rise {
@@ -507,6 +525,19 @@
   }
 }
 
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
 @keyframes spin-slow {
   to {
     rotate: 360deg;
@@ -520,7 +551,8 @@
 
   .rise,
   .drift,
-  .spin-slow {
+  .spin-slow,
+  .menu-in {
     animation: none;
   }
 }

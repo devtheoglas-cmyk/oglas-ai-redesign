@@ -69,7 +69,7 @@ export default async function Home() {
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link href="/services" className="btn btn-outline-light">
+              <Link href="/#services" className="btn btn-outline-light">
                 Explore Our Services
               </Link>
             </div>
@@ -140,7 +140,7 @@ export default async function Home() {
       </section>
 
       {/* SECTION 3 — How We Help Your Business */}
-      <section className="bg-bloom py-24 md:py-32">
+      <section id="services" className="bg-bloom scroll-mt-20 py-24 md:py-32">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionHeading
             eyebrow="How We Help"

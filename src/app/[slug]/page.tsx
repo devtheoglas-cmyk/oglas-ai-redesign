@@ -1092,14 +1092,8 @@ function BreadcrumbStructuredData() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Services",
-        item: `${baseUrl}/services`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
         name: "Workflow Automation Services",
-        item: `${baseUrl}/services/workflow-automation`,
+        item: `${baseUrl}/workflow-automation`,
       },
     ],
   };
@@ -1118,7 +1112,7 @@ function WorkflowAutomationStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/services/workflow-automation#service`,
+    "@id": `${baseUrl}/workflow-automation#service`,
     name: "Workflow Automation Services",
     serviceType: "Workflow Automation",
     description:
@@ -1134,7 +1128,7 @@ function WorkflowAutomationStructuredData() {
       "United Arab Emirates",
       "Global",
     ],
-    url: `${baseUrl}/services/workflow-automation`,
+    url: `${baseUrl}/workflow-automation`,
   };
 
   return (
@@ -1161,14 +1155,8 @@ function AiDashboardsBreadcrumbStructuredData() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Services",
-        item: `${baseUrl}/services`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
         name: "AI Dashboards & Decision Intelligence",
-        item: `${baseUrl}/services/ai-dashboards-decision-intelligence`,
+        item: `${baseUrl}/ai-dashboards-decision-intelligence`,
       },
     ],
   };
@@ -1187,7 +1175,7 @@ function AiDashboardsServiceStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/services/ai-dashboards-decision-intelligence#service`,
+    "@id": `${baseUrl}/ai-dashboards-decision-intelligence#service`,
     name: "AI Dashboards & Decision Intelligence",
     serviceType: "Business Intelligence & Decision Intelligence",
     description:
@@ -1202,7 +1190,7 @@ function AiDashboardsServiceStructuredData() {
       "United Arab Emirates",
       "Dubai, United Arab Emirates",
     ],
-    url: `${baseUrl}/services/ai-dashboards-decision-intelligence`,
+    url: `${baseUrl}/ai-dashboards-decision-intelligence`,
   };
 
   return (
@@ -1229,14 +1217,8 @@ function CustomSoftwareBreadcrumbStructuredData() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Services",
-        item: `${baseUrl}/services`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
         name: "Custom Software Development",
-        item: `${baseUrl}/services/custom-software-development`,
+        item: `${baseUrl}/custom-software-development`,
       },
     ],
   };
@@ -1255,7 +1237,7 @@ function CustomSoftwareServiceStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/services/custom-software-development#service`,
+    "@id": `${baseUrl}/custom-software-development#service`,
     name: "Custom Software Development",
     serviceType: "Custom Software Development",
     description:
@@ -1271,7 +1253,7 @@ function CustomSoftwareServiceStructuredData() {
       "United Arab Emirates",
       "Global",
     ],
-    url: `${baseUrl}/services/custom-software-development`,
+    url: `${baseUrl}/custom-software-development`,
   };
 
   return (
@@ -2952,6 +2934,10 @@ function WorkflowAutomationPage() {
   );
 }
 
+// Services live at the site root (/erp-payroll-automation); any other
+// top-level path that isn't a real page stays a 404.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
@@ -2974,7 +2960,7 @@ export async function generateMetadata({
     },
     description: seo?.description || service.summary,
     alternates: {
-      canonical: `/services/${service.slug}`,
+      canonical: `/${service.slug}`,
     },
   };
 }

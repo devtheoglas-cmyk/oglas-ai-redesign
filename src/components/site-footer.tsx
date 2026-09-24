@@ -28,15 +28,17 @@ export function SiteFooter() {
             Pages
           </h2>
           <div className="mt-6 grid gap-3.5">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="w-fit text-[15px] text-white/80 transition hover:text-white"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navigation
+              .filter((item) => !item.servicesMenu)
+              .map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="w-fit text-[15px] text-white/80 transition hover:text-white"
+                >
+                  {item.label}
+                </Link>
+              ))}
             <Link
               href="/privacy"
               className="w-fit text-[15px] text-white/80 transition hover:text-white"
@@ -54,7 +56,7 @@ export function SiteFooter() {
             {services.slice(0, 5).map((service) => (
               <Link
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={`/${service.slug}`}
                 className="w-fit text-[15px] text-white/80 transition hover:text-white"
               >
                 {service.title}

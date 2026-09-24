@@ -33,8 +33,15 @@ export const company = {
     "UAE-based custom software and AI solutions partner for companies building smarter operations across global markets.",
 };
 
-export const navigation = [
-  { href: "/services", label: "Services" },
+export type NavItem = {
+  href: string;
+  label: string;
+  /** Rendered as the services dropdown instead of a plain link. */
+  servicesMenu?: boolean;
+};
+
+export const navigation: NavItem[] = [
+  { href: "/#services", label: "Services", servicesMenu: true },
   { href: "/industries", label: "Industries" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/insights", label: "Insights" },
@@ -525,14 +532,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "ERP & Payroll Solutions",
         icon: CircuitBoard,
-        href: "/services/erp-payroll-automation",
+        href: "/erp-payroll-automation",
         summary:
           "Manage HR, payroll, attendance, approvals, and core operations in one place.",
       },
       {
         title: "Workflow Automation",
         icon: Workflow,
-        href: "/services/workflow-automation",
+        href: "/workflow-automation",
         summary:
           "Automate approvals, tasks, and processes to save time and reduce manual work.",
       },
@@ -548,14 +555,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "Employee Self-Service & HR",
         icon: UsersRound,
-        href: "/services/ess-hr-portals",
+        href: "/ess-hr-portals",
         summary:
           "Self-service portals for requests, documents, leave, and HR communication.",
       },
       {
         title: "AI Assistants & Chatbots",
         icon: Bot,
-        href: "/services/ai-chatbots-knowledge-assistants",
+        href: "/ai-chatbots-knowledge-assistants",
         summary:
           "Instant answers and support for employees and customers, anytime they need it.",
       },
@@ -571,14 +578,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "AI Dashboards & Insights",
         icon: LineChart,
-        href: "/services/ai-dashboards-decision-intelligence",
+        href: "/ai-dashboards-decision-intelligence",
         summary:
           "Real-time dashboards and predictive insights to track performance and spot opportunities.",
       },
       {
         title: "Intelligent Document Processing",
         icon: FileScan,
-        href: "/services/ai-document-processing",
+        href: "/ai-document-processing",
         summary:
           "Extract, classify, and process documents accurately with AI-powered automation.",
       },
@@ -594,14 +601,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "Computer Vision Solutions",
         icon: Camera,
-        href: "/services/intelligent-computer-vision",
+        href: "/intelligent-computer-vision",
         summary:
           "Use intelligent vision to improve safety, monitoring, compliance, and operations.",
       },
       {
         title: "Marketing Automation",
         icon: Megaphone,
-        href: "/services/marketing-automation",
+        href: "/marketing-automation",
         summary:
           "Automate campaigns, lead nurturing, and customer journeys to drive better engagement.",
       },

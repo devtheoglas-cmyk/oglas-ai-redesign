@@ -37,7 +37,7 @@ ${services
   .map(
     (service) => `### ${service.title}
 
-URL: ${baseUrl}/services/${service.slug}
+URL: ${baseUrl}/${service.slug}
 
 Summary: ${service.summary}
 
