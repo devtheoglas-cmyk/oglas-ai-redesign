@@ -55,6 +55,10 @@ export const metadata: Metadata = {
     description:
       "Software built around real business operations. ERP, payroll, workflow automation, computer vision, and AI dashboards.",
   },
+  // Google Search Console ownership check for oglas-ai.com.
+  verification: {
+    google: "UrDzYM4fLB_toMau8facjgTDHkQ4cVFVq-RkRoPvGD8",
+  },
   robots: {
     index: true,
     follow: true,
