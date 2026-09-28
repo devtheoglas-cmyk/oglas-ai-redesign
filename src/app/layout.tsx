@@ -33,7 +33,7 @@ const arabic = IBM_Plex_Sans_Arabic({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.oglasai.com"),
+  metadataBase: new URL("https://www.oglas-ai.com"),
   title: {
     default: "Oglas AI | Custom Software Development & Practical AI",
     template: "%s | Oglas AI",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Oglas AI",
     description:
       "Custom software and AI integrated solutions for companies in the UAE and global markets.",
-    url: "https://www.oglasai.com",
+    url: "https://www.oglas-ai.com",
     siteName: "Oglas AI",
     locale: "en_US",
     type: "website",

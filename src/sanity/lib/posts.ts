@@ -100,7 +100,7 @@ const postSlugsQuery = groq`
   }
 `;
 
-const SITE_ORIGIN = "https://www.oglasai.com";
+const SITE_ORIGIN = "https://www.oglas-ai.com";
 
 export function resolveCanonicalPath(canonicalUrl: string | undefined, fallbackPath: string): string {
   if (!canonicalUrl) return fallbackPath;

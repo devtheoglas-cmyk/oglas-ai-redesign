@@ -1076,7 +1076,7 @@ const customSoftwareFaqs = [
   },
 ];
 
-const baseUrl = "https://www.oglasai.com";
+const baseUrl = "https://www.oglas-ai.com";
 
 function BreadcrumbStructuredData() {
   const data = {

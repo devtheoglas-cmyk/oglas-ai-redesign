@@ -38,7 +38,7 @@ import { staticPageSeo } from "@/content/seo";
 export const revalidate = 60;
 
 const seo = staticPageSeo["/about"];
-const baseUrl = "https://www.oglasai.com";
+const baseUrl = "https://www.oglas-ai.com";
 
 export const metadata: Metadata = {
   title: { absolute: seo.title! },

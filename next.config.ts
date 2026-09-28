@@ -25,10 +25,11 @@ const nextConfig: NextConfig = {
   ],
   async redirects() {
     return [
-      { source: "/company", destination: "/about", permanent: true },
+      // 301 (not Next's default 308) so search engines treat these as moved permanently.
+      { source: "/company", destination: "/about", statusCode: 301 },
       // Services moved to the site root and into the header dropdown.
-      { source: "/services", destination: "/#services", permanent: true },
-      { source: "/services/:slug", destination: "/:slug", permanent: true },
+      { source: "/services", destination: "/#services", statusCode: 301 },
+      { source: "/services/:slug", destination: "/:slug", statusCode: 301 },
     ];
   },
 };

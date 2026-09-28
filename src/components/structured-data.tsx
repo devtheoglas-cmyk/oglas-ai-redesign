@@ -1,7 +1,7 @@
 import { company, industries, services } from "@/content/site";
 import type { PublishedPost } from "@/sanity/lib/posts";
 
-const baseUrl = "https://www.oglasai.com";
+const baseUrl = "https://www.oglas-ai.com";
 
 function jsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
