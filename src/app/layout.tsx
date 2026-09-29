@@ -56,8 +56,13 @@ export const metadata: Metadata = {
       "Software built around real business operations. ERP, payroll, workflow automation, computer vision, and AI dashboards.",
   },
   // Google Search Console ownership check for oglas-ai.com.
+  // `other` carries Pinterest's domain-verification tag
+  // (<meta name="p:domain_verify" ...>), which has no dedicated field.
   verification: {
     google: "UrDzYM4fLB_toMau8facjgTDHkQ4cVFVq-RkRoPvGD8",
+    other: {
+      "p:domain_verify": "b833133023b7941eddd0dd97edafa520",
+    },
   },
   robots: {
     index: true,
