@@ -60,7 +60,7 @@ const workflowFaqs = [
   {
     question: "What is custom workflow automation?",
     answer:
-      "Custom workflow automation is the process of designing software workflows around a company's specific processes, approval rules, systems, and business requirements. It can automate repetitive tasks such as approvals, notifications, document routing, data movement, and internal requests, helping teams reduce manual work and keep processes moving.",
+      "Custom workflow automation uses software to automate business processes based on your specific workflows, rules, approvals, systems, and team responsibilities. Instead of forcing your business into a fixed process, the automation is designed around how your organization operates.",
   },
   {
     question: "What business processes can be automated?",
@@ -120,7 +120,7 @@ const workflowTeams = [
     title: "HR",
     subtitle: "Automate everyday employee processes",
     description:
-      "Streamline leave requests, employee onboarding, document collection, approvals, attendance workflows, and internal HR requests.",
+      "Streamline leave requests, employee onboarding, document collection, approvals, and HR tasks with automated workflows.",
     icon: UsersRound,
   },
   {
@@ -163,7 +163,7 @@ const workflowSteps = [
     title: "Understand",
     subtitle: "Start with how your business actually works",
     description:
-      "We map your existing processes, identify repetitive work, understand approval rules, and determine where automation can create the most value.",
+      "We map your existing processes, identify manual bottlenecks, understand business rules, and define where automation can create the most value.",
   },
   {
     number: "02",
@@ -2666,8 +2666,8 @@ function WorkflowAutomationPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
               Automate approvals, document routing, notifications, and repetitive
-              tasks with workflows built around the way your business actually
-              operates.
+              tasks with workflow automation solutions built around how your
+              business operates.
             </p>
             <Link
               href="/contact"
@@ -2718,10 +2718,10 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"Automate the Work That Slows Your Business Down"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
-            Oglas AI provides workflow automation services built around the way your
-            business operates. We connect people, processes, documents, and business
-            systems to reduce repetitive manual work and keep tasks moving without
-            constant follow-ups.
+            We design workflow automation solutions that reduce manual work, connect
+            business processes, and keep tasks moving across your organization. From
+            approvals and document routing to notifications and task assignments, we
+            automate repetitive workflows around how your teams work.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -2752,10 +2752,10 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"Workflow Automation Across Your Business"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
-            Different teams have different processes, but the goal is the same: keep
-            work moving without relying on repetitive manual follow-ups. Oglas AI
-            delivers business workflow automation across departments while adapting
-            the system to your existing processes and business rules.
+            Business workflow automation can connect processes across HR, finance,
+            operations, sales, marketing, and management. Oglas AI builds workflows
+            around your existing systems, business rules, approvals, and team
+            responsibilities.
           </p>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-5">
@@ -2798,9 +2798,9 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"How Oglas AI Builds Workflow Automation"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
-            Every business works differently. Instead of forcing your processes into a
-            fixed workflow, Oglas AI designs workflow automation solutions around your
-            existing operations, systems, and business rules.
+            Every business has different processes, systems, and rules. Our workflow
+            automation services start by understanding how your business operates,
+            then designing and integrating workflows around those requirements.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -2837,12 +2837,9 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"Why Choose Custom Workflow Automation?"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
-            Generic automation tools can work well for straightforward processes. But
-            when workflows involve multiple teams, approval rules, existing business
-            systems, or exceptions, a solution built around your operations can provide
-            much greater control. As a workflow automation company, Oglas AI designs
-            custom workflows around your existing processes, systems, approval
-            structures, and business rules.
+            Off-the-shelf automation software may not fit the way your business
+            actually works. Custom workflow automation lets you build around your
+            processes, systems, rules, and operational requirements.
           </p>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             AI workflow automation can further enhance these workflows by helping
