@@ -84,7 +84,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "ai-dashboards-decision-intelligence": {
     title: "AI Dashboard Services Dubai | Oglas AI",
     description:
-      "Oglas AI provides AI dashboard services in Dubai and across the UAE, connecting business data with AI-powered insights, forecasting, alerts and decision intelligence.",
+      "Oglas AI provides AI dashboard services in Dubai and the UAE, connecting business data with AI-powered insights, forecasting, alerts, and decision support.",
   },
   "ai-document-processing": {
     title: "Intelligent Document Processing (IDP) | Oglas AI",
