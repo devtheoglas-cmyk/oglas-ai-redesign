@@ -2837,9 +2837,12 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"Why Choose Custom Workflow Automation?"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
-            Off-the-shelf automation software may not fit the way your business
-            actually works. Custom workflow automation lets you build around your
-            processes, systems, rules, and operational requirements.
+            Generic automation tools can work well for straightforward processes. But
+            when workflows involve multiple teams, approval rules, existing business
+            systems, or exceptions, off-the-shelf automation software may not fit the
+            way your business actually works. As a workflow automation company, Oglas
+            AI designs custom workflows around your existing processes, systems,
+            approval structures, and business rules.
           </p>
           <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
             AI workflow automation can further enhance these workflows by helping
