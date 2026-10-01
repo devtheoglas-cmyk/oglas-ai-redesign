@@ -135,7 +135,7 @@ export const services: Service[] = [
     title: "Workflow Automation",
     eyebrow: "Process systems",
     summary:
-      "Approval flows, notifications, document routing, and task automation for teams with repeated manual work.",
+      "Workflow automation for approvals, notifications, document routing, and repetitive business processes.",
     description:
       "Oglas AI maps the steps your teams repeat every day and converts them into reliable digital workflows. We automate approvals, reminders, handoffs, document checks, and exception handling while keeping people in control of important decisions.",
     icon: Workflow,
@@ -526,7 +526,7 @@ export const helpSlides: HelpSlide[] = [
     eyebrow: "01 · Simplify",
     title: "Simplify Everyday Work",
     description:
-      "From payroll to approvals and daily operations, we build software that removes unnecessary complexity and helps your team get more done with less effort.",
+      "We build business software and workflow automation solutions that reduce repetitive work across payroll, approvals, HR, and daily operations.",
     closer: "Streamlined operations. Happier teams. Better results.",
     points: [
       {
@@ -572,7 +572,7 @@ export const helpSlides: HelpSlide[] = [
     eyebrow: "03 · Decide",
     title: "Turn Data Into Decisions",
     description:
-      "We help you make sense of your business data by transforming information into insights that guide smarter, faster decisions.",
+      "Connect your business data to AI dashboards and business intelligence solutions that give leadership clearer operational visibility.",
     closer: "Better insights. Stronger, faster decisions.",
     points: [
       {

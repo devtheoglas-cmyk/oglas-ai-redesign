@@ -12,7 +12,7 @@ import { navigation, services } from "@/content/site";
 // The services overview that used to be its own page now opens the dropdown.
 const servicesIntro = {
   eyebrow: "Services",
-  title: "Custom software and AI services built for operational depth",
+  title: "Custom Software & AI Solutions for Businesses in Dubai & UAE",
   summary:
     "Start with one painful bottleneck or connect a full operating platform across HR, finance, operations, sales, marketing, and management.",
 };

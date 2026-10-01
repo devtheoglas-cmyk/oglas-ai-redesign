@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, Globe2, Plus, Quote } from "lucide-react";
+import { ArrowRight, CheckCircle2, Plus, Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRule } from "@/components/arrow-rule";
@@ -11,7 +11,6 @@ import { SplitTitle } from "@/components/split-title";
 import { FaqStructuredData } from "@/components/structured-data";
 import {
   caseStudies,
-  company,
   helpSlides,
   homepageFaqs,
   industries,
@@ -55,14 +54,14 @@ export default async function Home() {
         <div className="relative mx-auto flex min-h-[max(40rem,100svh)] w-full max-w-[1160px] flex-col justify-end px-4 pb-14 pt-36 md:pb-20">
           <div className="rise max-w-4xl">
             <h1 className="title-caps text-[2.55rem] text-white sm:text-6xl lg:text-[4.6rem]">
-              <SplitTitle>Software Built Around Real Business Operations</SplitTitle>
+              <SplitTitle at={6}>Custom Software &amp; AI Built Around Real Business Operations</SplitTitle>
             </h1>
             <ArrowRule className="mt-9 text-white/70" />
             <p className="mt-8 max-w-xl text-base leading-8 text-white/85 md:text-[17px]">
-              Our custom software development covers ERP systems, AI-powered solutions,
-              workflow automation, and business applications designed around your unique
-              business processes — helping you reduce manual work, improve operational
-              efficiency, and scale with confidence.
+              Oglas AI provides custom software development and practical AI solutions
+              for businesses in Dubai, the UAE, and global markets. We build ERP systems,
+              workflow automation, business applications, dashboards, portals, and
+              AI-powered solutions around how your business actually operates.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="btn btn-light">
@@ -76,12 +75,8 @@ export default async function Home() {
           </div>
 
           <div className="rise mt-12 flex flex-col gap-1.5 text-sm leading-6 text-white/85 [animation-delay:260ms] md:absolute md:bottom-20 md:right-4 md:mt-0 md:items-end md:text-right">
-            <span className="uppercase tracking-[0.14em] text-white/70">
-              Custom Software &amp; AI Solutions
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <Globe2 className="h-4 w-4 text-white/70" />
-              UAE-based · Globally available
+            <span className="uppercase tracking-[0.14em] text-white/80">
+              Custom Software &amp; AI Solutions in Dubai, UAE
             </span>
           </div>
         </div>
@@ -212,7 +207,7 @@ export default async function Home() {
             <SectionHeading
               eyebrow="Industries"
               title="Software Designed for the Way You Do Business"
-              summary="Every industry has its own way of working, and the right software should reflect that. We build custom solutions that fit your workflows, solve industry-specific challenges, and help your business grow with confidence."
+              summary="Every industry has its own way of working, and the right software should reflect that. We build custom software solutions for UAE businesses, fitting industry-specific workflows, solving operational challenges, and helping teams work more efficiently."
               tone="dark"
             />
             <div className="relative -mb-40 hidden justify-self-end lg:block">
@@ -228,7 +223,17 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="relative mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="relative mt-16 max-w-3xl">
+            <h3 className="text-2xl font-light text-white md:text-[1.75rem]">
+              Custom software solutions for UAE businesses across industries
+            </h3>
+            <p className="mt-3 text-base leading-8 text-white/85">
+              From manpower and manufacturing to security, trading, healthcare, facility
+              management, and retail, we build software around industry-specific workflows.
+            </p>
+          </div>
+
+          <div className="relative mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((industry) => (
               <div
                 key={industry.slug}
@@ -416,9 +421,9 @@ export default async function Home() {
             </h2>
             <ArrowRule className="mt-8 text-white/70" />
             <p className="mt-8 text-base leading-8 text-white/85">
-              Share a short brief and we will follow up with next steps, timelines,
-              and a tailored engagement plan for {company.location}-based and global
-              operations.
+              Looking for custom software development in Dubai or the UAE? Share a
+              short brief and we&apos;ll map the right software, automation, or AI
+              solution around your business.
             </p>
             <ul className="mt-9 grid gap-3.5">
               {[
