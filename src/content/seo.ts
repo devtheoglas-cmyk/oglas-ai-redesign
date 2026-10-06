@@ -72,9 +72,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
     "Oglas AI provides workflow automation services in Dubai, UAE, for approvals, HR, finance, CRM, document routing, and business operations.",
 },
   "marketing-automation": {
-    title: "Marketing Automation Solutions | Oglas AI",
+    title: "Marketing Automation Services in Dubai & UAE | Oglas AI",
     description:
-      "Streamline lead management, campaign workflows, CRM updates, and reporting with custom marketing automation solutions designed to improve efficiency and customer engagement.",
+      "Oglas AI builds marketing automation solutions in Dubai and the UAE, connecting lead capture, CRM, follow-ups, campaigns, notifications and reporting.",
   },
   "ess-hr-portals": {
     title: "Employee Self-Service (ESS) & HR Portals | Oglas AI",
