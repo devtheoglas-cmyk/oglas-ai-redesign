@@ -377,7 +377,7 @@ export function MarketingAutomationPage() {
           </div>
 
           <div className="glass-light mt-10 rounded-[1.75rem] p-6 md:p-9">
-            <h3 className="sr-only">{flowChain.join(" → ")}</h3>
+            <p className="sr-only">{flowChain.join(" → ")}</p>
             <FlowChips items={flowChain} />
           </div>
 
