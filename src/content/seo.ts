@@ -57,9 +57,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Oglas AI provides custom software development in Dubai and across the UAE, building business applications, ERP, CRM, integrations and AI solutions.",
   },
   "erp-payroll-automation": {
-    title: "ERP & Payroll Software Solutions | Oglas AI",
+    title: "ERP & Payroll Automation in Dubai & UAE | Oglas AI",
     description:
-      "Streamline HR and business operations with custom ERP and payroll software. Oglas AI builds solutions for payroll, attendance, approvals, leave management, and workforce automation.",
+      "Oglas AI builds customized ERP and payroll automation solutions in Dubai and the UAE, connecting HR, attendance, payroll, approvals, reporting and business systems.",
   },
   "intelligent-computer-vision": {
     title: "Computer Vision Solutions | Oglas AI",

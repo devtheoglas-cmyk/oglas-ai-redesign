@@ -51,6 +51,7 @@ import { FaqStructuredData } from "@/components/structured-data";
 import { SplitTitle } from "@/components/split-title";
 import Image from "next/image";
 import { HeroBackdrop } from "@/components/page-hero";
+import { ErpPayrollPage } from "./erp-payroll";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -2987,6 +2988,10 @@ export default async function ServiceDetailPage({
 
   if (slug === "ai-dashboards-decision-intelligence") {
     return <AiDashboardsPage />;
+  }
+
+  if (slug === "erp-payroll-automation") {
+    return <ErpPayrollPage />;
   }
 
   return (
