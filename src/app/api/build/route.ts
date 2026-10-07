@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { sendEmail } from "@/lib/email";
 
 // Build Lab submissions. "lead" fires when the visitor enters the lab (so a
 // lead is captured even if they leave halfway); "blueprint" fires when they
@@ -133,7 +134,7 @@ export async function POST(request: Request) {
   ].join("\n");
 
   try {
-    const { error } = await resend.emails.send({
+    const { error } = await sendEmail(resend, {
       from,
       to,
       replyTo: lead.email,

@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { sendEmail } from "@/lib/email";
 
 type ContactPayload = {
   name?: string;
@@ -83,7 +84,7 @@ export async function POST(request: Request) {
   const subject = `New Oglas AI consultation: ${payload.projectType}`;
 
   try {
-    const { data, error } = await resend.emails.send({
+    const { data, error } = await sendEmail(resend, {
       from,
       to,
       replyTo: payload.email,
