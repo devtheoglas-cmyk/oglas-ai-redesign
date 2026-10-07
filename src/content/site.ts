@@ -15,6 +15,7 @@ import {
   LineChart,
   Megaphone,
   Network,
+  RadioTower,
   Rocket,
   ShieldCheck,
   Store,
@@ -129,6 +130,28 @@ export const services: Service[] = [
       "Camera analytics dashboards",
     ],
     fit: "Best for security providers, industrial sites, facilities, warehouses, clinics, and operations teams with camera infrastructure.",
+  },
+  {
+    slug: "industrial-iot-integration",
+    title: "Industrial IoT Integration",
+    eyebrow: "Connected field devices",
+    summary:
+      "Connect sensors, weather stations, alarms and intercoms to one live dashboard with automated alerts and reports.",
+    description:
+      "Oglas AI builds the software that connects field hardware such as sensors, weather stations, gateways, intercoms, warning lights and display screens to one live system. It watches every reading, alerts the right people the moment something changes, and keeps a full record of what happened, in your private cloud, on-premise or fully offline.",
+    icon: RadioTower,
+    outcomes: [
+      "Automatic alerts instead of manual readings and phone calls",
+      "One live view of every site, device and reading",
+      "A full, auditable history of readings, alerts and changes",
+    ],
+    capabilities: [
+      "Device integration (API, Modbus, MQTT, gateways)",
+      "Live monitoring dashboards",
+      "Rule-based alerting with lights, intercom, email and SMS",
+      "Reports, audit trail and optional AI insights",
+    ],
+    fit: "Best for industrial, oil and gas, construction, port, facility and utility sites, and for system integrators who need a software partner.",
   },
   {
     slug: "workflow-automation",

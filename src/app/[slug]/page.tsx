@@ -53,6 +53,7 @@ import Image from "next/image";
 import { HeroBackdrop } from "@/components/page-hero";
 import { ErpPayrollPage } from "./erp-payroll";
 import { MarketingAutomationPage } from "./marketing-automation";
+import { IndustrialIotPage } from "./industrial-iot";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -2997,6 +2998,10 @@ export default async function ServiceDetailPage({
 
   if (slug === "marketing-automation") {
     return <MarketingAutomationPage />;
+  }
+
+  if (slug === "industrial-iot-integration") {
+    return <IndustrialIotPage />;
   }
 
   return (
