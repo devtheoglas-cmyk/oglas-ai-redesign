@@ -556,3 +556,340 @@
     animation: none;
   }
 }
+
+/* ---------- Build Lab (/build) ---------- */
+
+@layer components {
+  .lab-space {
+    position: relative;
+    isolation: isolate;
+    color: #fff;
+    background-color: #02041c;
+    background-image:
+      radial-gradient(52rem 36rem at 70% 38%, rgb(30 56 255 / 0.32), rgb(30 56 255 / 0) 70%),
+      radial-gradient(36rem 28rem at 8% 0%, rgb(120 140 255 / 0.22), rgb(120 140 255 / 0) 70%),
+      radial-gradient(40rem 30rem at 50% 115%, rgb(0 140 255 / 0.22), rgb(0 140 255 / 0) 70%),
+      linear-gradient(180deg, #030628 0%, #02041c 60%, #010214 100%);
+  }
+
+  /* Perspective floor grid that slowly flows towards the viewer. */
+  .lab-floor {
+    position: absolute;
+    inset: auto -40% -10% -40%;
+    height: 55%;
+    z-index: -1;
+    background-image:
+      linear-gradient(rgb(143 214 255 / 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(143 214 255 / 0.16) 1px, transparent 1px);
+    background-size: 56px 56px;
+    transform: perspective(520px) rotateX(64deg);
+    transform-origin: 50% 100%;
+    mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+    animation: lab-floor 7s linear infinite;
+    pointer-events: none;
+  }
+
+  .lab-scan {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background: repeating-linear-gradient(180deg, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 4px);
+  }
+
+  .lab-scan::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 30%;
+    background: linear-gradient(180deg, transparent, rgb(143 214 255 / 0.07), transparent);
+    animation: lab-sweep 9s linear infinite;
+  }
+
+  /* Holographic glass panel with corner brackets. */
+  .lab-panel {
+    position: relative;
+    border: 1px solid rgb(143 214 255 / 0.22);
+    background: linear-gradient(160deg, rgb(47 76 246 / 0.16), rgb(6 12 70 / 0.42));
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.06),
+      0 40px 90px -50px rgb(0 40 255 / 0.9);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  .lab-panel::before,
+  .lab-panel::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #8fd6ff;
+    pointer-events: none;
+  }
+
+  .lab-panel::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-top-left-radius: inherit;
+  }
+
+  .lab-panel::after {
+    right: -1px;
+    bottom: -1px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-bottom-right-radius: inherit;
+  }
+
+  .lab-mono {
+    font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Menlo, Consolas, monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .lab-input {
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(143 214 255 / 0.22);
+    background: rgb(2 6 40 / 0.6);
+    padding-inline: 1rem;
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  }
+
+  .lab-input::placeholder {
+    color: rgb(213 219 255 / 0.4);
+  }
+
+  .lab-input:focus {
+    border-color: #8fd6ff;
+    background: rgb(10 20 90 / 0.6);
+    box-shadow: 0 0 0 4px rgb(143 214 255 / 0.14), 0 0 24px -4px rgb(143 214 255 / 0.5);
+  }
+
+  /* Selectable option tiles. */
+  .lab-option {
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(143 214 255 / 0.16);
+    background: rgb(8 16 80 / 0.35);
+    padding: 1rem 1.1rem;
+    text-align: left;
+    transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.25s var(--ease-out-expo);
+  }
+
+  .lab-option:hover {
+    border-color: rgb(143 214 255 / 0.45);
+    transform: translateY(-2px);
+  }
+
+  .lab-option:focus-visible {
+    outline: 2px solid #8fd6ff;
+    outline-offset: 2px;
+  }
+
+  .lab-option[aria-pressed="true"] {
+    border-color: #8fd6ff;
+    background: linear-gradient(140deg, rgb(47 76 246 / 0.45), rgb(12 41 223 / 0.25));
+    box-shadow: 0 0 0 1px rgb(143 214 255 / 0.4), 0 0 34px -8px rgb(143 214 255 / 0.65);
+  }
+
+  .lab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3rem;
+    border-radius: 999px;
+    padding: 0 1.5rem;
+    font-size: 15px;
+    font-weight: 540;
+    color: #02041c;
+    background: linear-gradient(120deg, #ffffff, #c9ecff);
+    box-shadow: 0 0 30px -6px rgb(143 214 255 / 0.8);
+    transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s, opacity 0.2s;
+  }
+
+  .lab-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 0 44px -4px rgb(143 214 255 / 0.95);
+  }
+
+  .lab-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .lab-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 3rem;
+    border-radius: 999px;
+    border: 1px solid rgb(143 214 255 / 0.3);
+    padding: 0 1.25rem;
+    font-size: 15px;
+    color: rgb(255 255 255 / 0.85);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .lab-btn-ghost:hover {
+    border-color: #8fd6ff;
+    color: #fff;
+  }
+
+  .lab-spin,
+  .lab-spin-rev,
+  .lab-spin-fast {
+    transform-box: view-box;
+    transform-origin: 50% 50%;
+  }
+
+  .lab-spin {
+    animation: spin-slow 60s linear infinite;
+  }
+
+  .lab-spin-rev {
+    animation: spin-slow 40s linear infinite reverse;
+  }
+
+  .lab-spin-fast {
+    animation: spin-slow 12s linear infinite;
+  }
+
+  .lab-flow {
+    stroke-dasharray: 4 7;
+    animation: lab-flow 1.4s linear infinite;
+  }
+
+  .lab-pop {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: lab-pop 0.7s var(--ease-out-expo) both;
+  }
+
+  .lab-fade {
+    animation: lab-fade 0.6s var(--ease-out-expo) both;
+  }
+
+  .lab-pulse {
+    animation: lab-pulse 2.6s ease-in-out infinite;
+  }
+
+  .lab-caret::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    margin-left: 2px;
+    vertical-align: -0.12em;
+    background: #8fd6ff;
+    animation: lab-blink 1s steps(1) infinite;
+  }
+
+  .lab-assemble {
+    animation: lab-assemble 2.4s var(--ease-out-expo) both;
+  }
+}
+
+@keyframes lab-floor {
+  to {
+    background-position: 0 56px;
+  }
+}
+
+@keyframes lab-sweep {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(400%);
+  }
+}
+
+@keyframes lab-flow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes lab-pop {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes lab-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lab-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes lab-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes lab-assemble {
+  0% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  45% {
+    transform: scale(0.82) rotate(-120deg);
+    filter: brightness(1.9);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-floor,
+  .lab-scan::after,
+  .lab-spin,
+  .lab-spin-rev,
+  .lab-spin-fast,
+  .lab-flow,
+  .lab-pop,
+  .lab-fade,
+  .lab-pulse,
+  .lab-caret::after,
+  .lab-assemble {
+    animation: none;
+  }
+}

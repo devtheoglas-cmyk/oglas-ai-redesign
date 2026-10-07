@@ -39,6 +39,11 @@ export const staticPageSeo: Record<string, SeoEntry> = {
     description:
       "Oglas AI is a UAE-based custom software and practical AI company building ERP, automation, computer vision, and AI systems designed around how your business actually works.",
   },
+  "/build": {
+    title: "Build Your Custom Software | Oglas AI Build Lab",
+    description:
+      "Step into the Oglas AI Build Lab: choose a core, add modules, experience and AI, and watch your custom business software assemble in real time.",
+  },
   "/contact": {
     title: "Contact Oglas AI | Custom Software & AI Solutions",
     description:
