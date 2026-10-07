@@ -4,6 +4,7 @@ import {
   BarChart3,
   BellRing,
   Building2,
+  Check,
   Cloud,
   ClipboardCheck,
   Compass,
@@ -34,6 +35,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { ArrowRule } from "@/components/arrow-rule";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
@@ -43,38 +45,57 @@ import { serviceSeo } from "@/content/seo";
 const baseUrl = "https://www.oglas-ai.com";
 const slug = "industrial-iot-integration";
 
-type Card = { icon: LucideIcon; title: string; copy: string };
+/** A card's copy is one or more paragraphs; paragraphs may hold <strong> keywords. */
+type Card = { icon: LucideIcon; title: string; copy: ReactNode[]; list?: string[] };
 
 const capabilities: Card[] = [
   {
     icon: Cpu,
     title: "Device Integration",
-    copy: "Connect your hardware through its API, Modbus, MQTT, HTTP, serial gateways or vendor SDKs, so different brands and device types report into one system.",
+    copy: [
+      "Connect sensors, weather stations, gateways and other industrial devices through APIs, Modbus, MQTT, HTTP, serial gateways or vendor SDKs.",
+      "Our IoT device integration approach allows different hardware brands and device types to report into one connected system.",
+    ],
   },
   {
     icon: Gauge,
     title: "Live Monitoring Dashboard",
-    copy: "See every site, device and reading on one screen, updating in real time, with clear status for each location.",
+    copy: [
+      "Monitor sites, devices and readings from one industrial IoT dashboard.",
+      "See real-time device status, locations, readings and operational conditions through a clear monitoring interface.",
+    ],
   },
   {
     icon: Siren,
     title: "Automated Alerting",
-    copy: "Rule-based risk zones (green, yellow, orange, red) automatically trigger warning lights, intercom announcements, email and SMS when conditions change.",
+    copy: [
+      "Define transparent rules that turn readings into risk levels such as green, yellow, orange and red.",
+      "Automated alerts can trigger warning lights, intercom announcements, email or SMS notifications when defined conditions are reached.",
+    ],
   },
   {
     icon: Monitor,
     title: "Control Room & Site Displays",
-    copy: "Full-screen displays for control rooms, canteens and rest areas, with a screen manager for headings, banners and safety messages.",
+    copy: [
+      "Give control rooms and site teams a clear view of current conditions.",
+      "Manage full-screen displays for control rooms, canteens, rest areas and other operational locations with readings, banners and safety messages.",
+    ],
   },
   {
     icon: FileText,
     title: "Reports & Audit Trail",
-    copy: "Live and historic reports, charts, time-in-zone summaries and Excel or PDF export, backed by a log of every reading, alert and settings change.",
+    copy: [
+      "Access live and historical industrial monitoring data through reports, charts and time-in-zone summaries.",
+      "Export data to Excel or PDF and maintain a record of readings, alerts and settings changes for reporting and audits.",
+    ],
   },
   {
     icon: UsersRound,
     title: "Users, Roles & System Health",
-    copy: "Role-based access for administrators, safety teams, managers and viewers, with alerts when a device goes offline and checks that flag faulty sensor readings.",
+    copy: [
+      "Manage access for administrators, safety teams, managers and viewers through role-based permissions.",
+      "The system can also identify offline devices and potentially faulty or abnormal sensor readings so teams are not relying on incomplete data.",
+    ],
   },
 ];
 
@@ -97,27 +118,41 @@ const howItWorks: Card[] = [
   {
     icon: Activity,
     title: "Collect",
-    copy: "A collector reads every device around the clock. If a device goes quiet, the system treats it as an alarm, not as “all clear”.",
+    copy: [
+      "The collector reads data from connected devices around the clock.",
+      "A device that stops communicating can be treated as an alarm condition rather than automatically assuming everything is normal.",
+    ],
   },
   {
     icon: ClipboardCheck,
     title: "Check",
-    copy: "Every reading is checked for impossible values, so a broken sensor is flagged instead of trusted.",
+    copy: [
+      "Each reading is checked for impossible or abnormal values.",
+      "If a sensor appears to be malfunctioning, it can be flagged rather than allowing unreliable data to be treated as valid.",
+    ],
   },
   {
     icon: ShieldCheck,
     title: "Decide",
-    copy: "Clear, auditable rules decide the risk zone. The system is quick to warn and slow to relax, so alarms do not flicker on and off.",
+    copy: [
+      "Clear, auditable rules determine the applicable risk zone.",
+      "The system can be configured to warn quickly and relax conditions more slowly, helping avoid unnecessary alert fluctuations.",
+    ],
   },
   {
     icon: BellRing,
     title: "Act",
-    copy: "The right people and devices are triggered automatically: warning lights, announcements, email and SMS.",
+    copy: [
+      "The right people or connected devices can be triggered automatically.",
+      "This can include warning lights, announcements, email notifications, SMS and other configured actions.",
+    ],
   },
   {
     icon: Database,
     title: "Record",
-    copy: "Every reading, alert and settings change is logged, so you can always show what happened and when.",
+    copy: [
+      "Readings, alerts and settings changes are recorded to create a traceable history of system activity.",
+    ],
   },
 ];
 
@@ -125,50 +160,105 @@ const assurances: Card[] = [
   {
     icon: Cloud,
     title: "Deploy Where Your Data Must Stay",
-    copy: "Run the system on your private cloud or on-premise servers so data stays inside your network, as a fully offline installation for sites without internet access, or on cloud hosting where that suits the project.",
+    copy: [
+      <>
+        Deploy your <strong className="font-semibold text-white">industrial IoT solution</strong>{" "}
+        using private cloud, on-premise infrastructure or fully offline environments where
+        required.
+      </>,
+      "Cloud deployment can also be used where it is appropriate for the site and operational requirements.",
+    ],
   },
   {
     icon: ShieldCheck,
     title: "Safety Decisions You Can Explain",
-    copy: "Alerts are driven by clear rules, never a black box, so every alarm can be explained. Screens clearly show “No Live Data” when a device drops, so old readings are never mistaken for live ones, and no other part of the system is allowed to block a safety alert.",
+    copy: [
+      "Safety alerts are driven by clear, auditable rules rather than opaque decision-making.",
+      <>
+        The system can distinguish between live and stale readings and show{" "}
+        <strong className="font-semibold text-white">{"“No Live Data”"}</strong> when a
+        device stops communicating.
+      </>,
+      "A failure in another part of the system should not prevent the configured safety alert from being generated.",
+    ],
   },
   {
     icon: Lock,
     title: "Enterprise-Ready",
-    copy: "Role-based access, audit logs and encrypted connections, designed to support client security reviews and penetration testing. Separate test (UAT) and production environments with documented installation, backup and rollback, and integration with your email gateway, SMS gateway, company login (SSO) and business intelligence (BI) tools.",
+    copy: ["Support operational requirements such as:"],
+    list: [
+      "Role-based access",
+      "Audit logs",
+      "Encrypted connections",
+      "Security reviews",
+      "Penetration testing",
+      "Separate UAT and production environments",
+      "Documented installation",
+      "Backup and rollback procedures",
+      "Email and SMS gateways",
+      "SSO",
+      "BI tool integrations",
+    ],
   },
 ];
+
+function Strong({ children }: { children: ReactNode }) {
+  return <strong className="font-semibold text-onyx">{children}</strong>;
+}
 
 const fits: Card[] = [
   {
     icon: Thermometer,
     title: "Heat Stress & Worker Safety",
-    copy: "TWL, Heat Index and WBGT monitoring with automatic work and rest warnings for outdoor teams.",
+    copy: [
+      <>
+        Monitor <Strong>worker safety</Strong> conditions using TWL, Heat Index and WBGT
+        measurements.
+      </>,
+      "Automated monitoring can support work/rest warnings for outdoor teams based on configured safety rules.",
+    ],
   },
   {
     icon: Factory,
     title: "Oil, Gas & Petrochemical Sites",
-    copy: "Environmental and area monitoring across plants, yards and process areas.",
+    copy: [
+      <>
+        Monitor environmental and area conditions across plants, yards and process areas using
+        connected <Strong>industrial monitoring systems</Strong>.
+      </>,
+    ],
   },
   {
     icon: HardHat,
     title: "Construction & Infrastructure",
-    copy: "Site conditions and outdoor workforce safety monitoring.",
+    copy: [
+      <>
+        Connect site monitoring devices to support <Strong>construction safety monitoring</Strong>,
+        environmental monitoring and outdoor workforce safety.
+      </>,
+    ],
   },
   {
     icon: Ship,
     title: "Ports, Jetties & Logistics",
-    copy: "Weather, wind and site condition monitoring for marine and logistics operations.",
+    copy: ["Monitor weather, wind and site conditions across marine and logistics environments."],
   },
   {
     icon: Building2,
     title: "Facilities & Smart Buildings",
-    copy: "Temperature, air quality, occupancy and alarm monitoring across buildings and facilities.",
+    copy: [
+      "Monitor temperature, air quality, occupancy and alarm conditions across buildings and facilities.",
+    ],
   },
   {
     icon: Network,
     title: "Utilities & Manufacturing",
-    copy: "Equipment and environment monitoring for plants and production lines.",
+    copy: [
+      <>
+        Connect equipment and environmental monitoring across plants and production lines through
+        integrated <Strong>industrial IoT systems</Strong>.
+      </>,
+    ],
   },
 ];
 
@@ -176,22 +266,28 @@ const aiFeatures: Card[] = [
   {
     icon: Activity,
     title: "Sensor Health Checks",
-    copy: "Spot stuck, drifting or impossible readings before they lead to a wrong decision.",
+    copy: ["Identify potentially stuck, drifting or impossible readings across connected devices."],
   },
   {
     icon: BarChart3,
     title: "Daily Summaries",
-    copy: "Plain-language summaries such as “Yesterday Zone A spent 4 hours 20 minutes in orange and 35 minutes in red.”",
+    copy: [
+      "Turn monitoring data into plain-language summaries, such as the amount of time a zone spent in orange or red conditions.",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Short-Term Forecasts",
-    copy: "Early warnings such as “Zone A is expected to reach red around 12:30”, so teams can plan ahead instead of reacting late.",
+    copy: [
+      "Use available historical and live data to identify potential near-term changes, such as a zone that may reach a defined risk level around a particular time.",
+    ],
   },
   {
     icon: MessageSquareText,
     title: "Ask Your Data",
-    copy: "Ask plain-language questions about your monitoring history and get answers without building a report.",
+    copy: [
+      "Allow teams to ask questions in plain language about their monitoring history and operational data.",
+    ],
   },
 ];
 
@@ -199,37 +295,53 @@ const steps: Card[] = [
   {
     icon: Compass,
     title: "Discover",
-    copy: "Map your devices, sites, people, alert rules and reporting needs.",
+    copy: ["Map your devices, sites, users, alert rules and reporting requirements."],
   },
   {
     icon: FileText,
     title: "Specify",
-    copy: "Agree a signed specification so scope, price and timeline are clear.",
+    copy: [
+      "Create a documented specification covering the agreed scope, requirements, pricing and timeline.",
+    ],
   },
   {
     icon: Hammer,
     title: "Build & Simulate",
-    copy: "Build and demonstrate the full system on simulated data, before your hardware even arrives.",
+    copy: [
+      "Build and demonstrate the system using simulated data before connecting the final hardware.",
+    ],
   },
   {
     icon: Cpu,
     title: "Connect",
-    copy: "Bench-test with your hardware, then integrate the devices on site.",
+    copy: [
+      "Bench-test the hardware and integrate devices on site.",
+      <>
+        This can include existing equipment through supported protocols and interfaces such as{" "}
+        <Strong>Modbus, MQTT, APIs and gateways</Strong>.
+      </>,
+    ],
   },
   {
     icon: ClipboardCheck,
     title: "Test",
-    copy: "Your team tests the system in a separate UAT environment and signs off.",
+    copy: [
+      "Your team tests the system in a separate UAT environment before production deployment and sign-off.",
+    ],
   },
   {
     icon: Rocket,
     title: "Go Live",
-    copy: "Install in production and train your users and administrators, with full documentation.",
+    copy: [
+      "Deploy the production system, train users and administrators and provide the required documentation.",
+    ],
   },
   {
     icon: LifeBuoy,
     title: "Support",
-    copy: "Ongoing updates, monitoring and agreed response times through a multi-year maintenance contract (AMC).",
+    copy: [
+      "Continue with system updates, monitoring and agreed support response times through an ongoing maintenance arrangement where required.",
+    ],
   },
 ];
 
@@ -239,59 +351,49 @@ const partnerPoints: Card[] = [
   {
     icon: Handshake,
     title: "White-Label or Co-Branded Delivery",
-    copy: "Deliver the software under your brand or jointly with Oglas AI.",
+    copy: [
+      "Deliver the software under your partner brand or through a joint Oglas AI and partner solution.",
+    ],
   },
   {
     icon: KeyRound,
     title: "Per-Site and Per-Device Licensing",
-    copy: "Each deployment is licensed and tracked, delivered as compiled, licence-protected packages.",
+    copy: ["Support licensing and deployment management at site and device level where required."],
   },
   {
     icon: LifeBuoy,
     title: "Software Support Handled",
-    copy: "Oglas AI supports the software while you focus on the hardware and the client relationship.",
+    copy: [
+      "Oglas AI can manage the software side while the hardware partner continues to focus on the hardware and client relationship.",
+    ],
   },
 ];
 
 export const industrialIotFaqs = [
   {
-    question: "What is industrial IoT integration?",
+    question: "What are Industrial IoT solutions?",
     answer:
-      "Industrial IoT integration connects field devices such as sensors, weather stations, gateways, warning lights and intercoms into one software system. It collects readings automatically, applies alert rules, notifies the right people and keeps a full history for reporting and audits.",
+      "Industrial IoT solutions connect industrial devices such as sensors, weather stations, gateways, warning lights and intercoms to software systems that collect data, monitor conditions, apply rules, trigger alerts and maintain historical records.",
   },
   {
-    question: "Can you work with our existing hardware brand?",
+    question: "Can Oglas AI integrate with our existing industrial hardware?",
     answer:
-      "Yes. If a device shares its data through an API, a network protocol such as Modbus or MQTT, a gateway or a vendor SDK, Oglas AI can integrate it. We start from the manufacturer’s documentation.",
+      "Yes. Oglas AI can integrate with existing hardware where the devices provide supported interfaces such as APIs, Modbus, MQTT, gateways or vendor SDKs. The integration process starts by reviewing the available manufacturer documentation and device capabilities.",
   },
   {
-    question: "Does the system need an internet connection?",
+    question: "Does an Industrial IoT monitoring system need an internet connection?",
     answer:
-      "No. It can run entirely inside your private network or as a fully offline installation. Cloud hosting is also available where it suits the project.",
+      "Not necessarily. Depending on the requirements, the system can operate on a private network, on-premise infrastructure or in a fully offline environment. Cloud deployment is also possible where appropriate.",
   },
   {
-    question: "Can we keep our current dashboard design?",
+    question: "How long does an Industrial IoT integration project take?",
     answer:
-      "Yes. Where your team already uses a familiar interface, it can be recreated so there is little or no retraining.",
+      "Project timelines depend on the hardware, number of sites, integration requirements and site readiness. The existing project framework indicates that some deployments can take approximately 3–6 months from requirements to go-live, depending on these factors.",
   },
   {
-    question: "How long does an industrial IoT integration project take?",
+    question: "What support is available after an Industrial IoT system goes live?",
     answer:
-      "Typically 3 to 6 months from requirements to go-live, depending on hardware delivery and site readiness.",
-  },
-  {
-    question: "Who owns the data?",
-    answer: "You do. The data stays on your infrastructure.",
-  },
-  {
-    question: "What support is available after go-live?",
-    answer:
-      "Oglas AI offers multi-year maintenance contracts with defined response times, regular updates and a yearly system check before the critical season.",
-  },
-  {
-    question: "Does Oglas AI provide industrial IoT integration in Dubai, Abu Dhabi and the UAE?",
-    answer:
-      "Yes. Oglas AI designs and develops industrial IoT and safety monitoring software for businesses in Dubai, Abu Dhabi and across the UAE, including private-cloud, on-premise and fully offline deployments.",
+      "Oglas AI can provide ongoing software support, updates, monitoring and agreed response times through maintenance arrangements. Support can also include periodic system reviews and preparation ahead of critical operating periods.",
   },
 ];
 
@@ -319,8 +421,8 @@ function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/${slug}#service`,
-    name: "Industrial IoT & Safety Monitoring Integration",
-    serviceType: "Industrial IoT Integration",
+    name: "Industrial IoT & Safety Monitoring",
+    serviceType: "Industrial IoT Solutions",
     description: metaDescription,
     provider: {
       "@type": "Organization",
@@ -383,6 +485,17 @@ function OutlineIcon({ icon: Icon }: { icon: LucideIcon }) {
   );
 }
 
+/** Card body: each entry in `copy` becomes its own paragraph. */
+function CardCopy({ copy, className }: { copy: ReactNode[]; className: string }) {
+  return (
+    <div className={`mt-3 space-y-3 text-[15px] leading-7 ${className}`}>
+      {copy.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
+    </div>
+  );
+}
+
 const sectionTitle = "max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]";
 const bodyCopy = "text-base leading-8 text-steel md:text-lg";
 
@@ -404,14 +517,22 @@ export function IndustrialIotPage() {
             <p className="lead-serif mt-8 max-w-2xl text-2xl leading-9 text-white md:text-[1.7rem] md:leading-10">
               Your devices already collect the data. We make it act.
             </p>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/85 md:text-lg">
-              Oglas AI builds the software that connects your field hardware
-              (sensors, weather stations, gateways, intercoms, warning lights and
-              display screens) to one live system for businesses in Dubai, Abu
-              Dhabi and across the UAE. It watches every reading, alerts the right
-              people the moment something changes, and keeps a full record of
-              what happened.
-            </p>
+            <div className="mt-6 max-w-2xl space-y-4 text-base leading-8 text-white/85 md:text-lg">
+              <p>
+                Oglas AI builds industrial IoT solutions that connect field hardware such as
+                sensors, weather stations, gateways, intercoms, warning lights and display screens
+                to one live system.
+              </p>
+              <p>
+                Our industrial IoT integration services bring device data, monitoring, safety
+                rules, alerts and reporting together for businesses in Dubai, Abu Dhabi and across
+                the UAE.
+              </p>
+              <p>
+                The system watches every reading, identifies changes, alerts the right people or
+                equipment and keeps a complete record of what happened.
+              </p>
+            </div>
             <Link href="/contact" className="btn btn-light mt-9">
               Book a Technical Call
               <ArrowRight className="h-4 w-4" />
@@ -446,24 +567,23 @@ export function IndustrialIotPage() {
           </h2>
           <div className={`space-y-5 ${bodyCopy}`}>
             <p>
-              Many industrial and outdoor sites still rely on manual readings.
-              Someone walks around with a handheld meter and writes the numbers
-              down, warnings reach people late or not at all, and every device
-              comes with its own app that does not talk to the others. When an
-              auditor asks what happened at a specific time on a specific day,
-              there is often no clear answer.
+              Manual readings, handheld meters, delayed warnings, disconnected device applications
+              and unclear audit history can make industrial monitoring difficult to manage.
             </p>
             <p>
-              Oglas AI replaces this with{" "}
-              <strong className="font-semibold text-onyx">industrial IoT integration</strong>:
-              one connected system where device readings are collected
-              automatically, checked, turned into clear risk levels, and acted on
-              without waiting for someone to notice.
+              Oglas AI replaces fragmented processes with connected industrial IoT monitoring
+              solutions.
             </p>
             <p>
-              The goal is not simply to show sensor numbers on a screen. It is to
-              make sure the right people and devices respond at the right moment,
-              and that every reading and alert is recorded.
+              Readings are collected automatically, checked against defined rules and turned into
+              clear risk levels. The right people and devices can then respond without waiting for
+              manual intervention.
+            </p>
+            <p>The goal is not simply to display sensor numbers.</p>
+            <p>
+              It is to create an industrial monitoring system where the right people or equipment
+              respond at the right moment, while every reading and alert is recorded for
+              operational visibility and auditability.
             </p>
           </div>
         </div>
@@ -473,19 +593,23 @@ export function IndustrialIotPage() {
       <section className="bg-bloom py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <h2 className={sectionTitle}>
-            <SplitTitle>{"What We Build"}</SplitTitle>
+            <SplitTitle>{"What We Build with Industrial IoT Solutions"}</SplitTitle>
           </h2>
-          <p className={`mt-6 max-w-3xl ${bodyCopy}`}>
-            We design and develop the software layer around your devices, sites
-            and safety rules, whatever brand of hardware you use.
-          </p>
+          <div className={`mt-6 max-w-3xl space-y-4 ${bodyCopy}`}>
+            <p>We build the software layer around your devices, sites and safety rules.</p>
+            <p>
+              Whether you are working with existing hardware or introducing new devices, our
+              industrial IoT systems can bring different equipment and data sources into one
+              operational environment.
+            </p>
+          </div>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((item) => (
               <article key={item.title} className="glass-light rounded-[1.5rem] p-7">
                 <SolidIcon icon={item.icon} />
                 <h3 className="mt-6 text-xl font-normal leading-snug text-onyx">{item.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-steel">{item.copy}</p>
+                <CardCopy copy={item.copy} className="text-steel" />
               </article>
             ))}
           </div>
@@ -496,13 +620,15 @@ export function IndustrialIotPage() {
       <section className="bg-white py-20 md:py-28">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <h2 className={sectionTitle}>
-            <SplitTitle>{"How It Works"}</SplitTitle>
+            <SplitTitle>{"How Industrial IoT Monitoring Works"}</SplitTitle>
           </h2>
-          <p className={`mt-6 max-w-3xl ${bodyCopy}`}>
-            Field devices send their readings to the Oglas AI integration layer,
-            which stores the history, applies your alert rules and passes the
-            results to the people and equipment that need them.
-          </p>
+          <div className={`mt-6 max-w-3xl space-y-4 ${bodyCopy}`}>
+            <p>Field devices send readings to the Oglas AI integration layer.</p>
+            <p>
+              The industrial IoT software collects and stores the data, applies defined alert rules
+              and passes the results to people and connected equipment.
+            </p>
+          </div>
 
           {/* Flow diagram: devices → integration layer → you */}
           <figure className="mt-12">
@@ -545,9 +671,8 @@ export function IndustrialIotPage() {
               ))}
             </div>
             <figcaption className="sr-only">
-              Field devices send readings to the Oglas AI integration layer, which
-              sends results to your dashboard, displays, email, SMS, lights and
-              intercom.
+              Field devices send readings to the Oglas AI integration layer, which sends results to
+              your dashboard, displays, email, SMS, lights and intercom.
             </figcaption>
           </figure>
 
@@ -559,14 +684,12 @@ export function IndustrialIotPage() {
                   index < 3 ? "lg:col-span-2" : "lg:col-span-3"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <OutlineIcon icon={step.icon} />
-                  <span className="tabular text-sm font-medium tracking-[0.12em] text-brand">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="mt-6 text-xl font-normal text-onyx">{step.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-steel">{step.copy}</p>
+                <OutlineIcon icon={step.icon} />
+                <h3 className="mt-6 text-xl font-normal text-onyx">
+                  <span className="tabular text-brand">{String(index + 1).padStart(2, "0")}</span>{" "}
+                  — {step.title}
+                </h3>
+                <CardCopy copy={step.copy} className="text-steel" />
               </li>
             ))}
           </ol>
@@ -583,6 +706,13 @@ export function IndustrialIotPage() {
           <h2 className="max-w-3xl text-4xl leading-[1.05] text-white md:text-[3.2rem]">
             <SplitTitle>{"Built for Safety-Critical Environments"}</SplitTitle>
           </h2>
+          <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-white/90 md:text-lg">
+            <p>Industrial IoT can do more than connect devices.</p>
+            <p>
+              For industrial safety monitoring, the system needs to behave predictably when data
+              becomes unavailable, conditions change or a device stops responding.
+            </p>
+          </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {assurances.map((item) => (
@@ -591,7 +721,17 @@ export function IndustrialIotPage() {
                   <item.icon className="h-5 w-5" />
                 </span>
                 <h3 className="mt-6 text-xl font-normal leading-snug text-white">{item.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-white/85">{item.copy}</p>
+                <CardCopy copy={item.copy} className="text-white/85" />
+                {item.list ? (
+                  <ul className="mt-4 grid gap-2 text-[15px] leading-6 text-white/85">
+                    {item.list.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5">
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-white" aria-hidden="true" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </article>
             ))}
           </div>
@@ -604,13 +744,18 @@ export function IndustrialIotPage() {
           <h2 className={sectionTitle}>
             <SplitTitle>{"Where Industrial IoT Integration Fits"}</SplitTitle>
           </h2>
+          <p className={`mt-6 max-w-3xl ${bodyCopy}`}>
+            Our <Strong>industrial IoT integration services</Strong> can support different
+            operational environments where connected monitoring, safety alerts and historical data
+            are important.
+          </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {fits.map((item) => (
               <article key={item.title} className="glass-light rounded-[1.5rem] p-7">
                 <OutlineIcon icon={item.icon} />
                 <h3 className="mt-6 text-xl font-normal leading-snug text-onyx">{item.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-steel">{item.copy}</p>
+                <CardCopy copy={item.copy} className="text-steel" />
               </article>
             ))}
           </div>
@@ -624,8 +769,9 @@ export function IndustrialIotPage() {
             <SplitTitle>{"AI on Top of Your Device Data"}</SplitTitle>
           </h2>
           <p className={`mt-6 max-w-3xl ${bodyCopy}`}>
-            Once your device data flows cleanly into one system, AI can be added
-            as an optional layer to help your team see problems earlier.
+            Once your device data flows into a reliable{" "}
+            <Strong>industrial IoT monitoring system</Strong>, AI can become an optional layer to
+            help teams identify patterns and potential issues earlier.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -633,15 +779,14 @@ export function IndustrialIotPage() {
               <article key={item.title} className="glass-light rounded-[1.5rem] p-7">
                 <SolidIcon icon={item.icon} />
                 <h3 className="mt-6 text-xl font-normal leading-snug text-onyx">{item.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-steel">{item.copy}</p>
+                <CardCopy copy={item.copy} className="text-steel" />
               </article>
             ))}
           </div>
 
-          <p className="mt-8 flex items-start gap-3 text-[15px] leading-7 text-steel">
+          <p className="mt-8 flex items-start gap-3 text-[15px] font-semibold leading-7 text-onyx">
             <Sparkles className="mt-1 h-4 w-4 shrink-0 text-brand" aria-hidden="true" />
-            AI supports your team. Safety alerts always stay on transparent,
-            auditable rules.
+            AI supports your team. Safety alerts always stay on transparent, auditable rules.
           </p>
         </div>
       </section>
@@ -652,15 +797,19 @@ export function IndustrialIotPage() {
           <h2 className={sectionTitle}>
             <SplitTitle>{"From Site Survey to Go-Live and Support"}</SplitTitle>
           </h2>
-          <p className={`mt-6 max-w-3xl ${bodyCopy}`}>
-            We start by understanding your devices, sites, people and alert rules.
-            We then agree the scope in writing, build and demonstrate the system
-            on simulated data, connect your real hardware, test it with your team
-            and support it after go-live.
-          </p>
+          <div className={`mt-6 max-w-3xl space-y-4 ${bodyCopy}`}>
+            <p>
+              Every <Strong>industrial IoT solution</Strong> starts with understanding the devices,
+              sites, people and safety rules involved.
+            </p>
+            <p>
+              We define the requirements, build and simulate the system, connect the hardware, test
+              it with your team and support the deployment after go-live.
+            </p>
+          </div>
 
           <div className="bg-mesh mt-10 overflow-hidden rounded-[1.75rem] p-7 md:p-9">
-            <h3 className="text-xl font-light text-white">Process</h3>
+            <p className="text-xl font-light text-white">Process</p>
             <div className="mt-5">
               <p className="sr-only">{processFlow.join(" → ")}</p>
               <FlowChips items={processFlow} />
@@ -670,14 +819,12 @@ export function IndustrialIotPage() {
           <ol className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <li key={step.title} className="glass-light rounded-[1.5rem] p-7">
-                <div className="flex items-center justify-between">
-                  <SolidIcon icon={step.icon} />
-                  <span className="tabular text-sm font-medium tracking-[0.12em] text-brand">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="mt-6 text-xl font-normal text-onyx">{step.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-steel">{step.copy}</p>
+                <SolidIcon icon={step.icon} />
+                <h3 className="mt-6 text-xl font-normal text-onyx">
+                  <span className="tabular text-brand">{String(index + 1).padStart(2, "0")}</span>{" "}
+                  — {step.title}
+                </h3>
+                <CardCopy copy={step.copy} className="text-steel" />
               </li>
             ))}
           </ol>
@@ -692,9 +839,9 @@ export function IndustrialIotPage() {
               <SplitTitle>{"For System Integrators & Hardware Partners"}</SplitTitle>
             </h2>
             <p className="mt-6 text-base leading-8 text-white/90 md:text-lg">
-              Telecom, security and hardware integrators often win the hardware
-              contract but need a partner for the software. Oglas AI can act as
-              your software team.
+              If you are a telecom, security or hardware integrator that has won a device or
+              hardware project but needs a software team, Oglas AI can act as your{" "}
+              <strong className="font-semibold text-white">industrial IoT software partner</strong>.
             </p>
           </div>
           <div className="grid gap-4">
@@ -705,7 +852,7 @@ export function IndustrialIotPage() {
                 </span>
                 <div>
                   <h3 className="text-xl font-normal leading-snug text-white">{item.title}</h3>
-                  <p className="mt-2 text-[15px] leading-7 text-white/85">{item.copy}</p>
+                  <CardCopy copy={item.copy} className="text-white/85" />
                 </div>
               </article>
             ))}
@@ -750,10 +897,16 @@ export function IndustrialIotPage() {
               <SplitTitle>{"Let’s Connect Your Devices"}</SplitTitle>
             </h2>
             <ArrowRule className="mt-8 text-white/70" />
-            <p className="mt-8 max-w-2xl text-base leading-8 text-white/90 md:text-lg">
-              Tell us what hardware you have, what you need to see, and who needs
-              to be alerted. We will come back with an integration plan.
-            </p>
+            <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-white/90 md:text-lg">
+              <p>
+                Tell us what hardware you have, what you need to monitor, what your teams need to
+                see and who needs to be alerted.
+              </p>
+              <p>
+                We will come back with an industrial IoT integration plan designed around your
+                sites, devices and operational requirements.
+              </p>
+            </div>
           </div>
           <div className="lg:justify-self-end">
             <Link href="/contact" className="btn btn-light">

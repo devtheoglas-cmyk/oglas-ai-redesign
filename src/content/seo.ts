@@ -87,9 +87,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Build custom employee self-service (ESS) and HR portals for leave requests, document access, approvals, HR communication, and employee workflows with Oglas AI.",
   },
   "industrial-iot-integration": {
-    title: "Industrial IoT & Safety Monitoring in Dubai & UAE | Oglas AI",
+    title: "Industrial IoT Solutions in Dubai & UAE | Oglas AI",
     description:
-      "Oglas AI connects sensors, weather stations, alarms and intercoms to one live dashboard with automated alerts and reports, in your private cloud or fully offline.",
+      "Oglas AI builds industrial IoT solutions in Dubai and the UAE, connecting devices, monitoring systems, safety alerts, dashboards and reporting.",
   },
   "ai-dashboards-decision-intelligence": {
     title: "AI Dashboard Services Dubai | Oglas AI",
