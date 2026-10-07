@@ -164,7 +164,11 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Build Lab email failed", error.message);
-      return Response.json({ error: "Email delivery failed." }, { status: 502 });
+      // TEMP diagnostic: surface the provider's reason. Remove after fixing.
+      return Response.json(
+        { error: "Email delivery failed.", reason: error.message, from, to },
+        { status: 502 },
+      );
     }
 
     return Response.json({ ok: true });
