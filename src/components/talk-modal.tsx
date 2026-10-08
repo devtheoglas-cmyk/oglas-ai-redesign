@@ -108,35 +108,32 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
-          className="fixed inset-0 z-[70] flex items-end justify-center overflow-y-auto bg-[#02041c]/70 p-4 backdrop-blur-sm sm:items-center"
+          className="fixed inset-0 z-[70] flex items-end justify-center overflow-y-auto bg-[#02041c]/35 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setOpen(false);
           }}
         >
           <div
             ref={dialogRef}
-            className="modal-rise relative w-full max-w-lg rounded-[1.75rem] border border-brand/15 bg-white p-6 shadow-[0_60px_120px_-40px_rgba(0,0,80,0.9)] md:p-8"
+            className="modal-rise relative w-full max-w-md rounded-t-[1.5rem] border border-brand/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(0,0,80,0.55)] sm:rounded-[1.5rem] md:p-6"
           >
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close"
-              className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full border border-brand/15 bg-white text-onyx transition hover:bg-brand/8"
+              className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full text-steel transition hover:bg-brand/8 hover:text-onyx"
             >
               <X className="h-4 w-4" />
             </button>
 
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand">
-              Start a conversation
-            </p>
             <h2
               id={titleId}
-              className="mt-3 text-[1.9rem] font-light leading-tight text-onyx md:text-[2.1rem]"
+              className="text-[1.35rem] font-normal leading-tight text-onyx md:text-[1.5rem]"
             >
               Talk to Oglas AI
             </h2>
-            <p className="mt-2 text-[14px] leading-6 text-steel">
-              Share a few details. Our Dubai team will reply to plan the right next step.
+            <p className="mt-1.5 text-[13px] leading-5 text-steel">
+              A few quick details and our Dubai team will reply.
             </p>
 
             {status === "ok" ? (
@@ -156,8 +153,8 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
-                <div className="grid gap-4 md:grid-cols-2">
+              <form onSubmit={handleSubmit} className="mt-5 grid gap-3">
+                <div className="grid gap-3 md:grid-cols-2">
                   <ModalField
                     ref={firstFieldRef}
                     label="Name"
@@ -174,7 +171,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                     required
                   />
                 </div>
-                <div className="grid gap-4 md:grid-cols-2">
+                <div className="grid gap-3 md:grid-cols-2">
                   <ModalField
                     label="Email"
                     name="email"
@@ -198,7 +195,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                     name="projectType"
                     defaultValue={defaultProjectType ?? ""}
                     required
-                    className="h-12 rounded-xl border border-brand/15 bg-white/90 px-4 text-[15px] text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
+                    className="h-11 rounded-xl border border-brand/15 bg-white px-3.5 text-[14px] text-onyx outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15"
                   >
                     <option value="">Select a project type</option>
                     {projectTypes.map((type) => (
@@ -213,11 +210,11 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                   What do you want to build or improve?
                   <textarea
                     name="message"
-                    rows={4}
+                    rows={3}
                     required
                     maxLength={2000}
-                    placeholder="A short note on the workflow or system you have in mind."
-                    className="resize-none rounded-xl border border-brand/15 bg-white/90 px-4 py-3 text-[15px] leading-7 text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
+                    placeholder="A short note on what you want to build or improve."
+                    className="resize-none rounded-xl border border-brand/15 bg-white px-3.5 py-2.5 text-[14px] leading-6 text-onyx outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15"
                   />
                 </label>
 
@@ -283,7 +280,7 @@ const ModalField = forwardRef<HTMLInputElement, ModalFieldProps>(function ModalF
         autoComplete={autoComplete}
         required={required}
         maxLength={200}
-        className="h-12 rounded-xl border border-brand/15 bg-white/90 px-4 text-[15px] text-onyx shadow-[inset_0_1px_2px_rgba(7,11,61,0.04)] outline-none transition focus:border-brand focus:bg-white focus:ring-4 focus:ring-brand/12"
+        className="h-11 rounded-xl border border-brand/15 bg-white px-3.5 text-[14px] text-onyx outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15"
       />
     </label>
   );
