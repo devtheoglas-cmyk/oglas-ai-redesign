@@ -81,7 +81,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
       .catch(() => "");
 
     setStatus("error");
-    setMessage(serverError || "Something went wrong. Please email md@oglasglobal.com.");
+    setMessage(serverError || "Something went wrong. Please email admin@oglasglobal.com.");
   }
 
   return (

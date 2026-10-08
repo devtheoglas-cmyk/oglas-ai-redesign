@@ -471,7 +471,7 @@ export function BuildLab() {
       scrollTop();
       return;
     }
-    setSendError("Transmission failed. Please try again, or email md@oglasglobal.com.");
+    setSendError("Transmission failed. Please try again, or email admin@oglasglobal.com.");
   }
 
   const hologram = (

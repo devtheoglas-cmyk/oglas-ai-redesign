@@ -77,7 +77,7 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(resendApiKey);
-  const to = process.env.CONTACT_TO_EMAIL || "md@oglasglobal.com";
+  const to = process.env.CONTACT_TO_EMAIL || "admin@oglasglobal.com";
   // The "from" MUST be an address on a domain verified in Resend (oglasai.com).
   // Free mailboxes like gmail.com cannot be verified and will be rejected (502).
   const from = process.env.CONTACT_FROM_EMAIL || "Oglas AI <noreply@oglasai.com>";
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend email send failed", resendErrorDetails(error));
       return Response.json(
-        { error: "Email delivery failed. Please email md@oglasglobal.com directly." },
+        { error: "Email delivery failed. Please email admin@oglasglobal.com directly." },
         { status: 502 },
       );
     }
@@ -135,7 +135,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Resend email send threw", resendErrorDetails(error));
     return Response.json(
-      { error: "Email delivery failed. Please email md@oglasglobal.com directly." },
+      { error: "Email delivery failed. Please email admin@oglasglobal.com directly." },
       { status: 502 },
     );
   }

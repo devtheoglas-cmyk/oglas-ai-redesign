@@ -29,7 +29,7 @@ export default function PrivacyPage() {
             to third parties.
           </p>
           <p>
-            If you want your enquiry information removed, contact md@oglasglobal.com
+            If you want your enquiry information removed, contact admin@oglasglobal.com
             and we will review the request.
           </p>
         </div>

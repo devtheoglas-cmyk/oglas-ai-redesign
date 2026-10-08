@@ -45,7 +45,7 @@ export function ContactForm() {
       .catch(() => "");
 
     setStatus("error");
-    setMessage(serverError || "Something went wrong. Please email md@oglasglobal.com directly.");
+    setMessage(serverError || "Something went wrong. Please email admin@oglasglobal.com directly.");
   }
 
   return (
