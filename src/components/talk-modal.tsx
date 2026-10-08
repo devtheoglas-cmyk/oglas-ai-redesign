@@ -115,7 +115,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
         >
           <div
             ref={dialogRef}
-            className="modal-rise relative w-full max-w-md rounded-t-[1.5rem] border border-brand/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(0,0,80,0.55)] sm:rounded-[1.5rem] md:p-6"
+            className="modal-rise relative flex max-h-[92vh] w-full max-w-[22rem] flex-col overflow-y-auto rounded-t-[1.5rem] border border-brand/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(0,0,80,0.55)] sm:rounded-[1.5rem]"
           >
             <button
               type="button"
@@ -128,13 +128,10 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
 
             <h2
               id={titleId}
-              className="text-[1.35rem] font-normal leading-tight text-onyx md:text-[1.5rem]"
+              className="pr-10 text-[1.35rem] font-normal leading-tight text-onyx"
             >
               Talk to Oglas AI
             </h2>
-            <p className="mt-1.5 text-[13px] leading-5 text-steel">
-              A few quick details and our Dubai team will reply.
-            </p>
 
             {status === "ok" ? (
               <div className="mt-7 grid gap-4 text-center">
@@ -153,7 +150,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-5 grid gap-3">
+              <form onSubmit={handleSubmit} className="mt-4 grid gap-3">
                 <div className="grid gap-3 md:grid-cols-2">
                   <ModalField
                     ref={firstFieldRef}
@@ -210,7 +207,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                   What do you want to build or improve?
                   <textarea
                     name="message"
-                    rows={3}
+                    rows={2}
                     required
                     maxLength={2000}
                     placeholder="A short note on what you want to build or improve."
