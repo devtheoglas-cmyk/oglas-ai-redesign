@@ -1914,13 +1914,13 @@ function AiDashboardsPage() {
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                href="/contact"
+              <TalkToOglas
                 className="btn btn-outline-light"
+                defaultProjectType="AI Dashboards"
               >
                 Get a Free Data Readiness Check
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </TalkToOglas>
             </div>
             <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
               Connected to the systems you already run
@@ -2390,13 +2390,13 @@ function AiDashboardsPage() {
                 assessment whether or not you decide to proceed with the full
                 build.
               </p>
-              <Link
-                href="/contact"
+              <TalkToOglas
                 className="btn btn-primary"
+                defaultProjectType="AI Dashboards"
               >
                 Get a Free Data Readiness Check
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </TalkToOglas>
             </div>
             <div className="rounded-2xl glass-light p-6">
               <p className="text-sm font-semibold text-onyx">
@@ -2639,13 +2639,13 @@ function AiDashboardsPage() {
               Book a Free Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              href="/contact"
+            <TalkToOglas
               className="btn btn-outline-light"
+              defaultProjectType="AI Dashboards"
             >
               Free Data Readiness Check
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TalkToOglas>
           </div>
         </div>
       </section>
@@ -2675,13 +2675,13 @@ function WorkflowAutomationPage() {
               tasks with workflow automation solutions built around how your
               business operates.
             </p>
-            <Link
-              href="/contact"
+            <TalkToOglas
               className="btn btn-light mt-8"
+              defaultProjectType="Workflow Automation"
             >
               Automate Your Workflow
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TalkToOglas>
           </div>
 
           <div className="glass rise rounded-[1.75rem] p-4 [animation-delay:120ms]">
@@ -2927,13 +2927,13 @@ function WorkflowAutomationPage() {
               <SplitTitle>{"Ready to automate the work slowing your team down?"}</SplitTitle>
             </h2>
           </div>
-          <Link
-            href="/contact"
+          <TalkToOglas
             className="btn btn-light"
+            defaultProjectType="Workflow Automation"
           >
             Automate Your Workflow
             <ArrowRight className="h-4 w-4" />
-          </Link>
+          </TalkToOglas>
         </div>
       </section>
     </>

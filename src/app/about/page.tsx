@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TalkToOglas } from "@/components/talk-modal";
 import {
   ArrowRight,
   BarChart3,
@@ -422,13 +423,10 @@ export default function AboutPage() {
               AI solutions built around real operational needs.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="btn btn-light"
-              >
+              <TalkToOglas className="btn btn-light">
                 Talk to Oglas AI
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </TalkToOglas>
               <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-white/80">
                 <Globe2 className="h-4 w-4 text-white/70" />
                 UAE-based · Globally available

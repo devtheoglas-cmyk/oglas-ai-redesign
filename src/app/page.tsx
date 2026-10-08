@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowRight, CheckCircle2, Plus, Quote } from "lucide-react";
+import { TalkToOglas } from "@/components/talk-modal";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRule } from "@/components/arrow-rule";
@@ -188,10 +189,10 @@ export default async function Home() {
                 impact.
               </p>
             </div>
-            <Link href="/contact" className="btn btn-light shrink-0">
+            <TalkToOglas className="btn btn-light shrink-0">
               Let&apos;s Build What&apos;s Next
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TalkToOglas>
           </div>
         </div>
       </section>
