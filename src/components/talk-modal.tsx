@@ -176,7 +176,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
                   maxLength={2000}
                   aria-label="Message"
                   placeholder="Tell us what you want to build…"
-                  className="resize-none rounded-lg border border-brand/15 bg-white px-3 py-2 text-[14px] leading-6 text-onyx outline-none transition placeholder:text-steel/60 focus:border-brand focus:ring-2 focus:ring-brand/15"
+                  className="resize-none rounded-lg border border-brand/15 bg-white px-3 py-2 text-[14px] leading-6 text-onyx outline-none transition placeholder:text-onyx/70 focus:border-brand focus:ring-2 focus:ring-brand/15"
                 />
 
                 {/* Honeypot — hidden safely without creating page overflow */}
@@ -216,7 +216,7 @@ const Field = forwardRef<HTMLInputElement, FieldProps>(function Field(props, ref
       ref={ref}
       maxLength={200}
       {...props}
-      className="h-10 rounded-lg border border-brand/15 bg-white px-3 text-[14px] text-onyx outline-none transition placeholder:text-steel/60 focus:border-brand focus:ring-2 focus:ring-brand/15"
+      className="h-10 rounded-lg border border-brand/15 bg-white px-3 text-[14px] text-onyx outline-none transition placeholder:text-onyx/70 focus:border-brand focus:ring-2 focus:ring-brand/15"
     />
   );
 });
