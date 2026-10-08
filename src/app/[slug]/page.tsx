@@ -52,6 +52,7 @@ import { SplitTitle } from "@/components/split-title";
 import Image from "next/image";
 import { HeroBackdrop } from "@/components/page-hero";
 import { ErpPayrollPage } from "./erp-payroll";
+import { TalkToOglas } from "@/components/talk-modal";
 import { MarketingAutomationPage } from "./marketing-automation";
 import { IndustrialIotPage } from "./industrial-iot";
 
@@ -1315,13 +1316,13 @@ function CustomSoftwarePage() {
               Build Your Custom Software
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link
-              href="/contact"
+            <TalkToOglas
               className="btn btn-outline-light"
+              defaultProjectType="Custom Software Development"
             >
               Talk to Oglas AI
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </TalkToOglas>
           </div>
           <p className="mt-8 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
             UAE-based · Custom Software + Practical AI · Built Around Real
