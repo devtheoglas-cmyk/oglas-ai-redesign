@@ -96,7 +96,7 @@ export async function POST(request: Request) {
 
   const resend = new Resend(resendApiKey);
   const to = process.env.CONTACT_TO_EMAIL || "admin@oglasglobal.com";
-  const from = process.env.CONTACT_FROM_EMAIL || "Oglas AI <noreply@oglasai.com>";
+  const from = process.env.CONTACT_FROM_EMAIL || "Oglas AI <noreply@oglas-ai.com>";
 
   const subject =
     kind === "lead"

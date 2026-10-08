@@ -78,9 +78,9 @@ export async function POST(request: Request) {
 
   const resend = new Resend(resendApiKey);
   const to = process.env.CONTACT_TO_EMAIL || "admin@oglasglobal.com";
-  // The "from" MUST be an address on a domain verified in Resend (oglasai.com).
+  // Sent from the verified oglas-ai.com domain. If this is ever rejected, the
   // Free mailboxes like gmail.com cannot be verified and will be rejected (502).
-  const from = process.env.CONTACT_FROM_EMAIL || "Oglas AI <noreply@oglasai.com>";
+  const from = process.env.CONTACT_FROM_EMAIL || "Oglas AI <noreply@oglas-ai.com>";
   const subject = `New Oglas AI consultation: ${payload.projectType}`;
 
   try {
