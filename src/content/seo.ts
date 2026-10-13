@@ -67,9 +67,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Oglas AI builds customized ERP and payroll automation solutions in Dubai and the UAE, connecting HR, attendance, payroll, approvals, reporting and business systems.",
   },
   "intelligent-computer-vision": {
-    title: "Computer Vision Solutions | Oglas AI",
+    title: "Computer Vision Solutions in Dubai & UAE | Oglas AI",
     description:
-      "Develop AI-powered computer vision solutions for safety, monitoring, object detection, compliance, counting, and operational visibility with Oglas AI.",
+      "Explore custom computer vision solutions in Dubai and the UAE for object and activity detection, safety monitoring, visual inspection workflows and camera analytics.",
   },
   "workflow-automation": {
   title: "Workflow Automation Services Dubai | Oglas AI",

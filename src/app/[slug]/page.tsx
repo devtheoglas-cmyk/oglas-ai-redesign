@@ -55,6 +55,7 @@ import { ErpPayrollPage } from "./erp-payroll";
 import { TalkToOglas } from "@/components/talk-modal";
 import { MarketingAutomationPage } from "./marketing-automation";
 import { IndustrialIotPage } from "./industrial-iot";
+import { ComputerVisionPage } from "./computer-vision";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -3003,6 +3004,10 @@ export default async function ServiceDetailPage({
 
   if (slug === "industrial-iot-integration") {
     return <IndustrialIotPage />;
+  }
+
+  if (slug === "intelligent-computer-vision") {
+    return <ComputerVisionPage />;
   }
 
   return (
