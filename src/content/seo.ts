@@ -82,9 +82,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Oglas AI builds marketing automation solutions in Dubai and the UAE, connecting lead capture, CRM, follow-ups, campaigns, notifications and reporting.",
   },
   "ess-hr-portals": {
-    title: "Employee Self-Service (ESS) & HR Portals | Oglas AI",
+    title: "HR Portal Development in Dubai & UAE | Oglas AI",
     description:
-      "Build custom employee self-service (ESS) and HR portals for leave requests, document access, approvals, HR communication, and employee workflows with Oglas AI.",
+      "Custom ESS and HR portal development in Dubai and the UAE. Manage employee profiles, document expiry alerts, requests and approval workflows.",
   },
   "industrial-iot-integration": {
     title: "Industrial IoT Solutions in Dubai & UAE | Oglas AI",
