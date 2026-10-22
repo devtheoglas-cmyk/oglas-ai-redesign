@@ -22,6 +22,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: InsightPageProps): Promise<Metadata> {
   const { slug } = await params;
+
+  if (slug === "ai-automation-for-uae-businesses") {
+    return {};
+  }
+
   const post = await getPublishedPost(slug);
 
   if (!post) {
@@ -60,6 +65,11 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
 
 export default async function InsightDetailPage({ params }: InsightPageProps) {
   const { slug } = await params;
+
+  if (slug === "ai-automation-for-uae-businesses") {
+    notFound();
+  }
+
   const post = await getPublishedPost(slug);
 
   if (!post) {
@@ -90,7 +100,8 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
             <SplitTitle>{post.title}</SplitTitle>
           </h1>
           <p className="mt-7 text-sm text-white/75">
-            {post.readTime} · {new Date(post.date).toLocaleDateString("en", {
+            {post.readTime} ·{" "}
+            {new Date(post.date).toLocaleDateString("en", {
               month: "long",
               day: "numeric",
               year: "numeric",
@@ -98,8 +109,10 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
           </p>
         </div>
       </header>
+
       <div className="mx-auto w-full max-w-[820px] px-4 py-16 md:py-20">
         <p className="lead-serif text-2xl leading-9 text-onyx">{post.excerpt}</p>
+
         {post.mainImage?.asset?.url ? (
           <figure className="mt-10">
             <BgImage
@@ -109,6 +122,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               height={Math.round(post.mainImage.asset.metadata?.dimensions?.height ?? 840)}
               className="w-full rounded-[1.75rem]"
             />
+
             {post.mainImage.caption ? (
               <figcaption className="mt-3 text-sm leading-6 text-steel">
                 {post.mainImage.caption}
@@ -116,6 +130,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
             ) : null}
           </figure>
         ) : null}
+
         <div className="mt-10">
           {post.body && post.body.length > 0 ? (
             <PortableTextContent value={post.body} />
