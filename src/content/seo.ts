@@ -59,7 +59,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "custom-software-development-services-in-dubai-uae": {
     title: "Custom Software Development Services in Dubai | Oglas AI",
     description:
-      "Oglas AI provides custom software development in Dubai and across the UAE, building business applications, ERP, CRM, integrations and AI solutions.",
+      "Oglas AI provides custom software development services in Dubai and across the UAE, building business applications, ERP, CRM, integrations and AI solutions.",
   },
   "erp-software-company-in-dubai-uae": {
     title: "ERP Software Company UAE | Custom ERP Dubai | Oglas AI",
