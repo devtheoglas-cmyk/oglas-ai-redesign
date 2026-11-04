@@ -64,7 +64,7 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "custom-software-development",
+    slug: "custom-software-development-services-in-dubai-uae",
     title: "Custom Software Development",
     eyebrow: "Built around your business",
     summary:
@@ -88,7 +88,7 @@ export const services: Service[] = [
     fit: "Best for businesses whose workflows are too specific for off-the-shelf software, or that need multiple systems — ERP, CRM, HR, finance — to operate as one connected environment.",
   },
   {
-    slug: "erp-payroll-automation",
+    slug: "erp-software-company-in-dubai-uae",
     title: "ERP & Payroll Automation",
     eyebrow: "Core operations",
     summary:
@@ -110,7 +110,7 @@ export const services: Service[] = [
     fit: "Best for manpower companies, multi-branch operators, manufacturing firms, and service companies with complex payroll rules.",
   },
   {
-    slug: "intelligent-computer-vision",
+    slug: "computer-vision-solutions-in-dubai-uae",
     title: "Intelligent Computer Vision",
     eyebrow: "AI vision systems",
     summary:
@@ -132,7 +132,7 @@ export const services: Service[] = [
     fit: "Best for security providers, industrial sites, facilities, warehouses, clinics, and operations teams with camera infrastructure.",
   },
   {
-    slug: "industrial-iot-integration",
+    slug: "industrial-iot-companies-in-dubai-uae",
     title: "Industrial IoT Integration",
     eyebrow: "Connected field devices",
     summary:
@@ -154,7 +154,7 @@ export const services: Service[] = [
     fit: "Best for industrial, oil and gas, construction, port, facility and utility sites, and for system integrators who need a software partner.",
   },
   {
-    slug: "workflow-automation",
+    slug: "workflow-automation-in-dubai-uae",
     title: "Workflow Automation",
     eyebrow: "Process systems",
     summary:
@@ -176,7 +176,7 @@ export const services: Service[] = [
     fit: "Best for companies where work moves through HR, finance, operations, sales, or compliance before completion.",
   },
   {
-    slug: "marketing-automation",
+    slug: "marketing-automation-agency-in-dubai-uae",
     title: "Marketing Automation",
     eyebrow: "Growth operations",
     summary:
@@ -198,7 +198,7 @@ export const services: Service[] = [
     fit: "Best for agencies, service brands, clinics, property teams, and sales-led companies handling repeated enquiries.",
   },
   {
-    slug: "ess-hr-portals",
+    slug: "employee-self-service-in-dubai-uae",
     title: "ESS & HR Portals",
     eyebrow: "Employee experience",
     summary:
@@ -220,7 +220,7 @@ export const services: Service[] = [
     fit: "Best for manpower companies, facility management groups, clinics, retail operators, and teams with mobile staff.",
   },
   {
-    slug: "ai-dashboards-decision-intelligence",
+    slug: "ai-powered-dashboards-in-duabi-uae",
     title: "AI Dashboards & Decision Intelligence",
     eyebrow: "Management visibility",
     summary:
@@ -555,14 +555,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "ERP & Payroll Solutions",
         icon: CircuitBoard,
-        href: "/erp-payroll-automation",
+        href: "/erp-software-company-in-dubai-uae",
         summary:
           "Manage HR, payroll, attendance, approvals, and core operations in one place.",
       },
       {
         title: "Workflow Automation",
         icon: Workflow,
-        href: "/workflow-automation",
+        href: "/workflow-automation-in-dubai-uae",
         summary:
           "Automate approvals, tasks, and processes to save time and reduce manual work.",
       },
@@ -578,7 +578,7 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "Employee Self-Service & HR",
         icon: UsersRound,
-        href: "/ess-hr-portals",
+        href: "/employee-self-service-in-dubai-uae",
         summary:
           "Self-service portals for requests, documents, leave, and HR communication.",
       },
@@ -601,7 +601,7 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "AI Dashboards & Insights",
         icon: LineChart,
-        href: "/ai-dashboards-decision-intelligence",
+        href: "/ai-powered-dashboards-in-duabi-uae",
         summary:
           "Real-time dashboards and predictive insights to track performance and spot opportunities.",
       },
@@ -624,14 +624,14 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "Computer Vision Solutions",
         icon: Camera,
-        href: "/intelligent-computer-vision",
+        href: "/computer-vision-solutions-in-dubai-uae",
         summary:
           "Use intelligent vision to improve safety, monitoring, compliance, and operations.",
       },
       {
         title: "Marketing Automation",
         icon: Megaphone,
-        href: "/marketing-automation",
+        href: "/marketing-automation-agency-in-dubai-uae",
         summary:
           "Automate campaigns, lead nurturing, and customer journeys to drive better engagement.",
       },

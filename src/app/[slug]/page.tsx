@@ -1099,7 +1099,7 @@ function BreadcrumbStructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "Workflow Automation Services",
-        item: `${baseUrl}/workflow-automation`,
+        item: `${baseUrl}/workflow-automation-in-dubai-uae`,
       },
     ],
   };
@@ -1118,7 +1118,7 @@ function WorkflowAutomationStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/workflow-automation#service`,
+    "@id": `${baseUrl}/workflow-automation-in-dubai-uae#service`,
     name: "Workflow Automation Services",
     serviceType: "Workflow Automation",
     description:
@@ -1134,7 +1134,7 @@ function WorkflowAutomationStructuredData() {
       "United Arab Emirates",
       "Global",
     ],
-    url: `${baseUrl}/workflow-automation`,
+    url: `${baseUrl}/workflow-automation-in-dubai-uae`,
   };
 
   return (
@@ -1162,7 +1162,7 @@ function AiDashboardsBreadcrumbStructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "AI Dashboards & Decision Intelligence",
-        item: `${baseUrl}/ai-dashboards-decision-intelligence`,
+        item: `${baseUrl}/ai-powered-dashboards-in-duabi-uae`,
       },
     ],
   };
@@ -1181,7 +1181,7 @@ function AiDashboardsServiceStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/ai-dashboards-decision-intelligence#service`,
+    "@id": `${baseUrl}/ai-powered-dashboards-in-duabi-uae#service`,
     name: "AI Dashboards & Decision Intelligence",
     serviceType: "Business Intelligence & Decision Intelligence",
     description:
@@ -1196,7 +1196,7 @@ function AiDashboardsServiceStructuredData() {
       "United Arab Emirates",
       "Dubai, United Arab Emirates",
     ],
-    url: `${baseUrl}/ai-dashboards-decision-intelligence`,
+    url: `${baseUrl}/ai-powered-dashboards-in-duabi-uae`,
   };
 
   return (
@@ -1224,7 +1224,7 @@ function CustomSoftwareBreadcrumbStructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "Custom Software Development",
-        item: `${baseUrl}/custom-software-development`,
+        item: `${baseUrl}/custom-software-development-services-in-dubai-uae`,
       },
     ],
   };
@@ -1243,7 +1243,7 @@ function CustomSoftwareServiceStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/custom-software-development#service`,
+    "@id": `${baseUrl}/custom-software-development-services-in-dubai-uae#service`,
     name: "Custom Software Development",
     serviceType: "Custom Software Development",
     description:
@@ -1259,7 +1259,7 @@ function CustomSoftwareServiceStructuredData() {
       "United Arab Emirates",
       "Global",
     ],
-    url: `${baseUrl}/custom-software-development`,
+    url: `${baseUrl}/custom-software-development-services-in-dubai-uae`,
   };
 
   return (
@@ -2942,7 +2942,7 @@ function WorkflowAutomationPage() {
   );
 }
 
-// Services live at the site root (/erp-payroll-automation); any other
+// Services live at the site root; any other
 // top-level path that isn't a real page stays a 404.
 export const dynamicParams = false;
 
@@ -2983,35 +2983,35 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
-  if (slug === "custom-software-development") {
+  if (slug === "custom-software-development-services-in-dubai-uae") {
     return <CustomSoftwarePage />;
   }
 
-  if (slug === "workflow-automation") {
+  if (slug === "workflow-automation-in-dubai-uae") {
     return <WorkflowAutomationPage />;
   }
 
-  if (slug === "ai-dashboards-decision-intelligence") {
+  if (slug === "ai-powered-dashboards-in-duabi-uae") {
     return <AiDashboardsPage />;
   }
 
-  if (slug === "erp-payroll-automation") {
+  if (slug === "erp-software-company-in-dubai-uae") {
     return <ErpPayrollPage />;
   }
 
-  if (slug === "marketing-automation") {
+  if (slug === "marketing-automation-agency-in-dubai-uae") {
     return <MarketingAutomationPage />;
   }
 
-  if (slug === "industrial-iot-integration") {
+  if (slug === "industrial-iot-companies-in-dubai-uae") {
     return <IndustrialIotPage />;
   }
 
-  if (slug === "intelligent-computer-vision") {
+  if (slug === "computer-vision-solutions-in-dubai-uae") {
     return <ComputerVisionPage />;
   }
 
-  if (slug === "ess-hr-portals") {
+  if (slug === "employee-self-service-in-dubai-uae") {
     return <EssHrPortalsPage />;
   }
 

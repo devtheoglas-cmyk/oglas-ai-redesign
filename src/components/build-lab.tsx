@@ -880,7 +880,7 @@ export function BuildLab() {
               through it together.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/custom-software-development" className="lab-btn">
+              <Link href="/custom-software-development-services-in-dubai-uae" className="lab-btn">
                 Explore custom software
                 <ArrowRight className="h-4 w-4" />
               </Link>

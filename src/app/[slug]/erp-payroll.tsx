@@ -158,7 +158,7 @@ export const erpPayrollFaqs = [
   },
 ];
 
-const metaDescription = serviceSeo["erp-payroll-automation"].description;
+const metaDescription = serviceSeo["erp-software-company-in-dubai-uae"].description;
 
 function jsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -174,14 +174,14 @@ function StructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "ERP & Payroll Automation",
-        item: `${baseUrl}/erp-payroll-automation`,
+        item: `${baseUrl}/erp-software-company-in-dubai-uae`,
       },
     ],
   };
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/erp-payroll-automation#service`,
+    "@id": `${baseUrl}/erp-software-company-in-dubai-uae#service`,
     name: "ERP & Payroll Automation",
     serviceType: "ERP and Payroll Automation",
     description: metaDescription,
@@ -192,7 +192,7 @@ function StructuredData() {
       url: baseUrl,
     },
     areaServed: ["Dubai, United Arab Emirates", "United Arab Emirates"],
-    url: `${baseUrl}/erp-payroll-automation`,
+    url: `${baseUrl}/erp-software-company-in-dubai-uae`,
   };
 
   return (

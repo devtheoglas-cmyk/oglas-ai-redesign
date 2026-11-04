@@ -43,7 +43,7 @@ import { FaqStructuredData } from "@/components/structured-data";
 import { serviceSeo } from "@/content/seo";
 
 const baseUrl = "https://www.oglas-ai.com";
-const slug = "industrial-iot-integration";
+const slug = "industrial-iot-companies-in-dubai-uae";
 
 /** A card's copy is one or more paragraphs; paragraphs may hold <strong> keywords. */
 type Card = { icon: LucideIcon; title: string; copy: ReactNode[]; list?: string[] };

@@ -56,43 +56,43 @@ export const staticPageSeo: Record<string, SeoEntry> = {
 };
 
 export const serviceSeo: Record<string, SeoEntry> = {
-  "custom-software-development": {
-    title: "Custom Software Development in Dubai & the UAE | Oglas AI",
+  "custom-software-development-services-in-dubai-uae": {
+    title: "Custom Software Development Services in Dubai | Oglas AI",
     description:
       "Oglas AI provides custom software development in Dubai and across the UAE, building business applications, ERP, CRM, integrations and AI solutions.",
   },
-  "erp-payroll-automation": {
-    title: "ERP & Payroll Automation in Dubai & UAE | Oglas AI",
+  "erp-software-company-in-dubai-uae": {
+    title: "ERP Software Company UAE | Custom ERP Dubai | Oglas AI",
     description:
-      "Oglas AI builds customized ERP and payroll automation solutions in Dubai and the UAE, connecting HR, attendance, payroll, approvals, reporting and business systems.",
+      "Oglas AI builds customized ERP Software Company in Dubai and the UAE, connecting HR, attendance, payroll, approvals, reporting and business systems.",
   },
-  "intelligent-computer-vision": {
+  "computer-vision-solutions-in-dubai-uae": {
     title: "Computer Vision Solutions in Dubai & UAE | Oglas AI",
     description:
       "Explore custom computer vision solutions in Dubai and the UAE for object and activity detection, safety monitoring, visual inspection workflows and camera analytics.",
   },
-  "workflow-automation": {
+  "workflow-automation-in-dubai-uae": {
   title: "Workflow Automation Services Dubai | Oglas AI",
   description:
     "Oglas AI provides workflow automation services in Dubai, UAE, for approvals, HR, finance, CRM, document routing, and business operations.",
 },
-  "marketing-automation": {
-    title: "Marketing Automation Services in Dubai & UAE | Oglas AI",
+  "marketing-automation-agency-in-dubai-uae": {
+    title: "Marketing Automation Agency in Dubai | Oglas AI",
     description:
       "Oglas AI builds marketing automation solutions in Dubai and the UAE, connecting lead capture, CRM, follow-ups, campaigns, notifications and reporting.",
   },
-  "ess-hr-portals": {
-    title: "HR Portal Development in Dubai & UAE | Oglas AI",
+  "employee-self-service-in-dubai-uae": {
+    title: "Employee Self Service Software in UAE | Oglas AI",
     description:
-      "Custom ESS and HR portal development in Dubai and the UAE. Manage employee profiles, document expiry alerts, requests and approval workflows.",
+      "Employee Self Service Software in Dubai and the UAE. Manage employee profiles, document expiry alerts, requests and approval workflows.",
   },
-  "industrial-iot-integration": {
-    title: "Industrial IoT Solutions in Dubai & UAE | Oglas AI",
+  "industrial-iot-companies-in-dubai-uae": {
+    title: "IoT Solutions in Dubai & the UAE | Oglas AI",
     description:
-      "Oglas AI builds industrial IoT solutions in Dubai and the UAE, connecting devices, monitoring systems, safety alerts, dashboards and reporting.",
+      "Oglas AI builds IoT solutions in Dubai and the UAE, connecting devices, monitoring systems, safety alerts, dashboards and reporting.",
   },
-  "ai-dashboards-decision-intelligence": {
-    title: "AI Dashboard Services Dubai | Oglas AI",
+  "ai-powered-dashboards-in-duabi-uae": {
+    title: "AI powered Dashboard Services Dubai | Oglas AI",
     description:
       "Oglas AI provides AI dashboard services in Dubai and the UAE, connecting business data with AI-powered insights, forecasting, alerts, and decision support.",
   },

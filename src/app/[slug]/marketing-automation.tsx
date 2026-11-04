@@ -164,7 +164,7 @@ export const marketingAutomationFaqs = [
   },
 ];
 
-const metaDescription = serviceSeo["marketing-automation"].description;
+const metaDescription = serviceSeo["marketing-automation-agency-in-dubai-uae"].description;
 
 function jsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -180,14 +180,14 @@ function StructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "Marketing Automation",
-        item: `${baseUrl}/marketing-automation`,
+        item: `${baseUrl}/marketing-automation-agency-in-dubai-uae`,
       },
     ],
   };
   const service = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/marketing-automation#service`,
+    "@id": `${baseUrl}/marketing-automation-agency-in-dubai-uae#service`,
     name: "Marketing Automation",
     serviceType: "Marketing Automation",
     description: metaDescription,
@@ -198,7 +198,7 @@ function StructuredData() {
       url: baseUrl,
     },
     areaServed: ["Dubai, United Arab Emirates", "United Arab Emirates"],
-    url: `${baseUrl}/marketing-automation`,
+    url: `${baseUrl}/marketing-automation-agency-in-dubai-uae`,
   };
 
   return (
