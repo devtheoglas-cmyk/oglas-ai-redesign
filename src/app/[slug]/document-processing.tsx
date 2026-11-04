@@ -56,7 +56,7 @@ const faqs = [
   { question: "How does AI extract and classify information from documents?", answer: "AI processes supported documents to identify relevant information and categorize files according to their content and configured requirements. Extracted fields can be organized into structured records, while classification helps direct documents towards the appropriate processing or review workflow." },
   { question: "Can AI document processing identify missing or incorrect information?", answer: "A document processing solution can include validation checks to identify missing fields and potential inconsistencies according to defined rules. Items requiring further verification can be flagged for human review. The system does not automatically guarantee that every extracted detail is correct." },
   { question: "Can AI document processing integrate with existing business systems?", answer: "Yes, where technically suitable. AI document processing solutions can be designed to connect with existing business systems depending on available APIs or interfaces, data requirements, security considerations and technical feasibility. Integration requirements are assessed before development." },
-] as const;
+];
 
 function SectionTitle({ children, supporting, dark = false }: { children: string; supporting?: string; dark?: boolean }) {
   return (
