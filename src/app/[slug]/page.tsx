@@ -57,6 +57,7 @@ import { MarketingAutomationPage } from "./marketing-automation";
 import { IndustrialIotPage } from "./industrial-iot";
 import { ComputerVisionPage } from "./computer-vision";
 import { EssHrPortalsPage } from "./ess-hr-portals";
+import { DocumentProcessingPage } from "./document-processing";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -3013,6 +3014,10 @@ export default async function ServiceDetailPage({
 
   if (slug === "employee-self-service-in-dubai-uae") {
     return <EssHrPortalsPage />;
+  }
+
+  if (slug === "ai-document-processing") {
+    return <DocumentProcessingPage />;
   }
 
   return (

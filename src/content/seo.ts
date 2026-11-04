@@ -97,9 +97,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Oglas AI provides AI dashboard services in Dubai and the UAE, connecting business data with AI-powered insights, forecasting, alerts, and decision support.",
   },
   "ai-document-processing": {
-    title: "Intelligent Document Processing (IDP) | Oglas AI",
+    title: "AI Document Processing in Dubai & UAE | Oglas AI",
     description:
-      "Automate document extraction, classification, verification, and approval with intelligent document processing (IDP) solutions powered by AI and OCR.",
+      "Custom AI document processing solutions in Dubai and the UAE. Extract, classify and validate business documents with human review where needed.",
   },
   "ai-chatbots-knowledge-assistants": {
     title: "AI Chatbot Solutions | Oglas AI",
