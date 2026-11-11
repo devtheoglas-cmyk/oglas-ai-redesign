@@ -134,8 +134,7 @@ const sections = [
       {
         "title": "Configured Around Your Business Rules",
         "paragraphs": [
-          "Define response guidelines, information access and escalation requirements according to your organization's procedures.",
-          "Our AI chatbot development approach covers requirements discovery, solution design, development, testing and deployment. Each implementation is planned around your operational needs and agreed technical scope."
+          "Define response guidelines, information access and escalation requirements according to your organization's procedures."
         ]
       }
     ]
@@ -232,6 +231,9 @@ export function ChatbotsKnowledgePage() {
                     </article>
                   ))}
                 </div>
+              )}
+              {index === 3 && (
+                <p className="mt-10 max-w-3xl text-base leading-8 text-steel md:text-lg">Our AI chatbot development approach covers requirements discovery, solution design, development, testing and deployment. Each implementation is planned around your operational needs and agreed technical scope.</p>
               )}
             </div>
           </section>
