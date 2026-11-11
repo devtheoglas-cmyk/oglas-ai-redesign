@@ -10,8 +10,8 @@ const sections = [
     "supporting": "Make Business Knowledge Easier to Access",
     "intro": [
       "Businesses regularly handle questions about company policies, products, services and internal procedures. When information is scattered across documents and systems, finding accurate answers can take time and increase the workload on support teams.",
-      "AI chatbots and knowledge assistants provide a conversational way to access approved business information. They can retrieve relevant details from configured knowledge sources, respond to routine enquiries and direct requests requiring further assistance to the appropriate team.",
-      "Oglas AI develops custom AI assistants around your organization's information, users and operational requirements."
+      "Through intelligent AI chatbot development, businesses can make approved information easier to access. AI assistants can retrieve relevant details from configured knowledge sources, respond to routine enquiries and direct requests requiring further assistance to the appropriate team.",
+      "Oglas AI develops custom AI chatbot solutions that help organizations improve information access and manage repetitive enquiries through structured conversational experiences."
     ],
     "items": [
       {
@@ -23,7 +23,7 @@ const sections = [
       {
         "title": "Customer Support Chatbots",
         "paragraphs": [
-          "Handle recurring customer enquiries and provide relevant product, service and support information."
+          "Respond to recurring customer enquiries with relevant product, service and support information."
         ]
       },
       {
@@ -41,16 +41,16 @@ const sections = [
     ]
   },
   {
-    "title": "INTELLIGENT AI CHATBOT CAPABILITIES",
-    "supporting": "Designed for Relevant Answers and Controlled Responses",
+    "title": "AI CHATBOT DEVELOPMENT CAPABILITIES",
+    "supporting": "Built for Relevant Answers and Controlled Responses",
     "intro": [
-      "An effective AI chatbot needs to do more than generate responses. It should retrieve relevant information, follow defined instructions and recognize when a request requires human assistance."
+      "Effective AI chatbot development involves more than creating conversational responses. It requires relevant knowledge retrieval, contextual understanding and response controls that reflect your business requirements."
     ],
     "items": [
       {
         "title": "Company Knowledge Retrieval",
         "paragraphs": [
-          "Connect assistants with configured company documents, policies and other approved information sources to help users find relevant answers."
+          "Connect AI knowledge assistants with configured company documents, policies and other approved information sources to help users find relevant answers."
         ]
       },
       {
@@ -62,55 +62,80 @@ const sections = [
       {
         "title": "Business Rules and Access Controls",
         "paragraphs": [
-          "Configure response guidelines and appropriate information access according to the intended users and business requirements."
+          "Configure response guidelines and information access according to intended users, permissions and business requirements."
         ]
       },
       {
-        "title": "Human Escalation",
+        "title": "Human Escalation and Exception Handling",
         "paragraphs": [
-          "Identify requests that require additional verification or human judgement and direct them to the appropriate team."
+          "Identify questions requiring additional verification or human judgement and direct them to the appropriate team."
         ]
       }
     ]
   },
   {
-    "title": "CUSTOM AI CHATBOT DEVELOPMENT AND INTEGRATION",
-    "supporting": "Built Around Your Business Requirements",
+    "title": "HOW AI CHATBOTS & KNOWLEDGE ASSISTANTS WORK",
+    "supporting": "From User Questions to Relevant Business Answers",
     "intro": [
-      "Every organization has different knowledge sources, users and communication requirements. Oglas AI develops custom AI chatbot solutions based on how your business operates.",
-      "Solutions can be designed around your company information, supported user groups, response guidelines and intended workflows.",
-      "Where technically suitable, AI assistants can also be connected with existing business systems through available APIs or interfaces.",
-      "From requirements discovery and solution design to development, testing and deployment, the implementation is defined according to your operational needs, technical environment and agreed project scope."
+      "Our AI chatbot development process brings together user questions, approved knowledge sources and configured business rules to deliver relevant responses."
     ],
-    "items": []
-  },
-  {
-    "title": "AI KNOWLEDGE ASSISTANTS FOR DIFFERENT BUSINESS TEAMS",
-    "supporting": "Support Information Access Across Your Organization",
-    "intro": [],
     "items": [
       {
-        "title": "Customer Service",
+        "title": "Understand User Questions",
         "paragraphs": [
-          "Help support teams respond to recurring questions and provide consistent product and service information."
+          "Interpret incoming questions and identify the information or assistance being requested."
         ]
       },
       {
-        "title": "Human Resources",
+        "title": "Retrieve Relevant Information",
         "paragraphs": [
-          "Make approved employee policies, HR procedures and workplace guidelines easier to access."
+          "Search configured knowledge sources to identify information relevant to the user's enquiry."
         ]
       },
       {
-        "title": "Sales Teams",
+        "title": "Generate Responses",
         "paragraphs": [
-          "Help sales professionals find relevant product details, service information and approved business responses."
+          "Prepare responses using available information and configured instructions, helping users access business knowledge through conversation."
         ]
       },
       {
-        "title": "Business Operations",
+        "title": "Apply Rules and Escalate Requests",
         "paragraphs": [
-          "Support access to internal procedures and operational information, helping employees find answers to routine questions."
+          "Follow defined response guidelines and direct sensitive, unclear or out-of-scope requests to the appropriate team when human assistance is required."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "CUSTOM AI CHATBOT DEVELOPMENT IN DUBAI",
+    "supporting": "Designed Around Your Business Requirements",
+    "intro": [
+      "Every organization has different knowledge sources, users and communication requirements. Oglas AI provides custom AI chatbot development in Dubai, building solutions around how your business operates."
+    ],
+    "items": [
+      {
+        "title": "Built Around Your Company Knowledge",
+        "paragraphs": [
+          "Configure assistants to retrieve information from approved company documents, policies, product details and other relevant knowledge sources."
+        ]
+      },
+      {
+        "title": "Designed for Different Business Teams",
+        "paragraphs": [
+          "Develop assistants for customer service, HR, sales and operations, with relevant information and responses for each intended user group."
+        ]
+      },
+      {
+        "title": "Connected with Existing Business Systems",
+        "paragraphs": [
+          "Where technically suitable, AI chatbots can be designed to work with existing business systems through available APIs or interfaces."
+        ]
+      },
+      {
+        "title": "Configured Around Your Business Rules",
+        "paragraphs": [
+          "Define response guidelines, information access and escalation requirements according to your organization's procedures.",
+          "Our AI chatbot development approach covers requirements discovery, solution design, development, testing and deployment. Each implementation is planned around your operational needs and agreed technical scope."
         ]
       }
     ]
@@ -120,9 +145,9 @@ const sections = [
     "intro": [],
     "items": [
       {
-        "title": "What are AI chatbots and knowledge assistants?",
+        "title": "What does AI chatbot development in Dubai involve?",
         "paragraphs": [
-          "AI chatbots interact with users through conversations, while AI knowledge assistants help retrieve relevant information from configured knowledge sources. Businesses can use them to support customer enquiries, employee assistance and internal information access."
+          "AI chatbot development involves designing and building conversational solutions around a business's information, users and operational requirements. This can include knowledge retrieval, customer support, employee assistance and integration with relevant business systems."
         ]
       },
       {
@@ -134,13 +159,13 @@ const sections = [
       {
         "title": "Can AI chatbots be customized for different departments?",
         "paragraphs": [
-          "Yes. Assistants can be designed for different users and departments, including customer support, HR, sales and operations, with relevant knowledge sources and response guidelines."
+          "Yes. AI assistants can be developed for different departments, including customer support, HR, sales and operations, with relevant knowledge sources and response guidelines."
         ]
       },
       {
         "title": "Can AI chatbots integrate with existing business systems?",
         "paragraphs": [
-          "Where technically suitable, AI chatbot solutions can connect with existing business systems through available APIs or interfaces. Integration requirements are assessed during project discovery."
+          "AI chatbot solutions can be designed to connect with existing business systems where suitable APIs or interfaces are available. Integration requirements depend on system compatibility, data access, security and technical feasibility."
         ]
       },
       {
@@ -179,7 +204,7 @@ export function ChatbotsKnowledgePage() {
       <PageHero
         eyebrow="AI ASSISTANCE"
         title="AI Chatbots & Knowledge Assistants"
-        summary="Oglas AI develops custom AI chatbot solutions and knowledge assistants for businesses in Dubai and across the UAE. Built around approved company information and relevant business workflows, these solutions help employees and customers find answers, access information and manage enquiries while following your organization's policies and escalation requirements."
+        summary="Oglas AI provides AI chatbot development services in Dubai and across the UAE, creating custom AI chatbots and knowledge assistants tailored to your business requirements. Our AI chatbot solutions help employees and customers access company information, manage enquiries and receive relevant answers using approved business knowledge, defined policies and escalation workflows."
       >
         <TalkToOglas className="btn btn-light mt-8" defaultProjectType="AI Chatbots & Knowledge Assistants">
           Book a Free Consultation <ArrowRight className="h-4 w-4" />
@@ -218,8 +243,8 @@ export function ChatbotsKnowledgePage() {
           <h2 className="max-w-3xl text-4xl text-white md:text-[3.2rem]"><SplitTitle>Make Business Knowledge More Accessible</SplitTitle></h2>
           <div className="mt-7 max-w-3xl space-y-5 text-base leading-8 text-white/80 md:text-lg">
             <p>{"Help your employees and customers find relevant information without relying entirely on repetitive manual support."}</p>
-            <p>{"Oglas AI develops custom AI chatbots and knowledge assistants that bring approved company knowledge and conversational assistance together."}</p>
-            <p>{"Let's discuss your requirements and explore the right AI chatbot solution for your business."}</p>
+            <p>{"Oglas AI delivers custom AI chatbot development solutions that bring approved company knowledge and conversational assistance together."}</p>
+            <p>{"Let's discuss your requirements and explore how AI chatbot development can support your business operations."}</p>
           </div>
           <TalkToOglas className="btn btn-light mt-9" defaultProjectType="AI Chatbots & Knowledge Assistants">
             Book a Free Consultation <ArrowRight className="h-4 w-4" />

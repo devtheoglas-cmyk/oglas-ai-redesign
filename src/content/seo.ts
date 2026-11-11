@@ -104,7 +104,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "ai-chatbot-development-in-dubai-uae": {
     title: "AI Chatbot Development in Dubai & UAE | Oglas AI",
     description:
-      "Custom AI chatbots and knowledge assistants for businesses in Dubai and the UAE. Access approved company knowledge with human escalation.",
+      "Get custom AI chatbot development in Dubai and UAE. Build AI chatbots and knowledge assistants for business enquiries and internal support.",
   },
 };
 
