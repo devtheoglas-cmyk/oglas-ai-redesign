@@ -3016,7 +3016,7 @@ export default async function ServiceDetailPage({
     return <EssHrPortalsPage />;
   }
 
-  if (slug === "ai-document-processing") {
+  if (slug === "ai-powered-document-processing-in-dubai-uae") {
     return <DocumentProcessingPage />;
   }
 

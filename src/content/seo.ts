@@ -96,7 +96,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
     description:
       "Oglas AI provides AI dashboard services in Dubai and the UAE, connecting business data with AI-powered insights, forecasting, alerts, and decision support.",
   },
-  "ai-document-processing": {
+  "ai-powered-document-processing-in-dubai-uae": {
     title: "AI Document Processing in Dubai & UAE | Oglas AI",
     description:
       "Custom AI document processing solutions in Dubai and the UAE. Extract, classify and validate business documents with human review where needed.",

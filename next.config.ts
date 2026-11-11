@@ -27,6 +27,8 @@ const nextConfig: NextConfig = {
     return [
       // 301 (not Next's default 308) so search engines treat these as moved permanently.
       { source: "/company", destination: "/about", statusCode: 301 },
+      { source: "/ai-document-processing", destination: "/ai-powered-document-processing-in-dubai-uae", statusCode: 301 },
+      { source: "/services/ai-document-processing", destination: "/ai-powered-document-processing-in-dubai-uae", statusCode: 301 },
       { source: "/custom-software-development", destination: "/custom-software-development-services-in-dubai-uae", statusCode: 301 },
       { source: "/erp-payroll-automation", destination: "/erp-software-company-in-dubai-uae", statusCode: 301 },
       { source: "/intelligent-computer-vision", destination: "/computer-vision-solutions-in-dubai-uae", statusCode: 301 },

@@ -242,7 +242,7 @@ export const services: Service[] = [
     fit: "Best for leadership teams that need one reliable view of operations, sales, finance, HR, and production performance.",
   },
   {
-    slug: "ai-document-processing",
+    slug: "ai-powered-document-processing-in-dubai-uae",
     title: "AI Document Processing",
     eyebrow: "Document intelligence",
     summary:
@@ -608,7 +608,7 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "Intelligent Document Processing",
         icon: FileScan,
-        href: "/ai-document-processing",
+        href: "/ai-powered-document-processing-in-dubai-uae",
         summary:
           "Extract, classify, and process documents accurately with AI-powered automation.",
       },
