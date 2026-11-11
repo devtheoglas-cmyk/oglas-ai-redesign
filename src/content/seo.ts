@@ -101,7 +101,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
     description:
       "Custom AI document processing solutions in Dubai and the UAE. Extract, classify and validate business documents with human review where needed.",
   },
-  "ai-chatbots-knowledge-assistants": {
+  "ai-chatbot-development-in-dubai-uae": {
     title: "AI Chatbot Development in Dubai & UAE | Oglas AI",
     description:
       "Custom AI chatbots and knowledge assistants for businesses in Dubai and the UAE. Access approved company knowledge with human escalation.",

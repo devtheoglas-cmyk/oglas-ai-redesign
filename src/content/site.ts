@@ -264,7 +264,7 @@ export const services: Service[] = [
     fit: "Best for finance, HR, logistics, healthcare, trading, and compliance-heavy teams.",
   },
   {
-    slug: "ai-chatbots-knowledge-assistants",
+    slug: "ai-chatbot-development-in-dubai-uae",
     title: "AI Chatbots & Knowledge Assistants",
     eyebrow: "AI assistance",
     summary:
@@ -585,7 +585,7 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "AI Assistants & Chatbots",
         icon: Bot,
-        href: "/ai-chatbots-knowledge-assistants",
+        href: "/ai-chatbot-development-in-dubai-uae",
         summary:
           "Instant answers and support for employees and customers, anytime they need it.",
       },

@@ -3022,7 +3022,7 @@ export default async function ServiceDetailPage({
     return <DocumentProcessingPage />;
   }
 
-  if (slug === "ai-chatbots-knowledge-assistants") {
+  if (slug === "ai-chatbot-development-in-dubai-uae") {
     return <ChatbotsKnowledgePage />;
   }
 
