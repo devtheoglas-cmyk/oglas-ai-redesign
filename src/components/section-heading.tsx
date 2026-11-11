@@ -3,7 +3,7 @@ import { SplitTitle } from "@/components/split-title";
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
-  summary?: string;
+  summary?: React.ReactNode;
   align?: "left" | "center";
   tone?: "light" | "dark";
   headingLevel?: "h1" | "h2";

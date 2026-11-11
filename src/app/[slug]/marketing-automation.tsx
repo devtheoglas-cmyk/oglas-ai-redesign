@@ -337,7 +337,7 @@ export function MarketingAutomationPage() {
             <SplitTitle>{"Marketing Automation for Your Business Workflows"}</SplitTitle>
           </h2>
           <p className="mt-6 max-w-3xl text-base leading-8 text-steel md:text-lg">
-            We design and develop marketing automation workflows around your lead
+            We design and develop <a className="content-link" href="/workflow-automation-in-dubai-uae">marketing automation workflows</a> around your lead
             sources, sales process, CRM structure, and communication requirements,
             helping your teams automate repetitive marketing and sales activities
             without forcing them into a fixed workflow.
@@ -369,7 +369,7 @@ export function MarketingAutomationPage() {
             <p>
               Marketing automation works best when the systems involved in lead
               management and sales operations can work together. Instead of
-              managing lead information, follow-ups, CRM updates, and reporting as
+              managing lead information, follow-ups, CRM updates, and <a className="content-link" href="/ai-powered-dashboards-in-duabi-uae">reporting</a> as
               separate activities, Oglas AI can connect relevant processes into a
               more structured workflow.
             </p>

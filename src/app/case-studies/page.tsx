@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { ServiceMention } from "@/components/service-mention";
 import { CheckCircle2 } from "lucide-react";
-import { caseStudies } from "@/content/site";
+import { caseStudies, services } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
 import { PageHero } from "@/components/page-hero";
 
@@ -28,7 +29,7 @@ export default function CaseStudiesPage() {
       <section className="bg-white py-20">
         <div className="mx-auto grid w-full max-w-[1160px] px-4 gap-8">
           {caseStudies.map((study) => (
-            <article key={study.slug} className="grid gap-8 rounded-2xl border border-brand/10 bg-pearl p-7 lg:grid-cols-[0.8fr_1.2fr]">
+            <article id={study.slug} key={study.slug} className="grid scroll-mt-24 gap-8 rounded-2xl border border-brand/10 bg-pearl p-7 lg:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <p className="text-xs font-semibold uppercase text-emerald">{study.sector}</p>
                 <p className="mt-4 inline-flex rounded-md border border-champagne/30 bg-white px-3 py-2 text-xs font-semibold text-onyx">
@@ -38,11 +39,12 @@ export default function CaseStudiesPage() {
                   {study.title}
                 </h2>
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {study.services.map((service) => (
-                    <span key={service} className="rounded-md border border-black/10 bg-white px-3 py-2 text-xs font-semibold text-steel">
-                      {service}
-                    </span>
-                  ))}
+                  {study.services.map((title) => {
+                    const service = services.find((entry) => entry.title === title);
+                    return service ? (
+                      <a key={title} href={`/${service.slug}`} className="content-link rounded-md border border-black/10 bg-white px-3 py-2 text-xs font-semibold text-steel">{title}</a>
+                    ) : <span key={title}>{title}</span>;
+                  })}
                 </div>
               </div>
               <div className="grid gap-6">
@@ -52,7 +54,7 @@ export default function CaseStudiesPage() {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold uppercase text-champagne">Solution</h3>
-                  <p className="mt-3 text-sm leading-7 text-steel">{study.solution}</p>
+                  <p className="mt-3 text-sm leading-7 text-steel"><ServiceMention text={study.solution} /></p>
                 </div>
                 <div className="grid gap-2">
                   {study.outcomes.map((outcome) => (

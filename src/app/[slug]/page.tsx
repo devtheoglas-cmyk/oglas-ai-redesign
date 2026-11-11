@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceMention } from "@/components/service-mention";
 import { notFound } from "next/navigation";
 import {
   ArrowRight,
@@ -1308,7 +1309,7 @@ function CustomSoftwarePage() {
           <p className="mt-4 max-w-2xl text-base leading-7 text-white/85">
             Oglas AI develops custom software solutions for businesses in
             Dubai, the UAE, and beyond, combining business applications,
-            integrations, automation, and practical AI into software designed
+            integrations, <a className="content-link" href="/workflow-automation-in-dubai-uae">automation</a>, and practical AI into software designed
             around real operations.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -1904,7 +1905,7 @@ function AiDashboardsPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
               Oglas AI provides AI dashboard services in Dubai and across the
-              UAE, connecting ERP, CRM, finance, HR and production data into one
+              UAE, connecting <a className="content-link" href="/erp-software-company-in-dubai-uae">ERP</a>, CRM, finance, HR and production data into one
               live business intelligence view. Our AI-powered dashboards surface
               what changed, help identify what needs attention, forecast what
               may happen next, and support faster business decisions.
@@ -2674,7 +2675,7 @@ function WorkflowAutomationPage() {
               <SplitTitle>{"Workflow Automation Services"}</SplitTitle>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
-              Automate approvals, document routing, notifications, and repetitive
+              Automate approvals, <a className="content-link" href="/ai-powered-document-processing-in-dubai-uae">document routing</a>, notifications, and repetitive
               tasks with workflow automation solutions built around how your
               business operates.
             </p>
@@ -3034,7 +3035,7 @@ export default async function ServiceDetailPage({
               <SplitTitle>{service.title}</SplitTitle>
             </h1>
           </div>
-          <p className="text-lg leading-8 text-white/85">{service.description}</p>
+          <p className="text-lg leading-8 text-white/85"><ServiceMention text={service.description} exclude={`/${service.slug}`} /></p>
         </div>
       </section>
 

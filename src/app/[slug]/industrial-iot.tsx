@@ -583,7 +583,7 @@ export function IndustrialIotPage() {
             <p>
               It is to create an industrial monitoring system where the right people or equipment
               respond at the right moment, while every reading and alert is recorded for
-              operational visibility and auditability.
+              <a className="content-link" href="/ai-powered-dashboards-in-duabi-uae">operational visibility</a> and auditability.
             </p>
           </div>
         </div>
@@ -596,7 +596,7 @@ export function IndustrialIotPage() {
             <SplitTitle>{"What We Build with Industrial IoT Solutions"}</SplitTitle>
           </h2>
           <div className={`mt-6 max-w-3xl space-y-4 ${bodyCopy}`}>
-            <p>We build the software layer around your devices, sites and safety rules.</p>
+            <p>We build the <a className="content-link" href="/custom-software-development-services-in-dubai-uae">software layer</a> around your devices, sites and safety rules.</p>
             <p>
               Whether you are working with existing hardware or introducing new devices, our
               industrial IoT systems can bring different equipment and data sources into one

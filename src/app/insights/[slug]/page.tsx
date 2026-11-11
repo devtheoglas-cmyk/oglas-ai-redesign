@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { linkArticleServices } from "@/lib/service-mentions";
 import { notFound } from "next/navigation";
 import { BgImage } from "@/components/bg-image";
 import Link from "next/link";
@@ -133,7 +134,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
 
         <div className="mt-10">
           {post.body && post.body.length > 0 ? (
-            <PortableTextContent value={post.body} />
+            <PortableTextContent value={linkArticleServices(post.body)} />
           ) : (
             <div className="grid gap-6 text-base leading-8 text-steel">
               <p>
@@ -144,7 +145,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               <p>
                 Oglas AI starts with the business process: who does the work, which
                 approvals matter, where data enters the system, and what leadership needs
-                to see. That foundation makes ERP, automation, dashboards, and AI systems
+                to see. That foundation makes <Link className="content-link" href="/erp-software-company-in-dubai-uae">ERP</Link>, automation, <Link className="content-link" href="/ai-powered-dashboards-in-duabi-uae">dashboards</Link>, and AI systems
                 easier to adopt.
               </p>
               <p>
@@ -154,6 +155,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
             </div>
           )}
         </div>
+        <Link href="/case-studies" className="content-link mt-12 inline-block">Explore Oglas AI case studies</Link>
       </div>
     </article>
   );

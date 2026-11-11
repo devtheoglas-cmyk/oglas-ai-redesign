@@ -278,7 +278,7 @@ export default function ForexTradingPage() {
             <SectionHeading
               eyebrow="Forex & Trading Industry"
               title="The AI Layer for Modern Forex"
-              summary="Oglas AI builds AI agents, trading intelligence, and automation for brokers, fintechs, liquidity providers, PayTech companies, and prop firms — on top of the systems you already run, with people in control."
+              summary={<>Oglas AI builds AI agents, trading intelligence, and <Link className="content-link" href="/workflow-automation-in-dubai-uae">automation for brokers</Link>, fintechs, liquidity providers, PayTech companies, and prop firms — on top of the systems you already run, with people in control.</>}
               tone="dark"
               headingLevel="h1"
             />

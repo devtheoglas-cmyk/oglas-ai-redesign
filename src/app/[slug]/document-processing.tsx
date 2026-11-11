@@ -101,7 +101,7 @@ export function DocumentProcessingPage() {
           <SectionTitle supporting="Reduce Manual Document Handling">AI DOCUMENT PROCESSING SOLUTIONS FOR BUSINESS OPERATIONS</SectionTitle>
           <div className="mt-12 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
             <p>Businesses regularly handle invoices, forms and other operational documents that require information extraction, classification, verification and review. When these activities depend heavily on manual work, teams spend valuable time entering data, checking details and organizing documents.</p>
-            <p>AI document processing helps bring these activities into structured digital workflows. It can extract relevant information, categorize documents, flag missing details and direct files to the appropriate department for further action.</p>
+            <p>AI document processing helps bring these activities into <a className="content-link" href="/workflow-automation-in-dubai-uae">structured digital workflows</a>. It can extract relevant information, categorize documents, flag missing details and direct files to the appropriate department for further action.</p>
             <p>Oglas AI develops document processing solutions around your business requirements, helping teams manage repetitive document-related tasks more efficiently while keeping human review involved wherever verification or decision-making is required.</p>
           </div>
         </div>
@@ -146,7 +146,7 @@ export function DocumentProcessingPage() {
       <section className="bg-bloom py-20 md:py-24">
         <div className="mx-auto w-full max-w-[1160px] px-4">
           <SectionTitle supporting="Document Processing Solutions for Industry-Specific Operations">AI DOCUMENT PROCESSING FOR DIFFERENT BUSINESS ENVIRONMENTS</SectionTitle>
-          <p className="mt-12 max-w-3xl text-base leading-8 text-steel md:text-lg">Different industries handle different types of documents, information and review procedures. Oglas AI develops document processing solutions around these operational differences, with capabilities and workflows defined according to each organization&apos;s requirements.</p>
+          <p className="mt-12 max-w-3xl text-base leading-8 text-steel md:text-lg"><a className="content-link" href="/industries">Different industries</a> handle different types of documents, information and review procedures. Oglas AI develops document processing solutions around these operational differences, with capabilities and workflows defined according to each organization&apos;s requirements.</p>
           <div className="mt-12"><Cards items={industries} /></div>
           <p className="mt-10 max-w-3xl text-base leading-8 text-steel md:text-lg">The final capabilities depend on each organization&apos;s document types, operational requirements and agreed project scope.</p>
         </div>

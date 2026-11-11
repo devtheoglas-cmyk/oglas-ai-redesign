@@ -258,7 +258,7 @@ export function ErpPayrollPage() {
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/85 md:text-lg">
               Oglas AI designs and develops customized ERP and payroll solutions for
-              businesses in Dubai and across the UAE. We connect employee records,
+              businesses in Dubai and across the UAE. We connect <a className="content-link" href="/employee-self-service-in-dubai-uae">employee records</a>,
               attendance, leave, approvals, payroll, and reporting into a more
               organized workflow, adapting the system to your business rules and
               operational requirements instead of forcing your teams into a rigid
@@ -301,7 +301,7 @@ export function ErpPayrollPage() {
               As businesses grow, payroll and employee information can become
               spread across spreadsheets, attendance systems, HR tools, and
               finance processes. This can lead to repeated data entry, manual
-              checks, approval delays, and limited visibility.
+              checks, <a className="content-link" href="/workflow-automation-in-dubai-uae">approval delays</a>, and limited visibility.
             </p>
             <p>
               Oglas AI helps businesses bring these workflows together through{" "}

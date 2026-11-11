@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
             <div className="mt-10 rounded-md border border-white/10 bg-white/[0.04] p-5">
               <p className="text-sm leading-7 text-white/70">
-                Oglas AI works on custom quote projects after understanding the
+                <a className="content-link" href="/about">Oglas AI</a> works on custom quote projects after understanding the
                 workflow, users, integrations, and success criteria.
               </p>
             </div>

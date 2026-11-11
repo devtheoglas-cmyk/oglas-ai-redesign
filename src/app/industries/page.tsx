@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceMention } from "@/components/service-mention";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Compass, Layers, Sparkles, TrendingUp } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
@@ -195,7 +196,7 @@ export default function IndustriesPage() {
               >
                 <industry.icon className="h-8 w-8 text-emerald" />
                 <h3 className="mt-7 text-2xl font-semibold text-onyx">{industry.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-steel">{industry.summary}</p>
+                <p className="mt-4 text-sm leading-7 text-steel"><ServiceMention text={industry.summary} /></p>
                 <div className="mt-6 grid gap-2">
                   {industry.needs.map((need) => (
                     <span key={need} className="flex items-center gap-2 text-sm text-steel">
@@ -267,7 +268,7 @@ export default function IndustriesPage() {
                       {meta?.blurb ?? study.solution}
                     </p>
                     <Link
-                      href={`/case-studies/${study.slug}`}
+                      href={`/case-studies#${study.slug}`}
                       className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald transition hover:text-onyx"
                     >
                       View case study

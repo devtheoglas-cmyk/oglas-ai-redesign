@@ -21,7 +21,7 @@ export default function PrivacyPage() {
         <div className="grid gap-6 text-lg leading-8 text-steel">
           <p>
             Oglas AI collects information submitted through this website to respond
-            to business enquiries, consultation requests, and project discussions.
+            to business enquiries, <a className="content-link" href="/contact">consultation requests</a>, and project discussions.
           </p>
           <p>
             Contact details and project information are used only for communication,

@@ -59,8 +59,8 @@ export default async function Home() {
             </h1>
             <ArrowRule className="mt-9 text-white/70" />
             <p className="mt-8 max-w-xl text-base leading-8 text-white/85 md:text-[17px]">
-              Oglas AI provides custom software development and practical AI solutions
-              for businesses in Dubai, the UAE, and global markets. We build ERP systems,
+              Oglas AI provides <a className="content-link" href="/custom-software-development-services-in-dubai-uae">custom software development</a> and practical AI solutions
+              for businesses in Dubai, the UAE, and global markets. We build <a className="content-link" href="/erp-software-company-in-dubai-uae">ERP systems</a>,
               workflow automation, business applications, dashboards, portals, and
               AI-powered solutions around how your business actually operates.
             </p>

@@ -417,8 +417,8 @@ export default function AboutPage() {
               they operate.
             </p>
             <p className="mt-5 max-w-xl text-base leading-8 text-white/80">
-              From ERP and payroll systems to workflow automation, computer
-              vision, intelligent document processing, and AI-powered business
+              From ERP and payroll systems to <a className="content-link" href="/workflow-automation-in-dubai-uae">workflow automation</a>, computer
+              vision, <a className="content-link" href="/ai-powered-document-processing-in-dubai-uae">intelligent document processing</a>, and AI-powered business
               applications, we provide custom software development and practical
               AI solutions built around real operational needs.
             </p>

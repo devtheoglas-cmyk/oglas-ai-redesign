@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+.content-link { text-decoration: underline; text-underline-offset: 0.18em; }
+.content-link:hover { text-decoration-thickness: 2px; }
+
 /*
   Oglas AI — company-profile design system
 
