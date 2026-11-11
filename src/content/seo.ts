@@ -102,9 +102,9 @@ export const serviceSeo: Record<string, SeoEntry> = {
       "Custom AI document processing solutions in Dubai and the UAE. Extract, classify and validate business documents with human review where needed.",
   },
   "ai-chatbots-knowledge-assistants": {
-    title: "AI Chatbot Solutions | Oglas AI",
+    title: "AI Chatbot Development in Dubai & UAE | Oglas AI",
     description:
-      "Build secure AI chatbots and knowledge assistants for customer support, employee self-service, HR helpdesks, internal knowledge bases, and business operations.",
+      "Custom AI chatbots and knowledge assistants for businesses in Dubai and the UAE. Access approved company knowledge with human escalation.",
   },
 };
 

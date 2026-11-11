@@ -59,6 +59,7 @@ import { IndustrialIotPage } from "./industrial-iot";
 import { ComputerVisionPage } from "./computer-vision";
 import { EssHrPortalsPage } from "./ess-hr-portals";
 import { DocumentProcessingPage } from "./document-processing";
+import { ChatbotsKnowledgePage } from "./chatbots-knowledge";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -3019,6 +3020,10 @@ export default async function ServiceDetailPage({
 
   if (slug === "ai-powered-document-processing-in-dubai-uae") {
     return <DocumentProcessingPage />;
+  }
+
+  if (slug === "ai-chatbots-knowledge-assistants") {
+    return <ChatbotsKnowledgePage />;
   }
 
   return (
