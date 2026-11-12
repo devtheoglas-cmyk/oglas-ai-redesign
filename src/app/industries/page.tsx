@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { ServiceMention } from "@/components/service-mention";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Compass, Layers, Sparkles, TrendingUp } from "lucide-react";
@@ -11,15 +11,11 @@ import { HeroArt, PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/industries"];
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/industries",
-  },
-};
+  path: "/industries",
+});
 
 const approachCards = [
   {

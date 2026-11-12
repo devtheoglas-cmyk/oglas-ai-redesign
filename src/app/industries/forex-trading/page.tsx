@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import Link from "next/link";
 import {
   Activity,
@@ -31,15 +31,11 @@ const brochure = {
   meta: "PDF · 27 pages · 6.8 MB",
 };
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/industries/forex-trading",
-  },
-};
+  path: "/industries/forex-trading",
+});
 
 const layers = [
   {

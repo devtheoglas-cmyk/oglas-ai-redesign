@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { linkArticleServices } from "@/lib/service-mentions";
 import { notFound } from "next/navigation";
 import { BgImage } from "@/components/bg-image";
@@ -37,29 +38,29 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   const seo = insightSeo[post.slug];
   const title = seo?.title || post.metaTitle || post.title;
   const description = seo?.description || post.metaDescription || post.excerpt;
+  const path = resolveCanonicalPath(post.canonicalUrl, `/insights/${post.slug}`);
+  const metadata = pageMetadata({ title, description, path });
+  const images = post.mainImage?.asset?.url
+    ? [{ url: post.mainImage.asset.url, alt: post.mainImage.alt || post.title }]
+    : undefined;
 
   return {
-    title: {
-      absolute: title,
-    },
-    description,
+    ...metadata,
     keywords: post.keywords,
     alternates: {
-      canonical: resolveCanonicalPath(post.canonicalUrl, `/insights/${post.slug}`),
+      canonical: path,
     },
     openGraph: {
+      ...metadata.openGraph,
       title,
       description,
       type: "article",
       publishedTime: post.date,
-      images: post.mainImage?.asset?.url
-        ? [
-            {
-              url: post.mainImage.asset.url,
-              alt: post.mainImage.alt || post.title,
-            },
-          ]
-        : undefined,
+      images,
+    },
+    twitter: {
+      ...metadata.twitter,
+      images,
     },
   };
 }

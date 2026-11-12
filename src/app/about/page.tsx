@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { TalkToOglas } from "@/components/talk-modal";
 import {
   ArrowRight,
@@ -41,11 +41,11 @@ export const revalidate = 60;
 const seo = staticPageSeo["/about"];
 const baseUrl = "https://www.oglas-ai.com";
 
-export const metadata: Metadata = {
-  title: { absolute: seo.title! },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 /* ---------- content ---------- */
 

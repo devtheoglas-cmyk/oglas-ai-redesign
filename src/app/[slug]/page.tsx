@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { ServiceMention } from "@/components/service-mention";
 import { notFound } from "next/navigation";
 import {
@@ -2965,15 +2966,11 @@ export async function generateMetadata({
 
   const seo = serviceSeo[service.slug];
 
-  return {
-    title: {
-      absolute: seo?.title || `${service.title} | Oglas AI`,
-    },
+  return pageMetadata({
+    title: seo?.title || `${service.title} | Oglas AI`,
     description: seo?.description || service.summary,
-    alternates: {
-      canonical: `/${service.slug}`,
-    },
-  };
+    path: `/${service.slug}`,
+  });
 }
 
 export default async function ServiceDetailPage({

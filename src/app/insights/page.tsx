@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { BgImage } from "@/components/bg-image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -10,15 +10,11 @@ export const revalidate = 60;
 
 const seo = staticPageSeo["/insights"];
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/insights",
-  },
-};
+  path: "/insights",
+});
 
 export default async function InsightsPage() {
   const posts = await getPublishedPosts();

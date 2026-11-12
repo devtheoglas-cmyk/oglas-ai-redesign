@@ -5,6 +5,7 @@ import Script from "next/script";
 import { StructuredData } from "@/components/structured-data";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { staticPageSeo } from "@/content/seo";
 import "./globals.css";
 
 const googleTagManagerId = "GTM-KS9QHLW9";
@@ -35,15 +36,13 @@ const arabic = IBM_Plex_Sans_Arabic({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.oglas-ai.com"),
   title: {
-    default: "Oglas AI | Custom Software Development & Practical AI",
+    default: staticPageSeo["/"].title!,
     template: "%s | Oglas AI",
   },
-  description:
-    "Dubai-based custom software and AI solutions partner for ERP, payroll automation, computer vision, workflow automation, marketing automation, and decision intelligence.",
+  description: staticPageSeo["/"].description,
   openGraph: {
-    title: "Oglas AI",
-    description:
-      "Custom software and AI integrated solutions for companies in the UAE and global markets.",
+    title: staticPageSeo["/"].title!,
+    description: staticPageSeo["/"].description,
     url: "https://www.oglas-ai.com",
     siteName: "Oglas AI",
     locale: "en_US",
@@ -51,9 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oglas AI — Custom Software Development & Practical AI",
-    description:
-      "Software built around real business operations. ERP, payroll, workflow automation, computer vision, and AI dashboards.",
+    title: staticPageSeo["/"].title!,
+    description: staticPageSeo["/"].description,
   },
   // Google Search Console ownership check for oglas-ai.com.
   // `other` carries Pinterest's domain-verification tag

@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { PageHero } from "@/components/page-hero";
 import { staticPageSeo } from "@/content/seo";
 
 const seo = staticPageSeo["/privacy"];
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
+export const metadata = pageMetadata({
+  title: "Privacy Policy | Oglas AI",
   description: seo.description,
-  alternates: {
-    canonical: "/privacy",
-  },
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

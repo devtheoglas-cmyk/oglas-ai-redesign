@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { ServiceMention } from "@/components/service-mention";
 import { CheckCircle2 } from "lucide-react";
 import { caseStudies, services } from "@/content/site";
@@ -7,15 +7,11 @@ import { PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/case-studies"];
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/case-studies",
-  },
-};
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

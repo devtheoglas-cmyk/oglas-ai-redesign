@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { ArrowRight, CheckCircle2, Plus, Quote } from "lucide-react";
 import { TalkToOglas } from "@/components/talk-modal";
 import Image from "next/image";
@@ -25,15 +25,11 @@ export const revalidate = 60;
 
 const seo = staticPageSeo["/"];
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/",
-  },
-};
+  path: "/",
+});
 
 export default async function Home() {
   const latestInsights = await getPublishedPosts(3);

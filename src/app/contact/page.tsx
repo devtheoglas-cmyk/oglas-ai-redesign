@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { company } from "@/content/site";
@@ -7,15 +7,11 @@ import { PageHero } from "@/components/page-hero";
 
 const seo = staticPageSeo["/contact"];
 
-export const metadata: Metadata = {
-  title: {
-    absolute: seo.title!,
-  },
+export const metadata = pageMetadata({
+  title: seo.title!,
   description: seo.description,
-  alternates: {
-    canonical: "/contact",
-  },
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
