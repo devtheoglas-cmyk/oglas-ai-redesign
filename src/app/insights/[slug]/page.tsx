@@ -147,7 +147,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               <p>
                 Oglas AI starts with the business process: who does the work, which
                 approvals matter, where data enters the system, and what leadership needs
-                to see. That foundation makes <Link className="content-link" href="/erp-software-company-in-dubai-uae">ERP</Link>, automation, <Link className="content-link" href="/ai-powered-dashboards-in-duabi-uae">dashboards</Link>, and AI systems
+                to see. That foundation makes <Link className="content-link" href="/erp-software-company-in-dubai-uae">ERP</Link>, automation, <Link className="content-link" href="/ai-powered-dashboards-in-dubai-uae">dashboards</Link>, and AI systems
                 easier to adopt.
               </p>
               <p>

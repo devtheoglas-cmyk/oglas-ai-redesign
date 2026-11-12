@@ -583,7 +583,7 @@ export function IndustrialIotPage() {
             <p>
               It is to create an industrial monitoring system where the right people or equipment
               respond at the right moment, while every reading and alert is recorded for
-              <a className="content-link" href="/ai-powered-dashboards-in-duabi-uae">operational visibility</a> and auditability.
+              <a className="content-link" href="/ai-powered-dashboards-in-dubai-uae">operational visibility</a> and auditability.
             </p>
           </div>
         </div>

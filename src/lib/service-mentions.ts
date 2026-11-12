@@ -8,7 +8,7 @@ const topics = [
   { href: "/ai-powered-document-processing-in-dubai-uae", pattern: /\b(?:(?:intelligent |AI )?document processing|document extraction)\b/i },
   { href: "/marketing-automation-agency-in-dubai-uae", pattern: /\b(?:marketing automation|lead nurturing)\b/i },
   { href: "/ai-chatbot-development-in-dubai-uae", pattern: /\b(?:knowledge assistants?|AI assistants?|AI chatbots?|AI agents?)\b/i },
-  { href: "/ai-powered-dashboards-in-duabi-uae", pattern: /\b(?:business intelligence|(?:operational |production |monitoring |management )?dashboards?)\b/i },
+  { href: "/ai-powered-dashboards-in-dubai-uae", pattern: /\b(?:business intelligence|(?:operational |production |monitoring |management )?dashboards?)\b/i },
   { href: "/computer-vision-solutions-in-dubai-uae", pattern: /\b(?:computer vision|AI-powered inspection|camera intelligence)\b/i },
   { href: "/industrial-iot-companies-in-dubai-uae", pattern: /\b(?:industrial IoT|sensor data)\b/i },
 ];

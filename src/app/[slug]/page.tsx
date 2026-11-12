@@ -1166,7 +1166,7 @@ function AiDashboardsBreadcrumbStructuredData() {
         "@type": "ListItem",
         position: 2,
         name: "AI Dashboards & Decision Intelligence",
-        item: `${baseUrl}/ai-powered-dashboards-in-duabi-uae`,
+        item: `${baseUrl}/ai-powered-dashboards-in-dubai-uae`,
       },
     ],
   };
@@ -1185,7 +1185,7 @@ function AiDashboardsServiceStructuredData() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${baseUrl}/ai-powered-dashboards-in-duabi-uae#service`,
+    "@id": `${baseUrl}/ai-powered-dashboards-in-dubai-uae#service`,
     name: "AI Dashboards & Decision Intelligence",
     serviceType: "Business Intelligence & Decision Intelligence",
     description:
@@ -1200,7 +1200,7 @@ function AiDashboardsServiceStructuredData() {
       "United Arab Emirates",
       "Dubai, United Arab Emirates",
     ],
-    url: `${baseUrl}/ai-powered-dashboards-in-duabi-uae`,
+    url: `${baseUrl}/ai-powered-dashboards-in-dubai-uae`,
   };
 
   return (
@@ -2991,7 +2991,7 @@ export default async function ServiceDetailPage({
     return <WorkflowAutomationPage />;
   }
 
-  if (slug === "ai-powered-dashboards-in-duabi-uae") {
+  if (slug === "ai-powered-dashboards-in-dubai-uae") {
     return <AiDashboardsPage />;
   }
 

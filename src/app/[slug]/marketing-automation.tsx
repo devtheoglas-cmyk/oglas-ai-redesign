@@ -369,7 +369,7 @@ export function MarketingAutomationPage() {
             <p>
               Marketing automation works best when the systems involved in lead
               management and sales operations can work together. Instead of
-              managing lead information, follow-ups, CRM updates, and <a className="content-link" href="/ai-powered-dashboards-in-duabi-uae">reporting</a> as
+              managing lead information, follow-ups, CRM updates, and <a className="content-link" href="/ai-powered-dashboards-in-dubai-uae">reporting</a> as
               separate activities, Oglas AI can connect relevant processes into a
               more structured workflow.
             </p>

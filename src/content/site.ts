@@ -220,7 +220,7 @@ export const services: Service[] = [
     fit: "Best for manpower companies, facility management groups, clinics, retail operators, and teams with mobile staff.",
   },
   {
-    slug: "ai-powered-dashboards-in-duabi-uae",
+    slug: "ai-powered-dashboards-in-dubai-uae",
     title: "AI Dashboards & Decision Intelligence",
     eyebrow: "Management visibility",
     summary:
@@ -601,7 +601,7 @@ export const helpSlides: HelpSlide[] = [
       {
         title: "AI Dashboards & Insights",
         icon: LineChart,
-        href: "/ai-powered-dashboards-in-duabi-uae",
+        href: "/ai-powered-dashboards-in-dubai-uae",
         summary:
           "Real-time dashboards and predictive insights to track performance and spot opportunities.",
       },

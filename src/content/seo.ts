@@ -91,7 +91,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
     description:
       "Oglas AI builds IoT solutions in Dubai and the UAE, connecting devices, monitoring systems, safety alerts, dashboards and reporting.",
   },
-  "ai-powered-dashboards-in-duabi-uae": {
+  "ai-powered-dashboards-in-dubai-uae": {
     title: "AI powered Dashboard Services Dubai | Oglas AI",
     description:
       "Oglas AI provides AI dashboard services in Dubai and the UAE, connecting business data with AI-powered insights, forecasting, alerts, and decision support.",
