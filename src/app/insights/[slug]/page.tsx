@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import { ArticleStructuredData } from "@/components/structured-data";
 import { PortableTextContent } from "@/components/portable-text-content";
 import { insightSeo } from "@/content/seo";
-import { getPublishedPost, getPublishedPostSlugs, resolveCanonicalPath } from "@/sanity/lib/posts";
+import { getPublishedPost, getPublishedPostSlugs } from "@/sanity/lib/posts";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 
@@ -38,7 +38,8 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   const seo = insightSeo[post.slug];
   const title = seo?.title || post.metaTitle || post.title;
   const description = seo?.description || post.metaDescription || post.excerpt;
-  const path = resolveCanonicalPath(post.canonicalUrl, `/insights/${post.slug}`);
+  // The published slug owns the route. CMS canonical fields may contain old slugs.
+  const path = `/insights/${post.slug}`;
   const metadata = pageMetadata({ title, description, path });
   const images = post.mainImage?.asset?.url
     ? [{ url: post.mainImage.asset.url, alt: post.mainImage.alt || post.title }]
