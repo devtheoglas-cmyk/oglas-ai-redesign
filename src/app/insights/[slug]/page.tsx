@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   const metadata = pageMetadata({ title, description, path });
   const images = post.mainImage?.asset?.url
     ? [{ url: post.mainImage.asset.url, alt: post.mainImage.alt || post.title }]
-    : undefined;
+    : [{ url: "/opengraph-image", alt: "Oglas AI" }];
 
   return {
     ...metadata,

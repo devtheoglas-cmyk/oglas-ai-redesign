@@ -21,9 +21,11 @@ export function pageMetadata({
       siteName: "Oglas AI",
       locale: "en_US",
       type: "website",
+      images: [{ url: "/opengraph-image", alt: "Oglas AI" }],
     },
     twitter: {
       card: "summary_large_image",
+      images: [{ url: "/opengraph-image", alt: "Oglas AI" }],
       title,
       description,
     },
