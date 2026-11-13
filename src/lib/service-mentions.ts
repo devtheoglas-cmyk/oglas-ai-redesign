@@ -76,7 +76,12 @@ export function linkArticleServices(blocks: PortableTextBlock[], articleSlug?: s
     return {
       ...block,
       children: block.children.map((span) => span.text?.trim() === removal.label
-        ? { ...span, marks: (span.marks || []).filter((mark) => !linkKeys.has(mark)) }
+        ? {
+          ...span,
+          marks: "marks" in span && Array.isArray(span.marks)
+            ? span.marks.filter((mark: unknown) => typeof mark === "string" && !linkKeys.has(mark))
+            : [],
+        }
         : span),
     };
   });
