@@ -143,7 +143,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
         ) : null}
 
         <div className="mt-10">
-          {post.body && <PortableTextContent value={linkArticleServices(normalizeArticleHeadings(post.body))} />}
+          {post.body && <PortableTextContent value={linkArticleServices(normalizeArticleHeadings(post.body), post.slug)} />}
         </div>
         <Link href="/case-studies" className="content-link mt-12 inline-block">Explore Oglas AI case studies</Link>
       </div>

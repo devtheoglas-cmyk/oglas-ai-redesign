@@ -25,10 +25,23 @@ export function firstServiceMention(text: string, excluded: ReadonlySet<string> 
   return first;
 }
 
-// Add at most three distinct service links, one per paragraph, to unmarked text.
-export function linkArticleServices(blocks: PortableTextBlock[]) {
+const articleLinkRemovals: Record<string, { paragraph: string; label: string }[]> = {
+  "erp-payroll-integration-uae": [
+    { paragraph: "As businesses in Dubai and across the UAE grow", label: "payroll" },
+  ],
+  "manufacturing-data-integration-uae": [
+    { paragraph: "Integration connects data;", label: "dashboards" },
+  ],
+  "ai-automation-business-processes": [
+    { paragraph: "A practical guide to business", label: "process automation" },
+    { paragraph: "The important difference is that modern", label: "AI document processing" },
+  ],
+};
+
+// Add at most three distinct service links, then apply the requested editorial removals.
+export function linkArticleServices(blocks: PortableTextBlock[], articleSlug?: string) {
   const linked = new Set<string>();
-  return blocks.map((block) => {
+  const augmented = blocks.map((block) => {
     if (linked.size >= 3 || block._type !== "block" || block.style !== "normal" || !Array.isArray(block.children)) return block;
     for (const [index, span] of block.children.entries()) {
       if (span._type !== "span" || typeof span.text !== "string" || span.marks?.length) continue;
@@ -48,5 +61,23 @@ export function linkArticleServices(blocks: PortableTextBlock[]) {
       };
     }
     return block;
+  });
+
+  const removals = articleLinkRemovals[articleSlug || ""];
+  if (!removals) return augmented;
+  return augmented.map((block) => {
+    if (block._type !== "block" || !Array.isArray(block.children)) return block;
+    const paragraph = block.children.map((span) => span.text || "").join("").trim();
+    const removal = removals.find((entry) => paragraph.startsWith(entry.paragraph));
+    if (!removal) return block;
+    const linkKeys = new Set(
+      (block.markDefs || []).filter((mark) => mark._type === "link").map((mark) => mark._key),
+    );
+    return {
+      ...block,
+      children: block.children.map((span) => span.text?.trim() === removal.label
+        ? { ...span, marks: (span.marks || []).filter((mark) => !linkKeys.has(mark)) }
+        : span),
+    };
   });
 }
