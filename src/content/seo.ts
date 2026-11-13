@@ -108,6 +108,13 @@ export const serviceSeo: Record<string, SeoEntry> = {
   },
 };
 
+export const insightTitleOverrides: Readonly<Record<string, string>> = {
+  "everyone-wants-an-ai-agent-what-your-business-needs-first":
+    "Everyone Wants an AI Agent. What You Need First | Oglas AI",
+  "the-difference-between-ai-that-looks-smart-and-ai-that-saves-money":
+    "AI That Looks Smart vs AI That Saves Money | Oglas AI",
+};
+
 export const insightSeo: Record<string, SeoEntry> = {
   "ai-automation-business-processes": {
     description: "Discover 10 business processes you can automate with AI in 2026, from document processing and customer support to AI agents and reporting.",

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ArticleStructuredData } from "@/components/structured-data";
 import { PortableTextContent } from "@/components/portable-text-content";
-import { insightSeo } from "@/content/seo";
+import { insightSeo, insightTitleOverrides } from "@/content/seo";
 import { getPublishedPost, getPublishedPostSlugs } from "@/sanity/lib/posts";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   }
 
   const seo = insightSeo[post.slug];
-  const title = post.metaTitle || seo?.title || post.title;
+  const title = insightTitleOverrides[post.slug] || post.metaTitle || seo?.title || post.title;
   const description = seo?.description || post.metaDescription || post.excerpt;
   // The published slug owns the route. CMS canonical fields may contain old slugs.
   const path = `/insights/${post.slug}`;
