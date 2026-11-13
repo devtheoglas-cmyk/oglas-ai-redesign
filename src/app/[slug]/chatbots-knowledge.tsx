@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
-import { FaqStructuredData } from "@/components/structured-data";
+import { FaqStructuredData, ServicePageStructuredData } from "@/components/structured-data";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
 
@@ -200,6 +200,7 @@ export function ChatbotsKnowledgePage() {
   return (
     <>
       <FaqStructuredData faqs={faqs} />
+      <ServicePageStructuredData slug="ai-chatbot-development-in-dubai-uae" />
       <PageHero
         eyebrow="AI ASSISTANCE"
         title="AI Chatbots & Knowledge Assistants"

@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { company } from "@/content/site";
 import { staticPageSeo } from "@/content/seo";
 import { PageHero } from "@/components/page-hero";
+import { ContactPageStructuredData } from "@/components/structured-data";
 
 const seo = staticPageSeo["/contact"];
 
@@ -16,6 +17,7 @@ export const metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
+      <ContactPageStructuredData />
       <PageHero
         eyebrow="Contact"
         title="Book a Free Consultation"

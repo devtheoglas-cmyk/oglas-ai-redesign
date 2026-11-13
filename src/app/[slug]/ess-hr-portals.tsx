@@ -9,7 +9,7 @@ import {
   Workflow,
 } from "lucide-react";
 import Link from "next/link";
-import { FaqStructuredData } from "@/components/structured-data";
+import { FaqStructuredData, ServicePageStructuredData } from "@/components/structured-data";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
@@ -66,6 +66,7 @@ export function EssHrPortalsPage() {
   return (
     <>
       <FaqStructuredData faqs={faqs} />
+      <ServicePageStructuredData slug="employee-self-service-in-dubai-uae" />
       <section className="bg-mesh -mt-20 overflow-hidden pb-20 pt-36 md:pb-28 md:pt-44">
         <HeroBackdrop watermark={false} />
         <div className="mx-auto grid w-full max-w-[1160px] gap-10 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">

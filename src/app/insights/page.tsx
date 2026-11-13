@@ -1,5 +1,5 @@
 import { pageMetadata } from "@/lib/page-metadata";
-import { BgImage } from "@/components/bg-image";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { staticPageSeo } from "@/content/seo";
@@ -37,10 +37,12 @@ export default async function InsightsPage() {
             >
               {post.mainImage?.asset?.url ? (
                 <div className="relative aspect-[16/10] border-b border-black/10 bg-white">
-                  <BgImage
+                  <Image
                     src={post.mainImage.asset.url}
                     alt={post.mainImage.alt ?? ""}
                     fill
+                    sizes="(min-width: 1024px) 370px, 100vw"
+                    className="object-cover"
                   />
                 </div>
               ) : null}

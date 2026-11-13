@@ -1,6 +1,5 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import { groq } from "next-sanity";
-import { insights as fallbackInsights } from "@/content/site";
 import { projectId } from "@/sanity/env";
 import { client } from "@/sanity/lib/client";
 
@@ -30,6 +29,8 @@ export type PublishedPost = {
   category: string;
   excerpt: string;
   date: string;
+  contentUpdatedAt?: string;
+  author?: { name: string; role?: string };
   readTime: string;
   metaTitle?: string;
   metaDescription?: string;
@@ -47,6 +48,8 @@ const postCardFields = groq`
   "excerpt": coalesce(excerpt, ""),
   "date": coalesce(publishedAt, _createdAt),
   "readTime": coalesce(readTime, "4 min read"),
+  contentUpdatedAt,
+  author->{ name, role },
   metaTitle,
   metaDescription,
   keywords,
@@ -65,12 +68,14 @@ const postCardFields = groq`
 const publishedFilter = groq`
   _type == "post" &&
   defined(slug.current) &&
+  slug.current != "ai-automation-for-uae-businesses" &&
+  count(body[_type == "block" && count(children[_type == "span" && length(text) > 0]) > 0]) > 0 &&
   (!defined(status) || status == "published") &&
   (!defined(publishedAt) || publishedAt <= now())
 `;
 
 const postsQuery = groq`
-  *[${publishedFilter}] | order(publishedAt desc, _createdAt desc) [0...$limit] {
+  *[${publishedFilter}] | order(publishedAt desc, _createdAt desc) {
     ${postCardFields}
   }
 `;
@@ -104,70 +109,20 @@ function isSanityConfigured() {
   return Boolean(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) && projectId !== "demo";
 }
 
-function fallbackPostFromInsight(post: (typeof fallbackInsights)[number]): PublishedPost {
-  return {
-    _id: `fallback-${post.slug}`,
-    title: post.title,
-    slug: post.slug,
-    category: post.category,
-    excerpt: post.excerpt,
-    date: post.date,
-    readTime: post.readTime,
-    body: null,
-  };
-}
-
-function fallbackPosts(limit = fallbackInsights.length) {
-  return fallbackInsights.slice(0, limit).map(fallbackPostFromInsight);
-}
-
-export async function getPublishedPosts(limit = 100): Promise<PublishedPost[]> {
-  if (!isSanityConfigured()) {
-    return fallbackPosts(limit);
-  }
-
-  try {
-    const posts = await client.fetch<PublishedPost[]>(postsQuery, { limit });
-    return posts.length > 0 ? posts : fallbackPosts(limit);
-  } catch {
-    return fallbackPosts(limit);
-  }
+// Only complete published CMS documents are public. Let failures propagate so ISR
+// retains the last successful page instead of publishing substitute article copy.
+export async function getPublishedPosts(limit?: number): Promise<PublishedPost[]> {
+  if (!isSanityConfigured()) return [];
+  const query = limit === undefined ? postsQuery : groq`${postsQuery}[0...$limit]`;
+  return client.fetch<PublishedPost[]>(query, limit === undefined ? {} : { limit });
 }
 
 export async function getPublishedPost(slug: string): Promise<PublishedPost | null> {
-  const fallback = fallbackInsights.find((post) => post.slug === slug);
-
-  if (!isSanityConfigured()) {
-    return fallback ? fallbackPostFromInsight(fallback) : null;
-  }
-
-  try {
-    const post = await client.fetch<PublishedPost | null>(postBySlugQuery, { slug });
-    return post ?? (fallback ? fallbackPostFromInsight(fallback) : null);
-  } catch {
-    return fallback ? fallbackPostFromInsight(fallback) : null;
-  }
+  if (!isSanityConfigured()) return null;
+  return client.fetch<PublishedPost | null>(postBySlugQuery, { slug });
 }
 
 export async function getPublishedPostSlugs() {
-  const fallbackSlugs = fallbackInsights.map((post) => ({ slug: post.slug }));
-
-  if (!isSanityConfigured()) {
-    return fallbackSlugs;
-  }
-
-  try {
-    const slugs = await client.fetch<{ slug: string }[]>(postSlugsQuery);
-    const merged = new Map<string, { slug: string }>();
-
-    for (const item of [...fallbackSlugs, ...slugs]) {
-      if (item.slug) {
-        merged.set(item.slug, item);
-      }
-    }
-
-    return Array.from(merged.values());
-  } catch {
-    return fallbackSlugs;
-  }
+  if (!isSanityConfigured()) return [];
+  return client.fetch<{ slug: string }[]>(postSlugsQuery);
 }

@@ -16,6 +16,8 @@ export function StructuredData() {
         "@id": `${baseUrl}/#organization`,
         name: company.name,
         url: baseUrl,
+        logo: `${baseUrl}/icon.svg`,
+        sameAs: ["https://www.linkedin.com/company/oglas-ai/"],
         email: company.email,
         description: company.positioning,
         address: {
@@ -39,31 +41,6 @@ export function StructuredData() {
           "Marketing automation",
           "Business intelligence dashboards",
         ],
-        sameAs: [baseUrl],
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${baseUrl}/#website`,
-        url: baseUrl,
-        name: company.name,
-        publisher: {
-          "@id": `${baseUrl}/#organization`,
-        },
-        inLanguage: "en",
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": `${baseUrl}/#services`,
-        name: company.name,
-        url: baseUrl,
-        email: company.email,
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Dubai",
-          addressCountry: "AE",
-        },
-        serviceType: services.map((service) => service.title),
-        areaServed: ["AE", "SA", "AU"],
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Oglas AI Services",
@@ -71,14 +48,28 @@ export function StructuredData() {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
+              "@id": `${baseUrl}/${service.slug}#service`,
               name: service.title,
+              serviceType: service.title,
               description: service.summary,
               url: `${baseUrl}/${service.slug}`,
+              provider: { "@id": `${baseUrl}/#organization` },
               areaServed: ["AE", "SA", "AU"],
-              audience: industries.map((industry) => industry.title),
+              audience: industries.map((industry) => ({
+                "@type": "Audience",
+                audienceType: industry.title,
+              })),
             },
           })),
         },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${baseUrl}/#website`,
+        url: baseUrl,
+        name: company.name,
+        publisher: { "@id": `${baseUrl}/#organization` },
+        inLanguage: "en",
       },
     ],
   };
@@ -91,6 +82,52 @@ export function StructuredData() {
       }}
     />
   );
+}
+
+export function ServicePageStructuredData({ slug }: { slug: string }) {
+  const service = services.find((item) => item.slug === slug);
+  if (!service) return null;
+
+  const url = `${baseUrl}/${service.slug}`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: service.title,
+        serviceType: service.title,
+        description: service.summary,
+        url,
+        provider: { "@id": `${baseUrl}/#organization` },
+        areaServed: ["AE", "SA", "AU"],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/` },
+          { "@type": "ListItem", position: 2, name: service.title, item: url },
+        ],
+      },
+    ],
+  };
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />;
+}
+
+export function ContactPageStructuredData() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": `${baseUrl}/contact#webpage`,
+    url: `${baseUrl}/contact`,
+    name: "Book a Free Consultation",
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    mainEntity: { "@id": `${baseUrl}/#organization` },
+  };
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(data) }} />;
 }
 
 type FaqStructuredDataProps = {
@@ -129,7 +166,6 @@ type ArticleStructuredDataProps = {
 
 export function ArticleStructuredData({
   post,
-  title,
   description,
 }: ArticleStructuredDataProps) {
   const url = `${baseUrl}/insights/${post.slug}`;
@@ -137,13 +173,16 @@ export function ArticleStructuredData({
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${url}#article`,
-    headline: title || post.metaTitle || post.title,
+    headline: post.title,
     description: description || post.metaDescription || post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    ...(post.contentUpdatedAt ? { dateModified: post.contentUpdatedAt } : {}),
     mainEntityOfPage: url,
     image: post.mainImage?.asset?.url,
-    author: {
+    author: post.author?.name ? {
+      "@type": "Person",
+      name: post.author.name,
+    } : {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
       name: company.name,

@@ -147,6 +147,14 @@ export const post = defineType({
       group: "content",
     }),
     defineField({
+      name: "contentUpdatedAt",
+      title: "Content Updated At",
+      type: "datetime",
+      group: "content",
+      description:
+        "Optional date of a substantive editorial update. Leave empty until the article content is revised; this does not replace its publication date.",
+    }),
+    defineField({
       name: "readTime",
       title: "Read Time",
       type: "string",
@@ -187,6 +195,37 @@ export const post = defineType({
       type: "array",
       group: "content",
       of: bodyContent,
+      validation: (rule) =>
+        rule.custom((value, context) => {
+          // Legacy posts without a visibility field are also publicly visible.
+          if (context.document?.status === "hidden") return true;
+
+          const hasBodyText = Array.isArray(value) && value.some((block) => {
+            if (!block || typeof block !== "object") return false;
+            const candidate = block as {
+              _type?: string;
+              style?: string;
+              children?: { _type?: string; text?: unknown }[];
+            };
+            if (
+              candidate._type !== "block" ||
+              (candidate.style && candidate.style !== "normal") ||
+              !Array.isArray(candidate.children)
+            ) return false;
+
+            const text = candidate.children
+              .filter((child) =>
+                child?._type === "span" && typeof child.text === "string",
+              )
+              .map((child) => typeof child.text === "string" ? child.text : "")
+              .join("");
+
+            return /\p{L}/u.test(text);
+          });
+
+          return hasBodyText ||
+            "Published insights need article body text, not only empty blocks, headings, images, or punctuation.";
+        }),
     }),
     defineField({
       name: "bodyAr",
@@ -223,6 +262,8 @@ export const post = defineType({
       title: "Canonical URL",
       type: "url",
       group: "seo",
+      readOnly: true,
+      description: "The website generates the canonical URL from this article's published slug. Legacy stored values are ignored.",
     }),
   ],
   preview: {

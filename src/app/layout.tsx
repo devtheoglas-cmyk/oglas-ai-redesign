@@ -28,6 +28,7 @@ const garamond = EB_Garamond({
 
 const arabic = IBM_Plex_Sans_Arabic({
   variable: "--font-arabic",
+  preload: false,
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -85,7 +86,7 @@ export default function RootLayout({
       lang="en"
       className={`${aspekta.variable} ${garamond.variable} ${arabic.variable} h-full antialiased`}
     >
-      <Script id="google-tag-manager" strategy="beforeInteractive">
+      <Script id="google-tag-manager" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -93,6 +94,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${googleTagManagerId}');`}
       </Script>
       <body className="flex min-h-full flex-col">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-onyx">
+          Skip to content
+        </a>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${googleTagManagerId}`}
@@ -104,7 +108,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <StructuredData />
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
         <SiteFooter />
       </body>
     </html>

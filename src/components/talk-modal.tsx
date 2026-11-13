@@ -18,6 +18,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [message, setMessage] = useState("");
   const firstFieldRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
 
   useEffect(() => {
@@ -29,6 +30,22 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
 
     function onKey(event: KeyboardEvent) {
       if (event.key === "Escape") setOpen(false);
+      if (event.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const fields = Array.from(dialog.querySelectorAll<HTMLElement>(
+        'a[href], button:not(:disabled), input:not(:disabled):not([tabindex="-1"]), textarea:not(:disabled), select:not(:disabled), [tabindex="0"]',
+      )).filter((element) => element.getClientRects().length > 0);
+      const first = fields[0];
+      const last = fields[fields.length - 1];
+      if (!first || !last) return;
+      if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+        event.preventDefault();
+        first.focus();
+      }
     }
     window.addEventListener("keydown", onKey);
     return () => {
@@ -92,6 +109,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
 
       {open ? (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby={titleId}
@@ -100,7 +118,7 @@ export function TalkToOglas({ children, className, defaultProjectType }: Props) 
             if (event.target === event.currentTarget) setOpen(false);
           }}
         >
-          <div className="modal-rise relative w-full max-w-[22rem] overflow-hidden rounded-t-[1.25rem] border border-brand/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(0,0,80,0.55)] sm:rounded-[1.25rem]">
+          <div className="modal-rise relative max-h-[calc(100dvh-1rem)] w-full max-w-[22rem] overflow-y-auto rounded-t-[1.25rem] border border-brand/10 bg-white p-5 shadow-[0_30px_60px_-30px_rgba(0,0,80,0.55)] sm:rounded-[1.25rem]">
             <button
               type="button"
               onClick={() => setOpen(false)}

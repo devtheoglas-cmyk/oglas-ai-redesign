@@ -1,6 +1,7 @@
 import type { PortableTextComponents } from "@portabletext/react";
 import { PortableText } from "@portabletext/react";
-import { BgImage } from "@/components/bg-image";
+import { internalHref } from "@/lib/internal-href";
+import Image from "next/image";
 import type { SanityImage } from "@/sanity/lib/posts";
 
 type PortableTextContentProps = {
@@ -49,8 +50,8 @@ const components: PortableTextComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const href = typeof value?.href === "string" ? value.href : "#";
-      const isExternal = href.startsWith("http");
+      const href = internalHref(typeof value?.href === "string" ? value.href : "#");
+      const isExternal = /^(?:https?:)?\/\//i.test(href);
 
       return (
         <a
@@ -76,12 +77,13 @@ const components: PortableTextComponents = {
 
       return (
         <figure className="my-12">
-          <BgImage
+          <Image
             src={image.asset.url}
             alt={image.alt ?? ""}
             width={width}
             height={height}
-            className="w-full rounded-lg border border-black/10"
+            sizes="(max-width: 820px) 100vw, 820px"
+            className="h-auto w-full rounded-lg border border-black/10"
           />
           {image.caption ? (
             <figcaption className="mt-3 text-sm leading-6 text-steel">{image.caption}</figcaption>

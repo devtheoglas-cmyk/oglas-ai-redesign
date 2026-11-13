@@ -23,15 +23,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
-      lastModified: new Date(),
     })),
     ...services.map((service) => ({
       url: `${baseUrl}/${service.slug}`,
-      lastModified: new Date(),
     })),
     ...posts.map((post) => ({
       url: `${baseUrl}/insights/${post.slug}`,
-      lastModified: new Date(post.date),
+      lastModified: new Date(post.contentUpdatedAt || post.date),
     })),
   ];
 }

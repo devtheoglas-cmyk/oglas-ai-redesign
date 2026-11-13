@@ -37,7 +37,7 @@ export function PageHero({ eyebrow, title, summary, children, art }: PageHeroPro
           art ? "lg:grid-cols-[1.1fr_0.9fr] lg:items-center" : ""
         }`}
       >
-        <div className="rise max-w-3xl">
+        <div className="max-w-3xl">
           {eyebrow ? <p className="pill-glass">{eyebrow}</p> : null}
           <h1 className="mt-7 text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.3rem]">
             <SplitTitle>{title}</SplitTitle>

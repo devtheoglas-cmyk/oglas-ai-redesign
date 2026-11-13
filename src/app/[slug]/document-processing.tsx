@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { FaqStructuredData } from "@/components/structured-data";
+import { FaqStructuredData, ServicePageStructuredData } from "@/components/structured-data";
 import { PageHero } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
@@ -86,6 +86,7 @@ export function DocumentProcessingPage() {
   return (
     <>
       <FaqStructuredData faqs={faqs} />
+      <ServicePageStructuredData slug="ai-powered-document-processing-in-dubai-uae" />
       <PageHero
         eyebrow="DOCUMENT INTELLIGENCE"
         title="AI Document Processing"

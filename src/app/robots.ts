@@ -3,7 +3,6 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://www.oglas-ai.com";
 const publicCrawlerAccess = {
   allow: "/",
-  disallow: "/studio",
 };
 
 export default function robots(): MetadataRoute.Robots {

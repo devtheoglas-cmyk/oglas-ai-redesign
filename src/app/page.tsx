@@ -4,7 +4,6 @@ import { TalkToOglas } from "@/components/talk-modal";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRule } from "@/components/arrow-rule";
-import { BgImage } from "@/components/bg-image";
 import { ContactForm } from "@/components/contact-form";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
@@ -49,7 +48,7 @@ export default async function Home() {
         </div>
 
         <div className="relative mx-auto flex min-h-[max(40rem,100svh)] w-full max-w-[1160px] flex-col justify-end px-4 pb-14 pt-36 md:pb-20">
-          <div className="rise max-w-4xl">
+          <div className="max-w-4xl">
             <h1 className="title-caps text-[2.55rem] text-white sm:text-6xl lg:text-[4.6rem]">
               <SplitTitle at={6}>Custom Software &amp; AI Built Around Real Business Operations</SplitTitle>
             </h1>
@@ -342,11 +341,12 @@ export default async function Home() {
                 >
                   {post.mainImage?.asset?.url ? (
                     <div className="relative aspect-[16/10] overflow-hidden bg-pearl">
-                      <BgImage
+                      <Image
                         src={post.mainImage.asset.url}
                         alt={post.mainImage.alt ?? ""}
                         fill
-                        className="transition duration-700 group-hover:scale-[1.03]"
+                        sizes="(min-width: 1024px) 370px, 100vw"
+                        className="object-cover transition duration-700 group-hover:scale-[1.03]"
                       />
                     </div>
                   ) : null}

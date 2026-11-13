@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/page-metadata";
 import { linkArticleServices } from "@/lib/service-mentions";
+import { normalizeArticleHeadings } from "@/lib/article-content";
 import { notFound } from "next/navigation";
-import { BgImage } from "@/components/bg-image";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ArticleStructuredData } from "@/components/structured-data";
@@ -36,8 +37,8 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   }
 
   const seo = insightSeo[post.slug];
-  const title = seo?.title || post.metaTitle || post.title;
-  const description = seo?.description || post.metaDescription || post.excerpt;
+  const title = post.metaTitle || seo?.title || post.title;
+  const description = post.metaDescription || seo?.description || post.excerpt;
   // The published slug owns the route. CMS canonical fields may contain old slugs.
   const path = `/insights/${post.slug}`;
   const metadata = pageMetadata({ title, description, path });
@@ -85,8 +86,8 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     <article className="bg-white">
       <ArticleStructuredData
         post={post}
-        title={seo?.title}
-        description={seo?.description}
+        title={post.metaTitle || seo?.title}
+        description={post.metaDescription || seo?.description}
       />
       <header className="bg-mesh -mt-20 overflow-hidden">
         <HeroBackdrop />
@@ -103,6 +104,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
             <SplitTitle>{post.title}</SplitTitle>
           </h1>
           <p className="mt-7 text-sm text-white/75">
+            By {post.author?.name || "Oglas AI"}{post.author?.role ? ` · ${post.author.role}` : ""} ·{" "}
             {post.readTime} ·{" "}
             {new Date(post.date).toLocaleDateString("en", {
               month: "long",
@@ -110,6 +112,11 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
               year: "numeric",
             })}
           </p>
+          {post.contentUpdatedAt && (
+            <p className="mt-2 text-sm text-white/75">
+              Updated {new Date(post.contentUpdatedAt).toLocaleDateString("en", { month: "long", day: "numeric", year: "numeric" })}
+            </p>
+          )}
         </div>
       </header>
 
@@ -118,12 +125,13 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
 
         {post.mainImage?.asset?.url ? (
           <figure className="mt-10">
-            <BgImage
+            <Image
               src={post.mainImage.asset.url}
               alt={post.mainImage.alt ?? ""}
               width={Math.round(post.mainImage.asset.metadata?.dimensions?.width ?? 1400)}
               height={Math.round(post.mainImage.asset.metadata?.dimensions?.height ?? 840)}
-              className="w-full rounded-[1.75rem]"
+              sizes="(max-width: 820px) 100vw, 820px"
+              className="h-auto w-full rounded-[1.75rem]"
             />
 
             {post.mainImage.caption ? (
@@ -135,27 +143,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
         ) : null}
 
         <div className="mt-10">
-          {post.body && post.body.length > 0 ? (
-            <PortableTextContent value={linkArticleServices(post.body)} />
-          ) : (
-            <div className="grid gap-6 text-base leading-8 text-steel">
-              <p>
-                Most companies do not need a vague AI transformation project. They need
-                better workflow capture, cleaner operating data, and software that
-                removes repeated manual work before advanced intelligence is layered on top.
-              </p>
-              <p>
-                Oglas AI starts with the business process: who does the work, which
-                approvals matter, where data enters the system, and what leadership needs
-                to see. That foundation makes <Link className="content-link" href="/erp-software-company-in-dubai-uae">ERP</Link>, automation, <Link className="content-link" href="/ai-powered-dashboards-in-dubai-uae">dashboards</Link>, and AI systems
-                easier to adopt.
-              </p>
-              <p>
-                The best systems are practical, measurable, and designed around the teams
-                who will use them every day.
-              </p>
-            </div>
-          )}
+          {post.body && <PortableTextContent value={linkArticleServices(normalizeArticleHeadings(post.body))} />}
         </div>
         <Link href="/case-studies" className="content-link mt-12 inline-block">Explore Oglas AI case studies</Link>
       </div>

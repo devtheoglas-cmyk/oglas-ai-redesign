@@ -2,6 +2,7 @@
 
 import { Send } from "lucide-react";
 import { useState } from "react";
+import { company } from "@/content/site";
 
 const projectTypes = [
   "ERP & Payroll Automation",
@@ -10,6 +11,10 @@ const projectTypes = [
   "Marketing Automation",
   "ESS / HR Portal",
   "AI Dashboards",
+  "Custom Software Development",
+  "Industrial IoT Integration",
+  "AI Document Processing",
+  "AI Chatbots & Knowledge Assistants",
   "Other",
 ];
 
@@ -30,9 +35,9 @@ export function ContactForm() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    });
+    }).catch(() => null);
 
-    if (response.ok) {
+    if (response?.ok) {
       form.reset();
       setStatus("success");
       setMessage("Thank you. Oglas AI will reply to your enquiry shortly.");
@@ -40,12 +45,12 @@ export function ContactForm() {
     }
 
     const serverError = await response
-      .json()
+      ?.json()
       .then((body) => (body && typeof body.error === "string" ? body.error : ""))
       .catch(() => "");
 
     setStatus("error");
-    setMessage(serverError || "Something went wrong. Please email admin@oglasglobal.com directly.");
+    setMessage(serverError || "Something went wrong. Please contact us by email.");
   }
 
   return (
@@ -56,7 +61,7 @@ export function ContactForm() {
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
-        <Field label="Phone" name="phone" placeholder="+971" />
+        <Field label="Phone" name="phone" type="tel" placeholder="+971" />
       </div>
 
       <label className="grid gap-2 text-[13px] font-medium tracking-[0.02em] text-onyx">
@@ -96,7 +101,7 @@ export function ContactForm() {
       </button>
 
       {message ? (
-        <p
+        <p role={status === "error" ? "alert" : "status"}
           className={
             status === "success"
               ? "rounded-xl border border-brand/20 bg-brand/8 p-3.5 text-sm font-medium text-brand"
@@ -104,6 +109,7 @@ export function ContactForm() {
           }
         >
           {message}
+          {status === "error" && <> <a className="content-link" href={`mailto:${company.email}`}>Email {company.email}</a></>}
         </p>
       ) : null}
     </form>

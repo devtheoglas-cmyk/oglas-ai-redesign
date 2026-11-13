@@ -45,6 +45,12 @@ export function SiteFooter() {
             >
               Privacy Policy
             </Link>
+            <a
+              href="https://www.linkedin.com/company/oglas-ai/"
+              className="w-fit text-[15px] text-white/80 transition hover:text-white"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
 
