@@ -7,7 +7,7 @@ export const staticPageSeo: Record<string, SeoEntry> = {
   "/": {
     title: "Custom Software Development & AI Solutions in Dubai | Oglas AI",
     description:
-      "Oglas AI provides custom software development and practical AI solutions in Dubai, UAE. Build ERP, workflow automation, dashboards, portals and AI systems around your business.",
+      "Oglas AI builds custom software and practical AI in Dubai, UAE: ERP, workflow automation, dashboards and portals. Book a free consultation.",
   },
   "/services": {
     title: "Custom Software & AI Solutions in Dubai | Oglas AI Services",
@@ -17,27 +17,27 @@ export const staticPageSeo: Record<string, SeoEntry> = {
   "/industries": {
     title: "Custom Software & AI Solutions for Industries | Oglas AI",
     description:
-      "Explore Oglas AI's industry-focused custom software and AI solutions for manufacturing, healthcare, manpower, retail, trading, security, marketing, and facility management businesses in Dubai.",
+      "Custom software and AI for UAE manufacturing, healthcare, manpower, retail, trading, security and facility management firms. Book a free consultation.",
   },
   "/industries/forex-trading": {
     title: "AI for Forex Brokers & Trading Companies | Oglas AI",
     description:
-      "Oglas AI builds AI agents, trading intelligence, and automation for Forex and CFD brokers, fintechs, liquidity providers, PayTech companies, and prop firms. Download the brochure.",
+      "AI agents, trading intelligence and automation for Forex and CFD brokers, fintechs, liquidity providers and prop firms. Download the brochure.",
   },
   "/case-studies": {
     title: "Custom Software & AI Case Studies | Oglas AI",
     description:
-      "Explore Oglas AI case studies showcasing custom software development and AI solutions for businesses across manufacturing, manpower, healthcare, retail, and other industries.",
+      "See how Oglas AI cut payroll from 1-2 days to under 10 seconds and saved 300 HR minutes a day with custom software, ERP and AI. Read the case studies.",
   },
   "/insights": {
     title: "AI, Automation & Software Insights | Oglas AI",
     description:
-      "Explore insights from Oglas AI on custom software development, AI adoption, ERP, workflow automation, computer vision, and digital transformation for modern businesses.",
+      "Practical guides from Oglas AI on custom software, AI adoption, ERP, workflow automation and computer vision for UAE businesses. Read the latest.",
   },
   "/about": {
     title: "About Oglas AI | Custom Software & Practical AI Company",
     description:
-      "Oglas AI is a UAE-based custom software and practical AI company building ERP, automation, computer vision, and AI systems designed around how your business actually works.",
+      "Oglas AI is a UAE-based custom software and practical AI company building ERP, automation, computer vision and AI systems around your business.",
   },
   "/build": {
     title: "Build Your Custom Software | Oglas AI Build Lab",
@@ -47,7 +47,7 @@ export const staticPageSeo: Record<string, SeoEntry> = {
   "/contact": {
     title: "Contact Oglas AI | Custom Software & AI Solutions",
     description:
-      "Book a free consultation with Oglas AI to discuss custom software development, AI solutions, ERP systems, workflow automation, and business technology tailored to your needs.",
+      "Talk to Oglas AI in Dubai about custom software, ERP, workflow automation or AI. Book a free consultation and we’ll map the right solution.",
   },
   "/privacy": {
     description:
@@ -59,7 +59,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "custom-software-development-services-in-dubai-uae": {
     title: "Custom Software Development Services in Dubai | Oglas AI",
     description:
-      "Oglas AI provides custom software development services in Dubai and across the UAE, building business applications, ERP, CRM, integrations and AI solutions.",
+      "Custom software development services in Dubai and across the UAE: business applications, ERP, CRM, integrations and AI. Book a free consultation.",
   },
   "erp-software-company-in-dubai-uae": {
     title: "ERP Software Company UAE | Custom ERP Dubai | Oglas AI",
@@ -69,7 +69,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "computer-vision-solutions-in-dubai-uae": {
     title: "Computer Vision Solutions in Dubai & UAE | Oglas AI",
     description:
-      "Explore custom computer vision solutions in Dubai and the UAE for object and activity detection, safety monitoring, visual inspection workflows and camera analytics.",
+      "Custom computer vision solutions in Dubai, UAE: object detection, safety monitoring, visual inspection and camera analytics. Book a free consultation.",
   },
   "workflow-automation-in-dubai-uae": {
   title: "Workflow Automation Services Dubai | Oglas AI",
@@ -109,6 +109,12 @@ export const serviceSeo: Record<string, SeoEntry> = {
 };
 
 export const insightSeo: Record<string, SeoEntry> = {
+  "ai-automation-business-processes": {
+    description: "Discover 10 business processes you can automate with AI in 2026, from document processing and customer support to AI agents and reporting.",
+  },
+  "ai-search-optimization-uae-businesses": {
+    description: "Learn how AI search optimization helps UAE businesses get visible in search engines and AI platforms through helpful content and technical SEO.",
+  },
   "what-to-automate-before-ai": {
     title: "What to Automate Before Investing in AI | Oglas AI",
     description:

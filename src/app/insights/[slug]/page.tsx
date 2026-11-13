@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
 
   const seo = insightSeo[post.slug];
   const title = post.metaTitle || seo?.title || post.title;
-  const description = post.metaDescription || seo?.description || post.excerpt;
+  const description = seo?.description || post.metaDescription || post.excerpt;
   // The published slug owns the route. CMS canonical fields may contain old slugs.
   const path = `/insights/${post.slug}`;
   const metadata = pageMetadata({ title, description, path });
@@ -87,7 +87,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
       <ArticleStructuredData
         post={post}
         title={post.metaTitle || seo?.title}
-        description={post.metaDescription || seo?.description}
+        description={seo?.description || post.metaDescription}
       />
       <header className="bg-mesh -mt-20 overflow-hidden">
         <HeroBackdrop />
