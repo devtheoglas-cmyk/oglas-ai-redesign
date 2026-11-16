@@ -42,6 +42,11 @@ const articleLinkRemovals: Record<string, { paragraph: string; label: string }[]
     { paragraph: "Traditional Business Intelligence Dashboards remain useful", label: "Business Intelligence Dashboards" },
     { paragraph: "Similarly, a finance team could connect", label: "document processing" },
   ],
+  "custom-software-development-uae-build-vs-buy": [
+    { paragraph: "Custom software development means building a solution", label: "Custom software development" },
+    { paragraph: "Custom software solutions UAE companies invest in tend", label: "Custom software solutions UAE" },
+    { paragraph: "If sales data, inventory data, and financial data are sitting in separate silos", label: "Custom business software" },
+  ],
 };
 
 // Add at most three distinct service links, then apply the requested editorial removals.
