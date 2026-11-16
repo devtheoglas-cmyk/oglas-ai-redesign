@@ -26,6 +26,14 @@ export function firstServiceMention(text: string, excluded: ReadonlySet<string> 
 }
 
 const articleLinkRemovals: Record<string, { paragraph: string; label: string }[]> = {
+  "everyone-wants-an-ai-agent-what-your-business-needs-first": [
+    { paragraph: "Walk into any business meeting in Dubai right now", label: "AI agents" },
+    { paragraph: "This isn't an anti AI agent article.", label: "AI solutions in Dubai" },
+    { paragraph: "Enterprise AI solutions work best", label: "dashboard" },
+    { paragraph: "This is really the heart of good", label: "AI consulting" },
+    { paragraph: "Look for a partner who asks about your operations", label: "AI development company in UAE" },
+    { paragraph: "Look for evidence of practical, grounded work", label: "Business AI solutions" },
+  ],
   "erp-payroll-integration-uae": [
     { paragraph: "As businesses in Dubai and across the UAE grow", label: "payroll" },
   ],
