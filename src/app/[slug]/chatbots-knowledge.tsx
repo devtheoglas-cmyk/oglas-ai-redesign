@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-hero";
 import { FaqStructuredData, ServicePageStructuredData } from "@/components/structured-data";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
+import type { ReactNode } from "react";
 
 const sections = [
   {
@@ -189,11 +190,26 @@ function ContentText({ text }: { text: string }) {
     { phrase: "approved HR policies", href: "/employee-self-service-in-dubai-uae" },
     { phrase: "Human escalation workflows", href: "/workflow-automation-in-dubai-uae" },
     { phrase: "custom AI chatbot solutions", href: "/custom-software-development-services-in-dubai-uae" },
+    { phrase: "relevant workflow information", href: "/insights/everyone-wants-an-ai-agent-what-your-business-needs-first" },
+    { phrase: "repetitive enquiries", href: "/insights/ai-automation-for-uae-businesses-how-intelligent-automation-is-changing-operations" },
+    { phrase: "recurring customer enquiries", href: "/insights/ai-automation-business-processes" },
   ];
-  const link = links.find(({ phrase }) => text.includes(phrase));
-  if (!link) return text;
-  const index = text.indexOf(link.phrase);
-  return <>{text.slice(0, index)}<a className="content-link" href={link.href}>{link.phrase}</a>{text.slice(index + link.phrase.length)}</>;
+  const matches = links
+    .map((link) => ({ ...link, index: text.indexOf(link.phrase) }))
+    .filter((link) => link.index >= 0)
+    .sort((a, b) => a.index - b.index);
+  if (!matches.length) return text;
+
+  const parts: ReactNode[] = [];
+  let cursor = 0;
+  for (const match of matches) {
+    if (match.index < cursor) continue;
+    parts.push(text.slice(cursor, match.index));
+    parts.push(<a className="content-link" href={match.href} key={`${match.phrase}-${match.index}`}>{match.phrase}</a>);
+    cursor = match.index + match.phrase.length;
+  }
+  parts.push(text.slice(cursor));
+  return <>{parts}</>;
 }
 
 export function ChatbotsKnowledgePage() {

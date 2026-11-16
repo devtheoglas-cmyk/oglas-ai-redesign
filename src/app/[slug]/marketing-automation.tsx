@@ -26,6 +26,7 @@ import { ArrowRule } from "@/components/arrow-rule";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { FaqStructuredData } from "@/components/structured-data";
+import { RelatedInsights } from "@/components/related-insights";
 import { serviceSeo } from "@/content/seo";
 
 const baseUrl = "https://www.oglas-ai.com";
@@ -505,6 +506,27 @@ export function MarketingAutomationPage() {
           </div>
         </div>
       </section>
+
+      <RelatedInsights
+        intro="Explore practical insights on digital visibility, customer behaviour and marketing automation."
+        items={[
+          {
+            title: "1) AI search optimization for UAE businesses",
+            description: "Understand how businesses can improve their digital visibility and make their services easier to discover through AI-powered search.",
+            href: "/insights/ai-search-optimization-uae-businesses",
+          },
+          {
+            title: "2) Understanding customer behaviour through data",
+            description: "Discover how customer interactions, browsing patterns and engagement signals help businesses understand their audiences and improve marketing decisions.",
+            href: "/insights/hidden-meetings-inside-your-data",
+          },
+          {
+            title: "3) 10 practical AI automation use cases for businesses",
+            description: "Explore practical automation opportunities, including lead qualification, sales follow-ups, customer support, document processing and reporting.",
+            href: "/insights/ai-automation-business-processes",
+          },
+        ]}
+      />
 
       {/* Section 8 — FAQ */}
       <section className="bg-bloom py-20 md:py-28">

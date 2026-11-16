@@ -255,8 +255,8 @@ const fits: Card[] = [
     title: "Utilities & Manufacturing",
     copy: [
       <>
-        Connect equipment and environmental monitoring across plants and production lines through
-        integrated <Strong>industrial IoT systems</Strong>.
+        Connect equipment and environmental monitoring across plants and production lines through{" "}
+        <Link className="content-link" href="/insights/manufacturing-data-integration-uae">industrial data integration</Link>.
       </>,
     ],
   },

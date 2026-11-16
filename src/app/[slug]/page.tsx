@@ -61,6 +61,8 @@ import { ComputerVisionPage } from "./computer-vision";
 import { EssHrPortalsPage } from "./ess-hr-portals";
 import { DocumentProcessingPage } from "./document-processing";
 import { ChatbotsKnowledgePage } from "./chatbots-knowledge";
+import { InlineContentLink } from "@/components/inline-content-link";
+import { RelatedInsights } from "@/components/related-insights";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -339,7 +341,7 @@ const aiDashboardsSources = [
   {
     title: "CRM & Sales Data",
     description:
-      "Bring together customer, pipeline, sales and commercial performance data from platforms such as Salesforce, HubSpot, Zoho CRM and Shopify.",
+      "Bring together customer behaviour, pipeline, sales and commercial performance data from platforms such as Salesforce, HubSpot, Zoho CRM and Shopify.",
     icon: TrendingUp,
   },
   {
@@ -940,7 +942,7 @@ const customSoftwareIndustries = [
   {
     title: "Manufacturing & Industrial",
     description:
-      "Operational workflows, production-related processes, data visibility, automation, and business systems.",
+      "Operational workflows, production data integration, data visibility, automation, and business systems.",
   },
   {
     title: "Security & Surveillance",
@@ -965,7 +967,7 @@ const customSoftwareIndustries = [
   {
     title: "Facility Management",
     description:
-      "Workforce operations, service workflows, assignments, approvals, and operational visibility.",
+      "Workforce operations, facility management SLA workflows, assignments, approvals, and operational visibility.",
   },
   {
     title: "Retail & Multi-Branch Businesses",
@@ -1565,6 +1567,9 @@ function CustomSoftwarePage() {
             the problem. Where the workflow is genuinely unique or
             strategically important, custom development may make more sense.
           </p>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
+            For a more detailed comparison, explore our guide to <Link className="content-link" href="/insights/custom-software-development-uae-build-vs-buy">custom software development in UAE: build vs buy</Link> and understand when each approach makes sense.
+          </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {customSoftwareApproach.map((item) => (
@@ -1678,7 +1683,19 @@ function CustomSoftwarePage() {
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-steel">
-                  {item.description}
+                  {item.title === "Facility Management" ? (
+                    <InlineContentLink
+                      text={item.description}
+                      phrase="facility management SLA workflows"
+                      href="/insights/improve-sla-compliance-multi-site-facility-management-uae"
+                    />
+                  ) : item.title === "Manufacturing & Industrial" ? (
+                    <InlineContentLink
+                      text={item.description}
+                      phrase="production data integration"
+                      href="/insights/manufacturing-data-integration-uae"
+                    />
+                  ) : item.description}
                 </p>
               </article>
             ))}
@@ -2057,7 +2074,19 @@ function AiDashboardsPage() {
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-steel">
-                    {item.description}
+                    {item.title === "Production & Operations" ? (
+                      <InlineContentLink
+                        text={item.description}
+                        phrase="operational and production data"
+                        href="/insights/manufacturing-data-integration-uae"
+                      />
+                    ) : item.title === "CRM & Sales Data" ? (
+                      <InlineContentLink
+                        text={item.description}
+                        phrase="customer behaviour"
+                        href="/insights/hidden-meetings-inside-your-data"
+                      />
+                    ) : item.description}
                   </p>
                 </article>
               );
@@ -2292,6 +2321,9 @@ function AiDashboardsPage() {
                 project performance, receivables and cash flow. It helped
                 identify areas of cashflow leakage and improved visibility into
                 project costing and collections.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-steel">
+                Learn how to distinguish impressive AI features from <Link className="content-link" href="/insights/the-difference-between-ai-that-looks-smart-and-ai-that-saves-money">AI that delivers measurable business value</Link>.
               </p>
             </article>
 
@@ -2788,7 +2820,13 @@ function WorkflowAutomationPage() {
                   <p className="mt-3 text-sm font-semibold leading-6 text-onyx">
                     {team.subtitle}
                   </p>
-                  <p className="mt-3 text-sm leading-7 text-steel">{team.description}</p>
+                  <p className="mt-3 text-sm leading-7 text-steel">
+                    <InlineContentLink
+                      text={team.description}
+                      phrase="operational processes across teams and locations"
+                      href="/insights/improve-sla-compliance-multi-site-facility-management-uae"
+                    />
+                  </p>
                 </article>
               );
             })}
@@ -2898,6 +2936,27 @@ function WorkflowAutomationPage() {
           </p>
         </div>
       </section>
+
+      <RelatedInsights
+        intro="Explore practical guides on business process automation, intelligent workflows and improving operational efficiency."
+        items={[
+          {
+            title: "1. AI Automation: 10 Business Processes You Can Automate in 2026",
+            description: "Discover practical opportunities to automate repetitive business processes and improve efficiency.",
+            href: "/insights/ai-automation-business-processes",
+          },
+          {
+            title: "2. AI Workflow Automation: How Businesses Can Automate Operations, Reduce Manual Work, and Scale Faster",
+            description: "Learn how connected workflows simplify approvals, document processing and business operations.",
+            href: "/insights/ai-workflow-automation-business-operations",
+          },
+          {
+            title: "3. What UAE Companies Should Automate Before Investing Heavily in AI",
+            description: "Understand which core business processes should be automated before investing in advanced AI solutions.",
+            href: "/insights/what-uae-companies-should-automate-before-ai",
+          },
+        ]}
+      />
 
       <section className="bg-white py-20 md:py-24">
         <div className="mx-auto w-full max-w-[960px] px-4">

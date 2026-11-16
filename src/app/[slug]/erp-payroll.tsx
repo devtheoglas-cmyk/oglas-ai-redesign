@@ -25,6 +25,7 @@ import { ArrowRule } from "@/components/arrow-rule";
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { FaqStructuredData } from "@/components/structured-data";
+import { RelatedInsights } from "@/components/related-insights";
 import { serviceSeo } from "@/content/seo";
 
 const baseUrl = "https://www.oglas-ai.com";
@@ -498,6 +499,27 @@ export function ErpPayrollPage() {
           </div>
         </div>
       </section>
+
+      <RelatedInsights
+        intro="Explore our practical guides to ERP integration, payroll automation and successful ERP implementation."
+        items={[
+          {
+            title: "1. ERP and payroll integration in the UAE",
+            description: "Understand how HR, attendance, payroll and finance systems can work together.",
+            href: "/insights/erp-payroll-integration-uae",
+          },
+          {
+            title: "2. Building an AI-ready ERP data foundation",
+            description: "Learn how connected business data supports automation, analytics and smarter decisions.",
+            href: "/insights/erp-and-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses",
+          },
+          {
+            title: "3. ERP implementation checklist for UAE companies",
+            description: "Explore the essential steps involved in planning, selecting, integrating and implementing ERP software.",
+            href: "/insights/erp-implementation-checklist-for-uae-companies",
+          },
+        ]}
+      />
 
       {/* Section 7 — FAQ */}
       <section className="bg-bloom py-20 md:py-28">

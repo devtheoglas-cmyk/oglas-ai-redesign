@@ -13,6 +13,7 @@ import { FaqStructuredData, ServicePageStructuredData } from "@/components/struc
 import { HeroBackdrop } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
+import { RelatedInsights } from "@/components/related-insights";
 
 const capabilities = [
   ["Employee Profiles", "Organize relevant employee information through a centralized portal. Employee profile functionality can be configured around the information employees and authorized users need to access, with permissions defined according to business requirements.", UserRound],
@@ -93,6 +94,22 @@ export function EssHrPortalsPage() {
       <section className="bg-white py-20 md:py-24"><div className="mx-auto w-full max-w-[1160px] px-4"><SectionTitle>What an ESS &amp; HR Portal Can Improve</SectionTitle><div className="mt-12 max-w-3xl space-y-10">{improvements.map(([title, description]) => <article className="border-b border-brand/10 pb-10 last:border-b-0 last:pb-0" key={title}><h3 className="text-xl font-semibold leading-7 text-onyx">{title}</h3><p className="mt-3 max-w-2xl text-base leading-8 text-steel">{description}</p></article>)}</div><p className="mt-10 max-w-3xl text-base leading-8 text-steel md:text-lg">Actual results depend on the implementation, workflow design and how the organization uses the portal.</p></div></section>
 
       <section className="bg-bloom py-20 md:py-24"><div className="mx-auto w-full max-w-[1160px] px-4"><p className="max-w-3xl text-base leading-8 text-steel md:text-lg">Oglas AI follows a requirements-led approach to custom portal development.</p><div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{process.map(([title, description], index) => <article className="rounded-2xl border border-brand/10 bg-white p-6" key={title}><span className="text-xs font-semibold tracking-[0.16em] text-champagne">0{index + 1}</span><h3 className="mt-5 text-2xl font-semibold text-onyx">{title}</h3><p className="mt-3 text-sm leading-7 text-steel">{description}</p></article>)}</div></div></section>
+
+      <RelatedInsights
+        intro="Explore practical guides on employee management, HR integration and connected payroll systems."
+        items={[
+          {
+            title: "1) ERP and payroll integration in the UAE",
+            description: "Understand how businesses connect HR, employee attendance, payroll and finance systems to improve information flow and reduce manual administration.",
+            href: "/insights/erp-payroll-integration-uae",
+          },
+          {
+            title: "2) Building an AI-ready ERP and HR data foundation",
+            description: "Learn how connected employee information, HR processes, payroll and business systems support structured data and smarter automation.",
+            href: "/insights/erp-and-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses",
+          },
+        ]}
+      />
 
       <section className="bg-white py-20 md:py-24"><div className="mx-auto w-full max-w-[960px] px-4"><SectionTitle>Frequently Asked Questions</SectionTitle><div className="mt-10 divide-y divide-black/10 rounded-xl border border-black/10 bg-white">{faqs.map((faq) => <details className="group p-6" key={faq.question}><summary className="flex cursor-pointer list-none justify-between gap-6 pr-2 text-lg font-semibold text-onyx marker:hidden">{faq.question}<span className="text-emerald transition-transform group-open:rotate-45">+</span></summary><p className="mt-4 max-w-3xl text-sm leading-7 text-steel">{faq.answer}</p></details>)}</div></div></section>
 

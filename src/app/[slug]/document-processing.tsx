@@ -3,6 +3,7 @@ import { FaqStructuredData, ServicePageStructuredData } from "@/components/struc
 import { PageHero } from "@/components/page-hero";
 import { SplitTitle } from "@/components/split-title";
 import { TalkToOglas } from "@/components/talk-modal";
+import { InlineContentLink } from "@/components/inline-content-link";
 
 const capabilities = [
   ["Invoice and Form Data Extraction", "Extract relevant fields from invoices and business forms and organize the information into structured digital records. This helps reduce repetitive manual data entry and gives teams a more consistent way to work with incoming document information."],
@@ -23,7 +24,7 @@ const workflowStages = [
 const requirements = [
   ["Built Around Your Document Requirements", "Define how documents should be classified, which information needs to be extracted, what details require validation and where documents should be routed."],
   ["Designed for Your Business Workflows", "Configure document categories, required fields, validation checks and review responsibilities according to your internal processes."],
-  ["Connected with Existing Business Systems", "Where technically suitable, document processing solutions can be designed to work alongside existing ERP, finance, HR or other operational systems."],
+  ["Connected with Existing Business Systems", "Where technically suitable, document processing solutions can be designed to work alongside existing ERP, finance, HR and payroll systems or other operational systems."],
 ] as const;
 
 const industries = [
@@ -69,13 +70,32 @@ function SectionTitle({ children, supporting, dark = false }: { children: string
   );
 }
 
+const cardLinks: Record<string, { phrase: string; href: string }> = {
+  "Invoice and Form Data Extraction": {
+    phrase: "invoices and business forms",
+    href: "/insights/ai-automation-business-processes",
+  },
+  "Document Approval and Routing": {
+    phrase: "document-related workflows",
+    href: "/insights/ai-workflow-automation-business-operations",
+  },
+  "Connected with Existing Business Systems": {
+    phrase: "ERP, finance, HR and payroll systems",
+    href: "/insights/erp-payroll-integration-uae",
+  },
+};
+
 function Cards({ items, dark = false }: { items: readonly (readonly [string, string])[]; dark?: boolean }) {
   return (
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {items.map(([title, description]) => (
         <article className={`rounded-2xl border p-6 ${dark ? "border-white/10 bg-white/5" : "border-brand/10 bg-white"}`} key={title}>
           <h3 className={`text-xl font-semibold leading-7 ${dark ? "text-white" : "text-onyx"}`}>{title}</h3>
-          <p className={`mt-3 text-sm leading-7 ${dark ? "text-white/75" : "text-steel"}`}>{description}</p>
+          <p className={`mt-3 text-sm leading-7 ${dark ? "text-white/75" : "text-steel"}`}>
+            {cardLinks[title] ? (
+              <InlineContentLink text={description} phrase={cardLinks[title].phrase} href={cardLinks[title].href} />
+            ) : description}
+          </p>
         </article>
       ))}
     </div>
