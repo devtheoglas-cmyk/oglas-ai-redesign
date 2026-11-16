@@ -47,6 +47,14 @@ const articleLinkRemovals: Record<string, { paragraph: string; label: string }[]
     { paragraph: "Custom software solutions UAE companies invest in tend", label: "Custom software solutions UAE" },
     { paragraph: "If sales data, inventory data, and financial data are sitting in separate silos", label: "Custom business software" },
   ],
+  "erp-and-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses": [
+    { paragraph: "For UAE companies, this can also create a more reliable foundation", label: "AI Solutions Dubai" },
+    { paragraph: "For companies considering", label: "Custom Software Development Dubai" },
+    { paragraph: "ERP & Payroll Automation is the use of integrated software", label: "automated workflows" },
+    { paragraph: "These capabilities also create opportunities", label: "Business workflow automation" },
+    { paragraph: "This is the difference between automating isolated tasks", label: "Custom workflow automation" },
+    { paragraph: "For UAE businesses,", label: "workflow automation company" },
+  ],
 };
 
 // Add at most three distinct service links, then apply the requested editorial removals.
