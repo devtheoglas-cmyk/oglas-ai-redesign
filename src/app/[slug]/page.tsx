@@ -1449,6 +1449,11 @@ function CustomSoftwarePage() {
                   <p className="mt-3 text-sm leading-7 text-steel">
                     {item.description}
                   </p>
+                  {item.title === "Custom Business Applications" ? (
+                    <p className="mt-4 text-sm leading-7 text-steel">
+                      Need a solution tailored to your workflows? <Link className="content-link" href="/build">Explore the Oglas AI Build Lab</Link>.
+                    </p>
+                  ) : null}
                 </article>
               );
             })}
