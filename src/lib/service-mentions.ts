@@ -36,6 +36,12 @@ const articleLinkRemovals: Record<string, { paragraph: string; label: string }[]
     { paragraph: "A practical guide to business", label: "process automation" },
     { paragraph: "The important difference is that modern", label: "AI document processing" },
   ],
+  "ai-automation-for-uae-businesses-how-intelligent-automation-is-changing-operations": [
+    { paragraph: "Instead of asking employees to use AI as another separate application", label: "dashboard" },
+    { paragraph: "Unlike static reporting tools,", label: "AI-Powered Dashboards" },
+    { paragraph: "Traditional Business Intelligence Dashboards remain useful", label: "Business Intelligence Dashboards" },
+    { paragraph: "Similarly, a finance team could connect", label: "document processing" },
+  ],
 };
 
 // Add at most three distinct service links, then apply the requested editorial removals.
