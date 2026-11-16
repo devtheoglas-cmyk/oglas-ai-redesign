@@ -51,6 +51,7 @@ const components: PortableTextComponents = {
   marks: {
     link: ({ children, value }) => {
       const href = internalHref(typeof value?.href === "string" ? value.href : "#");
+      if (href === "/services") return children;
       const isExternal = /^(?:https?:)?\/\//i.test(href);
 
       return (
