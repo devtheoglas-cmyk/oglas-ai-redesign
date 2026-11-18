@@ -58,6 +58,10 @@ const nextConfig: NextConfig = {
       // 301 (not Next's default 308) so search engines treat these as moved permanently.
       { source: "/company", destination: "/about", statusCode: 301 },
       { source: "/insights/what-to-automate-before-ai", destination: "/insights/what-uae-companies-should-automate-before-ai", statusCode: 301 },
+      { source: "/insights/ai-automation-for-uae-businesses", destination: "/insights/ai-automation-for-uae-businesses-how-intelligent-automation-is-changing-operations", statusCode: 301 },
+      { source: "/insights/erp-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses", destination: "/insights/erp-and-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses", statusCode: 301 },
+      { source: "/insights/erp-and-payroll-integration-in-the-uae-a-practical-guide", destination: "/insights/erp-payroll-integration-uae", statusCode: 301 },
+      { source: "/insights/payroll-erp-foundation", destination: "/insights/erp-and-payroll-automation-building-an-ai-ready-data-foundation-for-uae-businesses", statusCode: 301 },
       { source: "/ai-powered-dashboards-in-duabi-uae", destination: "/ai-powered-dashboards-in-dubai-uae", statusCode: 301 },
       { source: "/services/ai-powered-dashboards-in-duabi-uae", destination: "/ai-powered-dashboards-in-dubai-uae", statusCode: 301 },
       { source: "/ai-chatbots-knowledge-assistants", destination: "/ai-chatbot-development-in-dubai-uae", statusCode: 301 },
