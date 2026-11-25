@@ -12,7 +12,7 @@ const sections = [
     "intro": [
       "Businesses regularly handle questions about company policies, products, services and internal procedures. When information is scattered across documents and systems, finding accurate answers can take time and increase the workload on support teams.",
       "Through intelligent AI chatbot development, businesses can make approved information easier to access. AI assistants can retrieve relevant details from configured knowledge sources, respond to routine enquiries and direct requests requiring further assistance to the appropriate team.",
-      "Oglas AI develops custom AI chatbot solutions that help organizations improve information access and manage repetitive enquiries through structured conversational experiences."
+    "Oglas AI develops custom AI chatbot solutions for businesses in Dubai and across the UAE, helping organizations improve access to approved information and manage repetitive enquiries through structured conversational experiences."
     ],
     "items": [
       {
@@ -111,7 +111,7 @@ const sections = [
     "title": "CUSTOM AI CHATBOT DEVELOPMENT IN DUBAI",
     "supporting": "Designed Around Your Business Requirements",
     "intro": [
-      "Every organization has different knowledge sources, users and communication requirements. Oglas AI provides custom AI chatbot development in Dubai, building solutions around how your business operates."
+      "Every organization has different knowledge sources, users and communication requirements. Oglas AI provides custom AI chatbot development services in Dubai and across the UAE, building solutions around your business operations, approved information sources and user needs."
     ],
     "items": [
       {
@@ -129,7 +129,7 @@ const sections = [
       {
         "title": "Connected with Existing Business Systems",
         "paragraphs": [
-          "Where technically suitable, AI chatbots can be designed to work with existing business systems through available APIs or interfaces."
+          "Where technically suitable, AI chatbots can be designed to work with existing business systems through available APIs or interfaces. For broader application development and system integration requirements, explore our custom software development services."
         ]
       },
       {
@@ -190,6 +190,7 @@ function ContentText({ text }: { text: string }) {
     { phrase: "approved HR policies", href: "/employee-self-service-in-dubai-uae" },
     { phrase: "Human escalation workflows", href: "/workflow-automation-in-dubai-uae" },
     { phrase: "custom AI chatbot solutions", href: "/custom-software-development-services-in-dubai-uae" },
+    { phrase: "custom software development services", href: "/custom-software-development-services-in-dubai-uae" },
     { phrase: "relevant workflow information", href: "/insights/everyone-wants-an-ai-agent-what-your-business-needs-first" },
     { phrase: "repetitive enquiries", href: "/insights/ai-automation-for-uae-businesses-how-intelligent-automation-is-changing-operations" },
     { phrase: "recurring customer enquiries", href: "/insights/ai-automation-business-processes" },
@@ -219,7 +220,7 @@ export function ChatbotsKnowledgePage() {
       <ServicePageStructuredData slug="ai-chatbot-development-in-dubai-uae" />
       <PageHero
         eyebrow="AI ASSISTANCE"
-        title="AI Chatbots & Knowledge Assistants"
+        title="AI Chatbot Development & Knowledge Assistants in Dubai & UAE"
         summary="Oglas AI provides AI chatbot development services in Dubai and across the UAE, creating custom AI chatbots and knowledge assistants tailored to your business requirements. Our AI chatbot solutions help employees and customers access company information, manage enquiries and receive relevant answers using approved business knowledge, defined policies and escalation workflows."
       >
         <TalkToOglas className="btn btn-light mt-8" defaultProjectType="AI Chatbots & Knowledge Assistants">

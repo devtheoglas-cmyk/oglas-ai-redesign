@@ -57,9 +57,9 @@ export const staticPageSeo: Record<string, SeoEntry> = {
 
 export const serviceSeo: Record<string, SeoEntry> = {
   "custom-software-development-services-in-dubai-uae": {
-    title: "Custom Software Development Services in Dubai | Oglas AI",
+    title: "Custom Software Development Company in Dubai & UAE | Oglas AI",
     description:
-      "Custom software development services in Dubai and across the UAE: business applications, ERP, CRM, integrations and AI. Book a free consultation.",
+      "Oglas AI is a custom software development company in Dubai, building business applications, ERP and CRM systems, portals and integrations for businesses across the UAE.",
   },
   "erp-software-company-in-dubai-uae": {
     title: "ERP Software Company UAE | Custom ERP Dubai | Oglas AI",
@@ -74,12 +74,12 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "workflow-automation-in-dubai-uae": {
   title: "Workflow Automation Services Dubai | Oglas AI",
   description:
-    "Oglas AI provides workflow automation services in Dubai, UAE, for approvals, HR, finance, CRM, document routing, and business operations.",
+    "Explore workflow automation services in Dubai and the UAE. Oglas AI automates approvals, document routing, notifications, task assignments and repetitive business processes.",
 },
   "marketing-automation-agency-in-dubai-uae": {
-    title: "Marketing Automation Agency in Dubai | Oglas AI",
+    title: "Marketing Automation Agency in Dubai & UAE | Oglas AI",
     description:
-      "Oglas AI builds marketing automation solutions in Dubai and the UAE, connecting lead capture, CRM, follow-ups, campaigns, notifications and reporting.",
+      "Marketing automation agency in Dubai helping UAE businesses connect lead capture, CRM updates, WhatsApp follow-ups, campaign workflows and reporting.",
   },
   "employee-self-service-in-dubai-uae": {
     title: "Employee Self Service Software in UAE | Oglas AI",
@@ -104,7 +104,7 @@ export const serviceSeo: Record<string, SeoEntry> = {
   "ai-chatbot-development-in-dubai-uae": {
     title: "AI Chatbot Development in Dubai & UAE | Oglas AI",
     description:
-      "Get custom AI chatbot development in Dubai and UAE. Build AI chatbots and knowledge assistants for business enquiries and internal support.",
+      "Oglas AI provides AI chatbot development in Dubai and across the UAE, building custom chatbots and knowledge assistants for customer support, HR and internal business information.",
   },
 };
 

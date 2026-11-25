@@ -96,6 +96,11 @@ const workflowFaqs = [
     answer:
       "Oglas AI starts by understanding how your business currently operates, then designs the workflow around your processes and business rules. The solution can then be integrated with your existing systems, tested with your team, deployed into your environment, and refined based on real-world usage.",
   },
+  {
+    question: "Does Oglas AI provide workflow automation services in Dubai and the UAE?",
+    answer:
+      "Yes, Oglas AI provides customized workflow automation services for businesses in Dubai and across the UAE. We design and implement workflows for approvals, document routing, task assignments, notifications and business process automation based on your existing systems and operational requirements.",
+  },
 ];
 
 const workflowCapabilities = [
@@ -148,7 +153,7 @@ const workflowTeams = [
     title: "Operations",
     subtitle: "Connect tasks across your operations",
     description:
-      "Coordinate requests, approvals, task assignments, status updates, and operational processes across teams and locations.",
+      "Coordinate requests, approvals, task assignments and status updates across teams and locations. See how these processes apply to multi-site facility management operations.",
     icon: CircuitBoard,
   },
   {
@@ -156,7 +161,7 @@ const workflowTeams = [
     title: "Sales & Marketing",
     subtitle: "Turn leads and campaigns into structured workflows",
     description:
-      "Automate lead assignment, follow-ups, CRM updates, campaign processes, approvals, and notifications so opportunities don't get stuck between teams.",
+      "Automate lead assignment, follow-ups, CRM updates, campaign processes, approvals, and notifications so opportunities don't get stuck between teams. For marketing-specific lead handling, CRM updates and campaign workflows, explore our marketing automation services.",
     icon: Megaphone,
   },
   {
@@ -1086,6 +1091,11 @@ const customSoftwareFaqs = [
     answer:
       "Oglas AI takes a business-first approach to custom software development, starting with the organization's workflows, requirements, systems, and operational challenges before defining the technology solution. Depending on the situation, the approach may involve building new software, integrating existing systems, modernizing an application, automating workflows, or adding practical AI capabilities.",
   },
+  {
+    question: "Does Oglas AI provide custom software development services in Dubai and the UAE?",
+    answer:
+      "Yes, Oglas AI provides custom software development services for businesses in Dubai and across the UAE. We develop tailored business applications, ERP and CRM systems, employee and customer portals, and software integrations based on each organization's workflows, existing systems and operational requirements.",
+  },
 ];
 
 const baseUrl = "https://www.oglas-ai.com";
@@ -1303,7 +1313,7 @@ function CustomSoftwarePage() {
             Custom Software Development
           </p>
           <h1 className="mt-7 max-w-3xl text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
-              <SplitTitle>{"Custom Software Built Around How Your Business Works"}</SplitTitle>
+              <SplitTitle>{"Custom Software Development for Businesses in Dubai & UAE"}</SplitTitle>
             </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
             Your business has its own workflows, rules, teams, systems, and
@@ -1311,10 +1321,11 @@ function CustomSoftwarePage() {
             them — not force them into a rigid process.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-white/85">
-            Oglas AI develops custom software solutions for businesses in
-            Dubai, the UAE, and beyond, combining business applications,
-            integrations, <a className="content-link" href="/workflow-automation-in-dubai-uae">automation</a>, and practical AI into software designed
-            around real operations.
+            As a custom software development company in Dubai, Oglas AI develops
+            tailored business applications, ERP and CRM systems, portals, and
+            integrations for businesses across the UAE and beyond. Each solution
+            is designed around your workflows, business rules, and operational
+            requirements.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -1370,9 +1381,10 @@ function CustomSoftwarePage() {
           </div>
 
           <p className="mt-8 max-w-3xl text-base leading-7 text-steel">
-            At that point, adding another tool may not solve the underlying
-            problem. Sometimes the better approach is to build software
-            around the way the business actually operates.
+            When existing tools no longer meet your business requirements, adding
+            another application may not solve the underlying problem. Custom
+            software development provides an opportunity to build solutions around
+            your existing systems, workflows and the way your business actually operates.
           </p>
         </div>
       </section>
@@ -1429,9 +1441,8 @@ function CustomSoftwarePage() {
             <SplitTitle>{"Custom Software Designed for Real Business Operations"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
-            From individual business applications to connected enterprise
-            systems, we develop software around specific operational
-            requirements.
+            From individual business applications to connected enterprise systems,
+            we develop software around specific operational requirements.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -1447,7 +1458,11 @@ function CustomSoftwarePage() {
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-steel">
-                    {item.description}
+                    {item.title === "Custom ERP & Business Management Systems" ? (
+                      <>Connect business functions such as HR, payroll, finance, operations, inventory, reporting, and approvals within systems designed around your processes. For employee, attendance, payroll and approval workflows, explore our <Link className="content-link" href="/erp-software-company-in-dubai-uae">ERP and payroll automation solutions</Link>.</>
+                    ) : item.title === "Workflow Management Systems" ? (
+                      <>Digitize approvals, assignments, notifications, escalations, validations, and recurring operational processes. For dedicated approval, notification, document-routing and repetitive-process solutions, explore our <Link className="content-link" href="/workflow-automation-in-dubai-uae">workflow automation services</Link>.</>
+                    ) : item.description}
                   </p>
                   {item.title === "Custom Business Applications" ? (
                     <p className="mt-4 text-sm leading-7 text-steel">
@@ -1488,7 +1503,11 @@ function CustomSoftwarePage() {
                     {item.flow}
                   </p>
                   <p className="mt-3 text-sm leading-7 text-steel">
-                    {item.description}
+                    {item.flow.startsWith("Documents") ? (
+                      <>Extract information from business documents and route it into the appropriate workflow. Explore our <Link className="content-link" href="/ai-powered-document-processing-in-dubai-uae">AI document processing solutions</Link> for document extraction, classification, verification and workflow integration.</>
+                    ) : item.flow.startsWith("Camera Feed") ? (
+                      <>Use computer vision to identify relevant events or conditions from visual data. Explore our <Link className="content-link" href="/computer-vision-solutions-in-dubai-uae">intelligent computer vision solutions</Link> for camera-based monitoring, visual inspection and operational detection.</>
+                    ) : item.description}
                   </p>
                 </article>
               );
@@ -2711,12 +2730,13 @@ function WorkflowAutomationPage() {
               Built in Dubai. Designed for businesses globally
             </p>
             <h1 className="mt-7 text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
-              <SplitTitle>{"Workflow Automation Services"}</SplitTitle>
+            <SplitTitle>{"Workflow Automation Services in Dubai & UAE"}</SplitTitle>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/85">
-              Automate approvals, <a className="content-link" href="/ai-powered-document-processing-in-dubai-uae">document routing</a>, notifications, and repetitive
-              tasks with workflow automation solutions built around how your
-              business operates.
+              Oglas AI provides workflow automation services in Dubai and across
+              the UAE, helping businesses automate approvals, document routing,
+              notifications, task assignments and repetitive processes with
+              workflows tailored to their operations.
             </p>
             <TalkToOglas
               className="btn btn-light mt-8"
@@ -2767,10 +2787,11 @@ function WorkflowAutomationPage() {
             <SplitTitle>{"Automate the Work That Slows Your Business Down"}</SplitTitle>
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-8 text-steel md:text-lg">
-            We design workflow automation solutions that reduce manual work, connect
-            business processes, and keep tasks moving across your organization. From
-            approvals and document routing to notifications and task assignments, we
-            automate repetitive workflows around how your teams work.
+            Our workflow automation services help businesses reduce manual work,
+            connect business processes and keep tasks moving across teams. Oglas AI
+            automates approval workflows, document routing, notifications, task
+            assignments and repetitive business processes based on your existing
+            systems and business rules.
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
@@ -2826,11 +2847,19 @@ function WorkflowAutomationPage() {
                     {team.subtitle}
                   </p>
                   <p className="mt-3 text-sm leading-7 text-steel">
-                    <InlineContentLink
-                      text={team.description}
-                      phrase="operational processes across teams and locations"
-                      href="/insights/improve-sla-compliance-multi-site-facility-management-uae"
-                    />
+                    {team.number === "03" ? (
+                      <InlineContentLink
+                        text={team.description}
+                        phrase="multi-site facility management operations"
+                        href="/insights/improve-sla-compliance-multi-site-facility-management-uae"
+                      />
+                    ) : team.number === "04" ? (
+                      <InlineContentLink
+                        text={team.description}
+                        phrase="marketing automation services"
+                        href="/marketing-automation-agency-in-dubai-uae"
+                      />
+                    ) : team.description}
                   </p>
                 </article>
               );
@@ -2905,6 +2934,12 @@ function WorkflowAutomationPage() {
             support decision-making. Oglas AI combines AI-powered workflow automation
             with business rules and existing systems where intelligent processing adds
             value.
+          </p>
+          <p className="mt-5 max-w-4xl text-base leading-8 text-steel md:text-lg">
+            For broader business applications, ERP and CRM systems, portals and integrations, explore our{" "}
+            <Link className="content-link" href="/custom-software-development-services-in-dubai-uae">
+              custom software development services.
+            </Link>
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">

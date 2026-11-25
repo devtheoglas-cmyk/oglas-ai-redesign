@@ -35,32 +35,32 @@ const capabilities: { icon: LucideIcon; title: string; copy: string }[] = [
   {
     icon: Inbox,
     title: "Lead Capture & Routing",
-    copy: "Connect enquiries from relevant channels and route them to the appropriate teams or sales processes based on defined business rules.",
+    copy: "Use lead capture and routing workflows to collect enquiries from relevant channels and direct them to the appropriate teams or sales processes based on defined business rules.",
   },
   {
     icon: Database,
     title: "CRM Automation",
-    copy: "Automate repetitive CRM activities such as lead updates, stage changes, task creation, notifications, and other workflow actions.",
+    copy: "Use CRM workflow automation to manage repetitive activities such as lead updates, stage changes, task creation, notifications, and other routine workflow actions.",
   },
   {
     icon: ListChecks,
     title: "Lead Qualification & Follow-Up",
-    copy: "Structure lead qualification and follow-up workflows around your business requirements, helping teams manage enquiries more consistently throughout the sales process.",
+    copy: "Structure lead qualification and automated lead follow-up workflows around your business requirements, helping teams manage enquiries consistently throughout the sales process.",
   },
   {
     icon: Mail,
     title: "Email & WhatsApp Workflows",
-    copy: "Connect relevant email and WhatsApp communication workflows with lead and customer processes, helping teams coordinate follow-ups and notifications more efficiently.",
+    copy: "Connect email and WhatsApp automation workflows with lead and customer processes, helping teams coordinate follow-ups, updates and notifications more efficiently.",
   },
   {
     icon: Megaphone,
     title: "Campaign Workflow Automation",
-    copy: "Automate selected campaign-related actions, notifications, and follow-up processes so marketing activity can connect more effectively with sales workflows.",
+    copy: "Use marketing workflow automation to coordinate campaign-related actions, notifications and follow-up processes, helping marketing activities connect more effectively with sales workflows.",
   },
   {
     icon: BarChart3,
     title: "Reporting & Dashboards",
-    copy: "Bring relevant marketing and lead information into structured reports and dashboards, giving marketing and management teams clearer visibility into workflow activity and outcomes.",
+    copy: "Bring relevant marketing and lead information into structured reports and dashboards to support campaign reporting and give marketing and management teams clearer visibility into workflow activity and outcomes.",
   },
 ];
 
@@ -256,7 +256,7 @@ export function MarketingAutomationPage() {
         <div className="mx-auto grid w-full max-w-[1160px] items-center gap-12 px-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rise">
             <h1 className="text-[2.6rem] text-white sm:text-5xl md:text-6xl lg:text-[4.1rem]">
-              <SplitTitle at={1}>{"Marketing Automation"}</SplitTitle>
+            <SplitTitle at={1}>{"Marketing Automation Services in Dubai & UAE"}</SplitTitle>
             </h1>
             <ArrowRule className="mt-8 text-white/70" />
             <p className="lead-serif mt-8 max-w-2xl text-2xl leading-9 text-white md:text-[1.7rem] md:leading-10">
@@ -265,11 +265,12 @@ export function MarketingAutomationPage() {
               around the way your business works.
             </p>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/85 md:text-lg">
-              Oglas AI designs and develops customized marketing automation
-              solutions for businesses in Dubai and across the UAE, helping
-              marketing and sales teams reduce repetitive work, improve lead
-              response, and create more connected workflows between marketing and
-              sales.
+              Oglas AI is a marketing automation agency in Dubai, helping
+              businesses across the UAE connect their marketing and sales
+              processes. We design customized workflows for lead capture, lead
+              routing, CRM updates, lead qualification, email and WhatsApp
+              communication, and campaign reporting, built around your existing
+              systems and business requirements.
             </p>
             <Link href="/contact" className="btn btn-light mt-9">
               Book a Free Consultation
@@ -356,6 +357,30 @@ export function MarketingAutomationPage() {
                 <p className="mt-3 text-[15px] leading-7 text-steel">{item.copy}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <h2 className="max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Marketing Automation for Marketing Agencies"}</SplitTitle>
+          </h2>
+          <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
+            <p>Marketing agencies manage multiple clients, campaigns, enquiries and reporting activities. Oglas AI develops customized marketing automation workflows that help agencies connect these processes, reduce manual coordination and improve operational visibility.</p>
+            <div>
+              <h3 className="text-xl font-normal text-onyx">Lead Routing &amp; CRM Workflows</h3>
+              <p className="mt-3">Automatically organize incoming enquiries, route leads to the appropriate team and connect CRM activities through defined business rules.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-normal text-onyx">Campaign Reporting &amp; Client Dashboards</h3>
+              <p className="mt-3">Connect campaign and lead information into structured reporting workflows and client dashboards for better visibility into account performance.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-normal text-onyx">Content &amp; Approval Workflows</h3>
+              <p className="mt-3">Organize content requests, review processes, notifications and task assignments to create a more structured workflow for marketing teams.</p>
+            </div>
+            <p>Oglas AI also develops industry-specific software and automation for marketing agencies, covering lead routing, CRM workflows, campaign reporting and client dashboards. Explore our <a className="content-link" href="/industries">solutions for marketing agencies</a>.</p>
           </div>
         </div>
       </section>
@@ -462,6 +487,28 @@ export function MarketingAutomationPage() {
                 <p className="mt-3 text-[15px] leading-7 text-steel">{item.copy}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto w-full max-w-[1160px] px-4">
+          <h2 className="max-w-3xl text-4xl leading-[1.05] text-onyx md:text-[3.2rem]">
+            <SplitTitle>{"Marketing Automation in Practice: 24/7 Meta Ads Monitoring"}</SplitTitle>
+          </h2>
+          <div className="mt-6 max-w-3xl space-y-5 text-base leading-8 text-steel md:text-lg">
+            <p>Managing advertising campaigns requires regular monitoring of budgets, ads and performance signals. Manual account checks can make continuous campaign monitoring difficult.</p>
+            <p>Oglas AI developed a marketing agent that monitors Meta Ads performance around the clock, reviews campaign signals and supports optimization decisions based on live performance patterns.</p>
+            <div>
+              <h3 className="text-xl font-normal text-onyx">Key capabilities</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5">
+                <li>Always-on campaign inspection.</li>
+                <li>Automated review of campaign performance signals.</li>
+                <li>Reduced dependency on manual ad account checks.</li>
+                <li>Support for faster optimization decisions.</li>
+              </ul>
+            </div>
+            <p><a className="content-link" href="/case-studies">Read the Marketing Agent for Meta Ads Optimization case study →</a></p>
           </div>
         </div>
       </section>
