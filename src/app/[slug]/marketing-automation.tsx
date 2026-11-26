@@ -161,7 +161,7 @@ export const marketingAutomationFaqs = [
   {
     question: "Does Oglas AI provide marketing automation services in Dubai and the UAE?",
     answer:
-      "Yes, Oglas AI designs and develops customized marketing automation solutions for businesses in Dubai and across the UAE. Solutions can be structured around lead management, CRM workflows, follow-ups, communication processes, integrations, and reporting requirements.",
+      "Yes, Oglas AI provides customized marketing automation services for businesses in Dubai and across the UAE. As a marketing automation agency in Dubai, we design workflows for lead capture, lead routing, CRM updates, lead qualification, automated follow-ups, email and WhatsApp communication, and campaign reporting based on your business requirements.",
   },
 ];
 
