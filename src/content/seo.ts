@@ -51,7 +51,7 @@ export const staticPageSeo: Record<string, SeoEntry> = {
   },
   "/privacy": {
     description:
-      "Read the Oglas AI Privacy Policy to learn how we collect, use, and protect your personal information when you use our website or contact us.",
+      "Read the Oglas AI Privacy Policy and Terms & Conditions to learn how we collect, use, protect and manage information when you use our website or contact us.",
   },
 };
 
