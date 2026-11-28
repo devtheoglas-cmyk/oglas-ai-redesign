@@ -1,6 +1,5 @@
-// Headings follow the company profile's two-voice pattern: a lead line in
-// EB Garamond Italic, then the rest in light Aspekta. The words are never
-// changed, only where the voice switches.
+// Headings keep the existing line breaks while using the same site font
+// throughout.
 
 const LINKING_WORDS = /^(a|an|the|of|and|&|to|for|with|in|on|at|by|from)$/i;
 

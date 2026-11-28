@@ -512,7 +512,7 @@ export function BuildLab() {
             <div className="rise">
               <p className="lab-mono text-xs text-[#8fd6ff]">Oglas AI · Build Lab</p>
               <h1 className="mt-6 text-[2.6rem] leading-[1.02] text-white sm:text-5xl md:text-6xl lg:text-[3.7rem]">
-                <span className="font-serif italic">Build the software</span>
+                <span>Build the software</span>
                 <br />
                 your business runs on.
               </h1>
@@ -809,7 +809,7 @@ export function BuildLab() {
                 tabIndex={-1}
                 className="mt-3 text-[1.9rem] font-light leading-tight text-white outline-none md:text-[2.4rem]"
               >
-                <span className="font-serif italic">{lead.company}</span>
+                <span>{lead.company}</span>
                 <br />
                 {field?.title} System
               </h1>

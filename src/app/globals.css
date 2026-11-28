@@ -12,7 +12,7 @@
               "AI startup" template and the beige consultancy template.
   OWN-WORLD   #0C29DF → #00009E fields lit by soft white/lilac blooms;
               frosted glass panels with white hairline edges; gradient pill
-              labels; EB Garamond Italic lead-lines over Aspekta Light;
+              labels and headings use the same Aspekta family throughout;
               chrome robot cut-outs; the giant glass "O1" numeral.
   STORY       A business owner learns what Oglas AI builds, trusts that it
               is practical and premium, and books a consultation.
@@ -57,7 +57,6 @@
 
 @theme inline {
   --font-sans: var(--font-aspekta), "Helvetica Neue", Arial, sans-serif;
-  --font-serif: var(--font-garamond), Georgia, "Times New Roman", serif;
   --font-arabic: var(--font-arabic);
 }
 
@@ -391,9 +390,9 @@
 
   .title-serif {
     display: block;
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 290;
     font-size: 1.07em;
     line-height: 1.02;
     letter-spacing: -0.012em;
@@ -413,8 +412,8 @@
   }
 
   .lead-serif {
-    font-family: var(--font-serif);
-    font-style: italic;
+    font-family: var(--font-sans);
+    font-style: normal;
     font-weight: 400;
     letter-spacing: -0.005em;
   }
